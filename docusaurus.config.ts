@@ -176,13 +176,13 @@ const config: Config = {
             {
               type: 'docSidebar',
               sidebarId: 'docspaceApiBackend',
-              label: 'Backend REST API',
+                label: 'API Reference',
               docsPluginId: 'api',
             },
             {
               type: 'docSidebar',
               sidebarId: 'docspaceJSSdk',
-              label: 'JavaScript SDK',
+                label: 'Embed SDK',
               docsPluginId: 'api',
             },
             {
@@ -197,12 +197,6 @@ const config: Config = {
                label: 'MCP Server',
                docsPluginId: 'api',
              },
-            {
-              type: 'docSidebar',
-              sidebarId: 'docspaceHosting',
-              label: 'For hosting providers',
-              docsPluginId: 'api',
-            },
           ],
         },
         {
@@ -328,8 +322,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Ascensio System SIA. All right reserved`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsLight,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ["bash", "php", "csharp", "java", "ruby"],
     },
     algolia: {
