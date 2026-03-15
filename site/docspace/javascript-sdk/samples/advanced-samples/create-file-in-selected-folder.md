@@ -2,6 +2,8 @@
 
 This example creates a file in the selected folder and opens it in the editors.
 
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/create-file-in-selected-folder.html)
+
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
@@ -15,7 +17,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#st
   <head>
     <meta charset="UTF-8">
     <title>DocSpace JavaScript SDK</title>
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     <style>
       .holder {
         margin: auto;
@@ -103,7 +105,7 @@ Create an HTML file. Add a combo box, a text field, and a button. The HTML file 
                 width: 800px;
             }
         </style>
-        <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+        <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     </head>
     <body>
         <div id="holder-buttons" class="holder" style="width: 400px; margin-top: 300px;">
@@ -121,7 +123,7 @@ Create an HTML file. Add a combo box, a text field, and a button. The HTML file 
 ```
 
 :::info
-The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.0.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.1.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
 :::
 
 ### 2. Initialize the Manager mode

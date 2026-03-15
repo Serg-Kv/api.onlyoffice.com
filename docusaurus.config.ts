@@ -37,7 +37,8 @@ const config: Config = {
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
-    }
+    },
+    mermaid: true,
   },
 
   customFields: {
@@ -77,10 +78,27 @@ const config: Config = {
           path: './site',
           routeBasePath: '',
 
-          editUrl:
-            isDev
-              ? 'https://git.onlyoffice.com/ONLYOFFICE/api.onlyoffice.com/src/branch/master'
-              : 'https://github.com/ONLYOFFICE/api.onlyoffice.com/tree/master',
+          editUrl: ({docPath}) => {
+            const baseUrl = 'https://github.com/ONLYOFFICE/api.onlyoffice.com/tree/master/site';
+
+            // Transform sample paths: samples/{category}/{subcategory}/... → {category}/{subcategory}/samples/...
+            if (docPath.startsWith('samples/')) {
+              const parts = docPath.split('/');
+              if (parts.length >= 4) {
+                const [, category, subcategory, ...rest] = parts;
+                let filePath = rest.join('/');
+
+                // Reverse rename: {subcategory}.md → samples.md
+                if (filePath === `${subcategory}.md`) {
+                  filePath = 'samples.md';
+                }
+
+                return `${baseUrl}/${category}/${subcategory}/samples/${filePath}`;
+              }
+            }
+
+            return `${baseUrl}/${docPath}`;
+          },
 
           docItemComponent: '@theme/ApiItem',
 
@@ -136,13 +154,6 @@ const config: Config = {
               groupPathsBy: "tagGroup",
             },
           } satisfies OpenApiPlugin.Options,
-          docspaceHosted: {
-            specPath: "openapi/docspace/asc.apisystem.swagger.yaml",
-            outputDir: "site/docspace/for-hosting-providers/usage-api",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          } satisfies OpenApiPlugin.Options,
         } satisfies Plugin.PluginOptions,
       },
     ],
@@ -159,6 +170,11 @@ const config: Config = {
     colorMode: {
       disableSwitch: false,
       respectPrefersColorScheme: true,
+    },
+    announcementBar: {
+      content: `<a target="_blank" href="https://www.onlyoffice.com/blog/2026/02/onlyoffice-docs-9-3"><b>ONLYOFFICE Docs 9.3 released</b></a>: enhanced PDF Editor and more signature options, multipage view for documents, Solver in sheets, GIF playback in presentation slideshow mode, AI-powered updates, and more.`,
+      textColor: '#091E42',
+      isCloseable: true,
     },
     navbar: {
       logo: {
@@ -370,7 +386,7 @@ const config: Config = {
     ],
   } satisfies Preset.ThemeConfig,
 
-  themes: ["docusaurus-theme-openapi-docs"],
+  themes: ["docusaurus-theme-openapi-docs", "@docusaurus/theme-mermaid"],
 };
 
 export default config;

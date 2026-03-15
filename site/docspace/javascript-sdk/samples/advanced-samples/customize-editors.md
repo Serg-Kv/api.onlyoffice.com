@@ -2,6 +2,8 @@
 
 This example customizes the editor interface so that it looks like your other products (if there are any), and changes the presence or absence of the additional buttons, links, logos and editor owner details.
 
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/customize-editors.html)
+
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
@@ -16,7 +18,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#st
   <head>
   <meta charset="UTF-8">
   <title>DocSpace JavaScript SDK</title>
-  <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+  <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     ...
   </head>
   <body>
@@ -77,7 +79,7 @@ Create an HTML file. The HTML file must include a *div* tag where we specify the
   <head>
     <meta charset="UTF-8">
     <title>DocSpace JavaScript SDK</title>
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     ...
   </head>
   <body>
@@ -88,7 +90,7 @@ Create an HTML file. The HTML file must include a *div* tag where we specify the
 ```
 
 :::info
-The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.0.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.1.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
 :::
 
 ### 2. Initialize the editors

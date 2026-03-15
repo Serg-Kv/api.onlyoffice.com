@@ -70,16 +70,12 @@ export const DEFAULT_SCRIPTS = {
             '})();\n',
 
         builder:
-            "builder.CreateFile(\"xlsx\");\n" +
-            "Api.AddComment(\"Comment 1\", \"Bob\");\n" +
-            "Api.AddComment(\"Comment 2\");\n" +
-            "let comments = Api.GetComments();\n" +
-            "let worksheet = Api.GetActiveSheet();\n" +
-            "worksheet.GetRange(\"A1\").SetValue(\"Comment Text: \", comments[0].GetText());\n" +
-            "worksheet.GetRange(\"B1\").SetValue(\"Comment Author: \", comments[0].GetAuthorName());\n" +
-            "builder.SaveFile(\"xlsx\", \"Api.xlsx\");\n" +
-            "builder.CloseFile();\n"
-    },
+            'builder.CreateFile("xlsx");\n' +
+            'let worksheet = Api.GetActiveSheet();\n' +
+            'worksheet.GetRange("B2:G28").Select();\n' +
+            'builder.SaveFile("xlsx", "Api.xlsx");\n' +
+            'builder.CloseFile();\n'
+        },
     slide: {
         'office-js-api':
             'var oPresentation = Api.GetPresentation();\n' +
@@ -140,7 +136,7 @@ export const DEFAULT_SCRIPTS = {
             '})();\n',
 
         builder:
-            "builder.CreateFile(\"pdf\");\n" +
+            "builder.CreateFile(\"docx\");\n" +
             "var oDocument = Api.GetDocument();\n" +
             "var oParagraph = Api.CreateParagraph();\n" +
             "oParagraph.AddText(\"Hello world!\");\n" +
@@ -148,4 +144,48 @@ export const DEFAULT_SCRIPTS = {
             "builder.SaveFile(\"pdf\", \"Api.pdf\");\n" +
             "builder.CloseFile();\n",
     },
+    pdf: {
+        'office-js-api':
+            'var oDocument = Api.GetDocument();\n' +
+            'var oPage = oDocument.GetPage(0);\n' +
+            'var oFill = Api.CreateSolidFill(Api.CreateRGBColor(255, 111, 61));\n' +
+            'var oStroke = Api.CreateStroke(0, Api.CreateNoFill());\n' +
+            'var oShape = Api.CreateShape("rect", 100 * 36000, 30 * 36000, oFill, oStroke);\n' +
+            'oShape.SetPosition(608400, 1267200);\n' +
+            'var oContent = oShape.GetContent();\n' +
+            'var oParagraph = oContent.GetElement(0);\n' +
+            'var oRun = Api.CreateRun();\n' +
+            'oRun.AddText("Hello world!");\n' +
+            'oParagraph.AddElement(oRun);\n' +
+            'oPage.AddObject(oShape);\n',
+
+        connector:
+            'connector.callCommand(function() {\n' +
+            '    var doc = Api.GetDocument();\n' +
+            '    var page = doc.GetPage(0);\n' +
+            '    var fill = Api.CreateSolidFill(Api.CreateRGBColor(255, 111, 61));\n' +
+            '    var stroke = Api.CreateStroke(0, Api.CreateNoFill());\n' +
+            '    var shape = Api.CreateShape("rect", 100 * 36000, 30 * 36000, fill, stroke);\n' +
+            '    shape.SetPosition(608400, 1267200);\n' +
+            '    page.AddObject(shape);\n' +
+            '});\n',
+
+        plugin:
+            PLUGIN_HEADER +
+            '(async function(){\n' +
+            '    let version = await Editor.callMethod("GetVersion");\n' +
+            '    console.log(version);\n' +
+            '    await Editor.callMethod("PasteHtml", ["<span>Hello, </span><span><b>world</b></span><span>!</span>"]);\n' +
+            '})();\n',
+
+        builder:
+            "builder.CreateFile(\"docx\");\n" +
+            "var oDocument = Api.GetDocument();\n" +
+            "var oParagraph = Api.CreateParagraph();\n" +
+            "oParagraph.SetJc(\"center\");\n" +
+            "oParagraph.AddText(\"Hello world!\");\n" +
+            "oDocument.InsertContent([oParagraph]);\n" +
+            "builder.SaveFile(\"pdf\", \"Api.pdf\");\n" +
+            "builder.CloseFile();\n",
+    }
 }

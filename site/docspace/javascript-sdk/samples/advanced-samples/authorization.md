@@ -7,6 +7,8 @@ This examples logs in to the DocSpace account using the specified email and pass
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
 You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#step-1-specifying-the-docspace-url) of your server's root directory to the **Developer Tools** section of DocSpace.
 
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/authorization.html)
+
 <details>
   <summary>Full example</summary>
 
@@ -16,7 +18,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#st
   <head>
     <meta charset="UTF-8">
     <title>DocSpace JavaScript SDK</title>
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
   </head>
   <body>
     <label>Login</label><br />
@@ -66,7 +68,7 @@ Create an HTML file. Add two text fields and a button. The HTML file must includ
   <head>
     <meta charset="UTF-8">
     <title>DocSpace JavaScript SDK</title>
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
   </head>
   <body>
     <label for="login">Login</label><br>
@@ -80,7 +82,7 @@ Create an HTML file. Add two text fields and a button. The HTML file must includ
 ```
 
 :::info
-The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.0.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.1.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
 :::
 
 ### 2. Initialize the System mode

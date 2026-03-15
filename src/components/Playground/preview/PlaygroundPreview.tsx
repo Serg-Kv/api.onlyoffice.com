@@ -2,6 +2,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import {usePlaygroundRootContext} from "@site/src/components/Playground";
 import styles from './PlaygroundPreview.module.css';
 import {getFullUrl} from "@site/src/utils/url";
+import { EditorType } from "@site/src/components/Playground/root/PlaygroundRootContext";
 
 declare global {
     interface Window {
@@ -13,6 +14,7 @@ declare global {
 
 const FILE_CONFIGS = {
     word: { ext: 'docx', docType: 'word', url: 'https://static.onlyoffice.com/assets/docs/samples/demo.docx' },
+    pdf: { ext: 'pdf', docType: 'pdf', url: 'https://static.onlyoffice.com/assets/docs/samples/demo.pdf' },
     cell: { ext: 'xlsx', docType: 'cell', url: 'https://static.onlyoffice.com/assets/docs/samples/demo.xlsx' },
     slide: {
         ext: 'pptx',
@@ -26,14 +28,30 @@ const FILE_CONFIGS = {
     },
 }
 
+const getDocumentUrl = (
+    templateUrl: string | null | undefined,
+    fileConfig: { ext: string; url: string },
+    editorType: EditorType
+): string => {
+    if (templateUrl === null) {
+        const name = editorType === 'form' ? 'demo-invoice' : 'new'
+        return `https://static.onlyoffice.com/assets/docs/samples/${name}.${fileConfig.ext}`
+    }
+
+    if (templateUrl) {
+        return templateUrl
+    }
+
+    return fileConfig.url
+}
+
 export const PlaygroundPreview = () => {
-    const { theme, scriptValue, previewType, scriptType, editorType, documentServerUrl, documentServerSecret } = usePlaygroundRootContext()
+    const { theme, scriptValue, previewType, scriptType, editorType, documentServerUrl, documentServerSecret, templateUrl, hasInitialScript } = usePlaygroundRootContext()
 
     const containerRef = useRef(null)
     const initializingRef = useRef(false)
     const [isApiLoaded, setIsApiLoaded] = useState(false)
-
-    const pluginConfigUrl = getFullUrl("/plugin/config.json");
+    const initialScriptExecutedRef = useRef(!hasInitialScript)
 
     const createJWT = useCallback(
         async (payload: object): Promise<string> => {
@@ -104,7 +122,7 @@ export const PlaygroundPreview = () => {
                     fileType: fileConfig.ext,
                     key: "0" + Math.random(),
                     title: `Example Document Title.${fileConfig.ext}`,
-                    url: fileConfig.url,
+                    url: getDocumentUrl(templateUrl, fileConfig, editorType),
                 },
                 documentType: fileConfig.docType,
                 type: previewType,
@@ -116,6 +134,9 @@ export const PlaygroundPreview = () => {
                     },
                     customization: {
                         uiTheme: theme === 'dark' ? 'default-dark' : 'default-light',
+                        mobile: {
+                            disableForceDesktop:true,
+                        },
                         features: {
                             featuresTips: false,
                         },
@@ -127,10 +148,17 @@ export const PlaygroundPreview = () => {
                 events: {
                     onDocumentReady: () => {
                         try {
+                            const pluginConfigUrl = getFullUrl("/plugin/config.json");
+
                             window.connector = window.docEditor.createConnector();
                             window.connector.callCommand(
                                 new Function(`Api.installDeveloperPlugin("${pluginConfigUrl}");`)
                             );
+
+                            if (!initialScriptExecutedRef.current) {
+                                initialScriptExecutedRef.current = true
+                                executeCode(scriptValue, scriptType)
+                            }
                         } catch (error) {
                             console.error('Failed to initialize connector:', error)
                         }
@@ -142,6 +170,26 @@ export const PlaygroundPreview = () => {
                 (config as any).token = await createJWT(config)
             }
 
+            if (previewType === 'mobile') {
+                // NOTE:  Fixed positioning removes the element from normal document flow and positions it relative to the viewport, not the parent container.
+                const observer = new MutationObserver(() => {
+                    const iframe = containerRef.current?.querySelector('iframe')
+                    if (iframe) {
+                        iframe.style.position = 'absolute'
+                        iframe.style.top = '0'
+                        iframe.style.left = '0'
+                        observer.disconnect()
+                    }
+                })
+
+                if (containerRef.current) {
+                    observer.observe(containerRef.current, {
+                        childList: true,
+                        subtree: true
+                    })
+                }
+            }
+
             window.docEditor = new window.DocsAPI.DocEditor('placeholder', config)
         } catch (error) {
             console.error('Failed to create editor:', error)
@@ -149,7 +197,7 @@ export const PlaygroundPreview = () => {
             initializingRef.current = false
         }
 
-    }, [editorType, theme, previewType, documentServerUrl, documentServerSecret, createJWT, pluginConfigUrl, isApiLoaded, destroyEditor])
+    }, [editorType, theme, previewType, documentServerUrl, documentServerSecret, createJWT, isApiLoaded, destroyEditor, templateUrl])
 
     const executeCode = useCallback((code: string, type: string) => {
         if (!window.connector) {
@@ -193,7 +241,7 @@ export const PlaygroundPreview = () => {
         } catch (error) {
             console.error('Error executing code:', error)
         }
-    }, [])
+    }, [editorType])
 
 
     useEffect(() => {

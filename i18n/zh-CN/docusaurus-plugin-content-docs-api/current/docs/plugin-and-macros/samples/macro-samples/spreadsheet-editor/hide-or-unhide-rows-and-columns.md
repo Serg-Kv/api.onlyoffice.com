@@ -2,10 +2,6 @@
 
 在电子表格中隐藏或取消隐藏指定的行和/或列。
 
-<!-- This code snippet is shown in the screenshot. -->
-
-<!-- eslint-skip -->
-
 ```ts
 (function()
 {
@@ -31,8 +27,6 @@
 
 ## 参考 Microsoft VBA 宏代码
 
-<!-- code generated with AI -->
-
 ```vb
 Sub HideUnhide()
     Rows("5:10").Hidden = Not Rows("5:10").Hidden
@@ -41,7 +35,5 @@ End Sub
 ```
 
 ## 结果
-
-<!-- imgpath -->
 
 ![Hide or unhide rows and columns](/assets/images/plugins/hide-unhide-rows-columns.png#gh-light-mode-only)![Hide or unhide rows and columns](/assets/images/plugins/hide-unhide-rows-columns.dark.png#gh-dark-mode-only)

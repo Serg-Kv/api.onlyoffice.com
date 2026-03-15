@@ -2,6 +2,8 @@
 
 This example demonstrates how to embed the room selection interface using the JavaScript SDK method.
 
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/basic-samples/init-room-selector.html)
+
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
@@ -19,7 +21,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#st
     <title>Init Room Selector</title>
 
     <!-- Replace with your actual DocSpace portal URL -->
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
   </head>
 
   <body>
@@ -71,7 +73,7 @@ Create a basic HTML page with an iframe to host the DocSpace SDK interface.
     <title>Init Room Selector</title>
 
     <!-- Replace with your actual DocSpace portal URL -->
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
   </head>
 
   <body>
@@ -82,7 +84,7 @@ Create a basic HTML page with an iframe to host the DocSpace SDK interface.
 ```
 
 :::info
-The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.0.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.1.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
 :::
 
 ## Step 2. JavaScript SDK logic

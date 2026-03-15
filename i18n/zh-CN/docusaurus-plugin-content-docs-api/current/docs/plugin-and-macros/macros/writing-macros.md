@@ -9,10 +9,6 @@ sidebar_position: -5
 1. 打开 ONLYOFFICE 编辑器并创建一个新的电子表格。
 2. 打开**视图**选项卡并选择**宏**。宏窗口将弹出，并出现一个基础的函数包装器，可以在其中编写所需代码：
 
-<!-- 此代码与宏相关。 -->
-
-<!-- eslint-skip -->
-
    ``` ts
    (function () {
      // ... your code goes here ...
@@ -55,10 +51,6 @@ sidebar_position: -5
      ```
 
 现在我们将其整合成完整的脚本代码：
-
-<!-- This code is related to macros. -->
-
-<!-- eslint-skip -->
 
 ``` ts
 (function()

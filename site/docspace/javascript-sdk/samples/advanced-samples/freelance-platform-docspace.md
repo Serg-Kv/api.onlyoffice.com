@@ -2,6 +2,8 @@
 
 This example shows how to build a freelance project workspace using DocSpace SDK. When a project is created, a room is generated, a freelancer is assigned via API, task files are managed, and the room is archived on completion.
 
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/freelance-platform-docspace.html)
+
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
@@ -19,7 +21,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#st
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Freelance Platform</title>
     <!-- Replace with your actual portal URL -->
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     <style>
       /* Styles omitted for brevity - same as your input */
     </style>

@@ -8,10 +8,6 @@ Converts a base currency into multiple desired target currencies. It can also fe
 
 > To use this macro, you need to obtain your own API key from currencyapi.
 
-<!-- This code snippet is shown in the screenshot. -->
-
-<!-- eslint-skip -->
-
 ```ts
 (function () {
     function buildHistoricalURL(apiKey, baseCurrency, date, currencies) {
@@ -92,7 +88,5 @@ Converts a base currency into multiple desired target currencies. It can also fe
 Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet.md), [GetRange](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange.md), [SetValue](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/SetValue.md), [AutoFit](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/AutoFit.md)
 
 ## Result
-
-<!-- imgpath -->
 
 ![Currency conversion](/assets/images/plugins/currency-conversion.png#gh-light-mode-only)![Currency conversion](/assets/images/plugins/currency-conversion.dark.png#gh-dark-mode-only)

@@ -2,6 +2,8 @@
 
 This example opens a file in [ONLYOFFICE editors](/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initeditor) using the [file selector](/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initfileselector).
 
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/open-file-in-onlyoffice-editors.html)
+
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the JavaScript SDK must be launched on the server.
@@ -16,7 +18,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/get-started.md#st
   <head>
     <meta charset="UTF-8">
     <title>DocSpace JavaScript SDK</title>
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     ...
   </head>
   <body>
@@ -65,7 +67,7 @@ Create an HTML file. It must include a *div* tag where we specify the DocSpace c
   <head>
     <meta charset="UTF-8">
     <title>DocSpace JavaScript SDK</title>
-    <script src="{PORTAL_SRC}/static/scripts/sdk/2.0.0/api.js"></script>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.1.0/api.js"></script>
     ...
   </head>
   <body>
@@ -76,7 +78,7 @@ Create an HTML file. It must include a *div* tag where we specify the DocSpace c
 ```
 
 :::info
-The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.0.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.1.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
 :::
 
 ### 2. Add the file selector
