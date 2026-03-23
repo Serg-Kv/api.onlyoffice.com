@@ -10,6 +10,10 @@
 <tr>
 <td width="50%">
 
+<table>
+<tr>
+<td width="50%">
+
 ### 🚀 **I want to start coding NOW**
 Jump straight into building with our interactive quick-starts:
 
