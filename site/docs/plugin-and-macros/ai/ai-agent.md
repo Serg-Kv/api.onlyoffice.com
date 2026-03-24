@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: -2
 ---
 
 # AI agent (beta)
@@ -11,7 +11,7 @@ The AI inline agent is a contextual assistant integrated into ONLYOFFICE editors
 The AI agent:
 
 - Provides natural language interaction for executing common editing tasks without navigating menus.
-- Includes a collection of simple predefined [tools](custom-ai-tools/custom-ai-tools-overview.md) adapted to common tasks for each editor.
+- Includes a collection of simple predefined [tools](custom-ai-tools.md) adapted to common tasks for each editor.
 - Maintains conversation history to support iterative refinement and multi-step requests.
 
 ## What the AI agent can do {#functions}
@@ -20,9 +20,32 @@ The AI agent:
 - **Smart formatting**. Apply formatting without searching through menus. Request formatting changes, and the editor updates the document automatically.
 - **Data analysis and visualization**. Aggregate, sort, and filter data in spreadsheets, and generate visual representations from selected ranges or entire sheets. Create diagrams and slide images based on simple text descriptions.
 
-## How to use the AI agent {#usage}
+## How to install the AI agent {#installation}
 
-Before using the AI agent, make sure the AI plugin is installed and configured. See [Getting started](getting-started.md) and [Configuring AI providers](providers/configuring-providers.md).
+To install the AI agent, follow the steps below:
+
+1. Go to the **Plugins** tab and open **Plugin Manager**. Find the **AI plugin** and click **Install** or **Update** if the plugin is already installed.
+
+   ![AI plugin](/assets/images/plugins/install-ai-plugin.png#gh-light-mode-only)![AI plugin](/assets/images/plugins/install-ai-plugin.dark.png#gh-dark-mode-only)
+
+2. Click the **Background Plugins** button and activate the **AI** switch.
+
+    ![Activate AI](/assets/images/plugins/activate-ai.png#gh-light-mode-only)![Activate AI](/assets/images/plugins/activate-ai.dark.png#gh-dark-mode-only)
+
+3. Find a new **AI** tab in the top toolbar of ONLYOFFICE editors.
+4. Click **Settings** to open the configuration window.
+5. Select **Edit AI models** and click ![Plus icon](/assets/images/plugins/plus.svg#gh-light-mode-only)![Plus icon](/assets/images/plugins/plus.dark.svg#gh-dark-mode-only).
+6. Choose an AI provider from the list or add new AI models by entering your API keys.
+7. In the row of icons, select what the model is used for: *Text*, *Images*, *Embeddings*, *Audio Processing*, *Content Moderation*, *Realtime Tasks*, *Coding Help*, *Visual Analysis*.
+8. Click **OK** to save your settings and complete the connection process.
+
+    ![AI settings](/assets/images/plugins/ai-settings.png#gh-light-mode-only)![AI settings](/assets/images/plugins/ai-settings.dark.png#gh-dark-mode-only)
+
+9. Go back to the **Settings** and set the model for the **Chatbot**.
+
+The AI agent is now installed and ready to start.
+
+## How to use the AI agent {#usage}
 
 To invoke the AI agent:
 
@@ -37,33 +60,3 @@ The editor supports request history, so you can continue the conversation, givin
 To reset the history, press `Ctrl + Alt + /`.
 
 To disable the agent, use `Esc`.
-
-## Use cases and examples
-
-| Request | What the agent does |
-|---------|-------------------|
-| `Make this paragraph more formal` | Rewrites selected text in a formal tone |
-| `Add a comment explaining this formula` | Runs `commentText` tool on selected cell |
-| `Insert a 3x3 table with headers` | Runs `addTableToSlide` or creates a table inline |
-| `Summarize the selected text` | Generates a summary and inserts it |
-| `Change the font size to 14` | Applies formatting via `changeTextStyle` tool |
-
-## Limitations and roadmap {#limitations}
-
-**Current limitations:**
-
-- Adding a custom AI tool requires modifying the AI plugin source code directly and rebuilding the plugin. There is no runtime plugin registration yet.
-- The agent is available only in ONLYOFFICE Docs version 9.0.4 and later.
-- Context window is limited by the configured model's token limit.
-
-**Planned improvements:**
-
-- Runtime tool registration without source modification.
-- Broader predefined tool coverage across all editor types.
-- Multi-step task planning with agent memory.
-
-To follow development progress or submit feedback, see the [GitHub repository](https://github.com/ONLYOFFICE/onlyoffice.github.io/issues).
-
-## Extending the agent
-
-The predefined tools cover common tasks, but you can add your own. See [Custom AI tools](custom-ai-tools/custom-ai-tools-overview.md) to learn how to create and register new tools.
