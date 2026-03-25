@@ -1,5 +1,5 @@
 ---
-sidebar_position: -3
+sidebar_position: 1
 ---
 
 # Adding custom providers
@@ -68,7 +68,7 @@ class Provider extends AI.Provider {
 }
 ```
 
-## Step 2. Add the custom provider
+## Step 2. Add the custom provider {#add-provider}
 
 To add the custom provider to the AI plugin:
 
@@ -84,7 +84,7 @@ To add the custom provider to the AI plugin:
 
     ![Add custom provider](/assets/images/plugins/add-custom-provider.png#gh-light-mode-only)![Add custom provider](/assets/images/plugins/add-custom-provider.dark.png#gh-dark-mode-only)
 
-7. Click **Back** to exit **Custom providers** window.
+7. Click **Back** to exit the **Custom providers** window.
 8. Select your custom provider from the list in the **Edit AI Model** window and click **OK**.
 9. Click **Back** to exit the **AI Models list** window.
 10. Set the custom provider model for a specific task in the **AI configuration** window.
