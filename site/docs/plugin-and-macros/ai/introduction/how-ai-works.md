@@ -16,6 +16,7 @@ This page explains the execution flow for each layer of the ONLYOFFICE AI system
 ```
 User input → AI plugin → Provider API → Response → Document
 ```
+![Activate AI](/assets/images/plugins/activate-ai.png#gh-light-mode-only)![Activate AI](/assets/images/plugins/activate-ai.dark.png#gh-dark-mode-only)
 
 ## AI agent example flow
 
@@ -28,10 +29,13 @@ User input → AI plugin → Provider API → Response → Document
 ```
 User request → Agent → Tool selection → Tool execution → Office API → Document
 ```
+![Inline AI Agent](/assets/images/inline-ai-agent.png#gh-light-mode-only)![Inline AI Agent](/assets/images/inline-ai-agent.dark-a6a00ac7257f48aafff6c146610eda68.png#gh-dark-mode-only)
 
 ## When to use custom AI tools
 
-Use custom AI tools when the built-in agent tools do not cover your use case. Common scenarios:
+Use custom AI tools when the built-in agent tools do not cover your use case. Tools are scoped to a specific editor type — register tools in the correct map for the editor your plugin targets.
+
+Common scenarios:
 
 | Scenario | Use custom AI tools |
 |----------|-------------------|
@@ -41,4 +45,4 @@ Use custom AI tools when the built-in agent tools do not cover your use case. Co
 | General text generation or summarization | No — use the AI plugin directly |
 | Simple formatting changes | No — use the AI agent's built-in tools |
 
-For implementation details, see [Creating a custom AI tool](../custom-ai-tools/creating-custom-ai-tools.md).
+For implementation details, see [Creating a custom AI tool](../custom-ai-tools/creating-a-custom-ai-tool.md).

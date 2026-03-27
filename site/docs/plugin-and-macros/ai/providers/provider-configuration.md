@@ -43,7 +43,7 @@ Common errors and how to resolve them:
 | `401 Unauthorized` | Invalid or missing API key | Check and update the API key in Settings |
 | `429 Too Many Requests` | Rate limit exceeded | Wait and retry, or switch to a higher-tier plan |
 | `503 Service Unavailable` | Provider is temporarily down | Retry after a short delay |
-| CORS error | Provider does not allow browser requests | Use a server-side proxy or configure CORS (see [Configuring Ollama with CORS](configuring-ollama-with-cors.md)) |
+| CORS error | Provider does not allow browser requests | Use a server-side proxy or configure CORS (see [Configuring Ollama with CORS](../configuration/configuring-ollama-with-cors.md)) |
 | Empty response | Model returned no output | Rephrase the prompt or check the model's context window limit |
 
 The plugin uses `StartAction` and `EndAction` to ensure that even if a request fails mid-stream, the editor state is cleanly rolled back.

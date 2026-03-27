@@ -22,7 +22,7 @@ When the AI plugin receives a `429` response, the current request fails. To redu
 
 - **Use lighter models for simple tasks.** Small models process faster and consume fewer tokens.
 - **Avoid sending large text blocks unnecessarily.** Select only the relevant portion of text before triggering an AI action.
-- **Use a self-hosted model.** Local models like [Ollama](configuring-ollama-with-cors.md) have no provider-enforced rate limits.
+- **Use a self-hosted model.** Local models like [Ollama](../configuration/configuring-ollama-with-cors.md) have no provider-enforced rate limits.
 
 ## Provider-specific limits
 

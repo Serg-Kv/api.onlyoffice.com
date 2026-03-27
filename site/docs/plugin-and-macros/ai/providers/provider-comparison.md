@@ -22,7 +22,7 @@ The ONLYOFFICE AI plugin supports any OpenAI-compatible provider. This page comp
 
 **Choose DeepSeek** if cost efficiency is a priority and your tasks involve technical or coding-related content.
 
-**Choose Ollama** if you are working in a privacy-sensitive environment, are on a restricted network, or want to avoid per-request costs. See [Configuring Ollama with CORS](configuring-ollama-with-cors.md) for setup instructions.
+**Choose Ollama** if you are working in a privacy-sensitive environment, are on a restricted network, or want to avoid per-request costs. See [Configuring Ollama with CORS](../configuration/configuring-ollama-with-cors.md) for setup instructions.
 
 **Choose a custom endpoint** if your organization runs a private AI infrastructure or requires a specific model not available through standard providers. See [Adding custom providers](adding-custom-providers.md) for implementation details.
 

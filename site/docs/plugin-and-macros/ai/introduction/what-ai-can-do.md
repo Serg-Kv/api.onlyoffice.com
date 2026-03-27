@@ -40,4 +40,4 @@ Custom tools allow you to:
 - Integrate AI-driven operations into any editor type.
 - Reuse and share tools across teams and deployments.
 
-Ready-to-use examples are available in the [custom AI tool samples](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md).
+Ready-to-use examples are available in the [custom AI tool samples](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md).

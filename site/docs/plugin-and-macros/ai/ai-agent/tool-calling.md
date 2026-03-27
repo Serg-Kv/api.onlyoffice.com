@@ -42,4 +42,4 @@ The AI agent ships with predefined tools for each editor type:
 
 Developers can extend the agent by registering custom tools using the `RegisteredFunction` object. Custom tools follow the same calling pattern as built-in tools.
 
-For implementation details, see [Creating a custom AI tool](../custom-ai-tools/creating-custom-ai-tools.md).
+For implementation details, see [Creating a custom AI tool](../custom-ai-tools/creating-a-custom-ai-tool.md).

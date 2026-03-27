@@ -9,7 +9,7 @@ The AI agent is currently in **beta**. This page documents known constraints and
 ## Current limitations
 
 **Adding a custom AI tool requires modifying the plugin source code.**
-There is no plugin-level UI for registering custom tools. Developers must clone the [AI plugin repository](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/ai), add their tool to the helpers folder, rebuild, and deploy via a custom store link. See [Creating a custom AI tool](../custom-ai-tools/creating-custom-ai-tools.md) for the full process.
+There is no plugin-level UI for registering custom tools. Developers must clone the [AI plugin repository](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/ai), add their tool to the helpers folder, rebuild, and deploy via a custom store link. See [Creating a custom AI tool](../custom-ai-tools/creating-a-custom-ai-tool.md) for the full process.
 
 **Tool selection depends on the AI model's judgment.**
 The agent relies on the configured model to select the correct tool based on the user's request. Ambiguous or poorly worded requests may result in the wrong tool being called. Providing clear, specific instructions improves accuracy.
