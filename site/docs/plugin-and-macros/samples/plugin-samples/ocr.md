@@ -16,7 +16,7 @@ import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.
 
-You can remove it following the [desktop](/docs/plugin-and-macros/tutorials/installing/onlyoffice-desktop-editors.md), [on-premises](/docs/plugin-and-macros/tutorials/installing/onlyoffice-docs-on-premises.md), or [cloud](/docs/plugin-and-macros/tutorials/installing/onlyoffice-cloud.md) installation instructions.
+You can remove it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 The plugin guid: `{440EBF13-9B19-4BD8-8621-05200E58140B}`.
 
@@ -191,8 +191,8 @@ Repository on GitHub: [ocr](https://github.com/ONLYOFFICE/onlyoffice.github.io/t
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/#how-it-works)
+- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
 - [onTranslate](/docs/plugin-and-macros/structure/localization.md#applying-translations-to-plugin)
 - [resizeWindow](/docs/plugin-and-macros/customization/windows-and-panels.md#interacting-with-a-window)
 - [info.recalculate](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#recalculate)

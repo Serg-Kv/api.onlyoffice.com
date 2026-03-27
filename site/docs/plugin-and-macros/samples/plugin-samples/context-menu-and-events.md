@@ -10,7 +10,7 @@ Tracks the events of calling the context menu and clicking on its items. It also
 
 ## Installation
 
-Copy the code below and save it in the *config.json*, *index.html*, and *code.js* files respectively. Download the *resources* folder with icons from [this plugin](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_customfields_add/resources). Put all the files and the folder into the plugin folder and install it following the [desktop](/docs/plugin-and-macros/tutorials/installing/onlyoffice-desktop-editors.md), [on-premises](/docs/plugin-and-macros/tutorials/installing/onlyoffice-docs-on-premises.md), or [cloud](/docs/plugin-and-macros/tutorials/installing/onlyoffice-cloud.md) installation instructions.
+Copy the code below and save it in the *config.json*, *index.html*, and *code.js* files respectively. Download the *resources* folder with icons from [this plugin](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/example_customfields_add/resources). Put all the files and the folder into the plugin folder and install it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 ## Usage
 
@@ -208,8 +208,8 @@ window.Asc.plugin.event_onTargetPositionChanged = function event_onTargetPositio
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/#how-it-works)
+- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
 - [onTargetPositionChanged](/docs/plugin-and-macros/interacting-with-editors/form-api/Events/onTargetPositionChanged.md)
 - [attachContextMenuClickEvent](/docs/plugin-and-macros/customization/context-menu.md#clicking-a-context-menu-item)
 - [executeMethod ("AddContextMenuItem")](/docs/plugin-and-macros/customization/context-menu.md#creating-a-context-menu-item)

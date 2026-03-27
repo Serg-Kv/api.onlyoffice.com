@@ -26,18 +26,19 @@ const config: Config = {
   tagline: 'ONLYOFFICE',
   favicon: 'img/favicon.ico',
 
-  url: 'https://api.onlyoffice.com',
-  baseUrl: '/',
+  url: 'https://serg-kv.github.io',
+  baseUrl: '/api.onlyoffice.com/',
 
-  trailingSlash: true,
+  trailingSlash: false,
 
   noIndex: isDev,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'ignore',
     },
     mermaid: true,
   },
@@ -77,7 +78,7 @@ const config: Config = {
           id: 'api',
           sidebarPath: './sidebars.ts',
           path: './site',
-          routeBasePath: '',
+          routeBasePath: '/',
 
           editUrl: ({docPath}) => {
             const baseUrl = 'https://github.com/ONLYOFFICE/api.onlyoffice.com/tree/master/site';

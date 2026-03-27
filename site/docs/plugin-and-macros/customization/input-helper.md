@@ -1,11 +1,11 @@
 ---
-sidebar_position: -3
+sidebar_position: 4
 description: Learn how to create and use input helpers in ONLYOFFICE plugins.
 ---
 
 # Input helper
 
-Plugins can create their own windows that appear and disappear when you type text. Their location is tied to the cursor.
+Plugins can create its own window that appears and disappears when you type text. Its location is tied to the cursor.
 
 ![Input helper](/assets/images/plugins/input-helper.png)
 
@@ -23,6 +23,7 @@ To create an input helper, use the **createInputHelper** method.
 window.Asc.plugin.init = (text) => {
   if (!window.isInit) {
     window.isInit = true;
+    window.Asc.plugin.currentContentControl = null;
     window.Asc.plugin.createInputHelper();
     window.Asc.plugin.getInputHelper().createWindow();
   }
@@ -43,6 +44,7 @@ To get the [InputHelper object](#inputhelper), use the **getInputHelper** method
 window.Asc.plugin.init = (text) => {
   if (!window.isInit) {
     window.isInit = true;
+    window.Asc.plugin.currentContentControl = null;
     window.Asc.plugin.createInputHelper();
     window.Asc.plugin.getInputHelper().createWindow();
   }
@@ -109,6 +111,7 @@ Creates an input helper window.
 window.Asc.plugin.init = (text) => {
   if (!window.isInit) {
     window.isInit = true;
+    window.Asc.plugin.currentText = "";
     window.Asc.plugin.createInputHelper();
     window.Asc.plugin.getInputHelper().createWindow();
   }
@@ -121,7 +124,7 @@ Returns an array of the [InputHelperItem](#inputhelperitem) objects that contain
 
 **Parameters**: This method doesn't have any parameters.
 
-**Returns**: [InputHelperItem](#inputhelperitem)[]
+**Returns**: Array.\<[InputHelperItem](#inputhelperitem)\>
 
 **Example**:
 
@@ -175,7 +178,7 @@ Returns the sizes of the input helper scrolled window. Returns an object with wi
 ```ts
 function getInputHelperSize() {
   const size = window.Asc.plugin.getInputHelper().getScrollSizes();
-  let width = 150;
+  let width = 200;
   let height = size.h;
   const inputHelper = window.Asc.plugin.getInputHelper();
   const heightMin = inputHelper.getItemsHeight(Math.min(5, inputHelper.getItems().length));
@@ -198,7 +201,7 @@ Sets the items to the input helper.
 
 | Name    | Type                                            | Description                                                                                                           |
 |---------|-------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| *items* | [InputHelperItem](#inputhelperitem)[] | Defines an array of the [InputHelperItem](#inputhelperitem) objects which contain all the items for the input helper. |
+| *items* | `Array.<InputHelperItem>` | Defines an array of the [InputHelperItem](#inputhelperitem) objects which contain all the items for the input helper. |
 
 **Returns**: This method doesn't return any data.
 

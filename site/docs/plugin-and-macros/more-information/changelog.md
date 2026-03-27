@@ -64,7 +64,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the [onClickAnnotation](../interacting-with-editors/text-document-api/Events/onClickAnnotation.md) event for Text document Api.
 - Added the [onFocusAnnotation](../interacting-with-editors/text-document-api/Events/onFocusAnnotation.md) event for Text document Api.
 - Added the [onParagraphText](../interacting-with-editors/text-document-api/Events/onParagraphText.md) event for Text document Api.
-- Updated [Adding plugins through the plugin manager for all users](../tutorials/installing/onlyoffice-docs-on-premises.md) instruction according Help center info.
+- Updated [Adding plugins through the plugin manager for all users](../development-workflow/installing-and-testing/docs-on-premises-installation.md) instruction according Help center info.
 
 ## Version 9.1
 
@@ -138,7 +138,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 
 ## Version 7.4
 
-- Added the ability to download ready-to-use plugins from [ONLYOFFICE Plugin Marketplace](../tutorials/installing/onlyoffice-desktop-editors.md#adding-plugins-through-the-plugin-manager) in ONLYOFFICE Desktop Editors.
+- Added the ability to download ready-to-use plugins from [ONLYOFFICE Plugin Marketplace](../development-workflow/installing-and-testing/desktop-editors-installation.md#option-1-plugin-manager-recommended) in ONLYOFFICE Desktop Editors.
 - Added the [sendToPlugin](../customization/windows-and-panels.md#interacting-with-a-window) method to the *Plugin* object.
 - Added the [onContextMenuClick](../customization/context-menu.md#clicking-a-context-menu-item) event.
 - Added the [onContextMenuShow](../customization/context-menu.md#creating-a-context-menu-item) event.
@@ -181,7 +181,7 @@ The list of changes for ONLYOFFICE Plugins and Macros API.
 - Added the [MoveToNextReviewChange](../interacting-with-editors/text-document-api/Methods/MoveToNextReviewChange.md) method to *window\.Asc.plugin.executeMethod*.
 - Added the [RejectReviewChanges](../interacting-with-editors/text-document-api/Methods/RejectReviewChanges.md) method to *window\.Asc.plugin.executeMethod*.
 - Changed the plugin [localization](../structure/localization.md) scheme.
-- Added the [ONLYOFFICE Plugin Marketplace](../tutorials/installing/onlyoffice-docs-on-premises.md#adding-plugins-through-the-plugin-manager-for-a-single-user).
+- Added the [ONLYOFFICE Plugin Marketplace](../development-workflow/installing-and-testing/docs-on-premises-installation.md#adding-a-plugin).
 - Added the [ChangeOleObject](../interacting-with-editors/text-document-api/Methods/ChangeOleObject.md) method to *window\.Asc.plugin.executeMethod*.
 - Added the [GetAllForms](../interacting-with-editors/text-document-api/Methods/GetAllForms.md) method to *window\.Asc.plugin.executeMethod*.
 - Added the [GetFileToDownload](../interacting-with-editors/text-document-api/Methods/GetFileToDownload.md) method to *window\.Asc.plugin.executeMethod*.

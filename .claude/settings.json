@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/batet/.claude/projects/c--github-api-onlyoffice-com/64c16876-6a41-4084-b2f0-64bda4fa9525/tool-results/**)",
+      "Bash(gh api:*)",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}

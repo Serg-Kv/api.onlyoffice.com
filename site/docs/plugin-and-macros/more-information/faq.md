@@ -6,7 +6,7 @@ sidebar_position: -2
 
 ## How to install plugins to the ONLYOFFICE editors?
 
-Some plugins are installed by default. Switch to the **Plugins** tab to see the available ones. To install additional plugins, see the [desktop](../tutorials/installing/onlyoffice-desktop-editors.md), [on-premises](../tutorials/installing/onlyoffice-docs-on-premises.md) or [cloud](../tutorials/installing/onlyoffice-cloud.md) installation instructions.
+Some plugins are installed by default. Switch to the **Plugins** tab to see the available ones. To install additional plugins, see the [desktop](../development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](../development-workflow/installing-and-testing/docs-on-premises-installation.md) or [cloud](../development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 ## How to adjust my plugin to the ONLYOFFICE style?
 

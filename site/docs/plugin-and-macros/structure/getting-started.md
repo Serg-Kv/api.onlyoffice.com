@@ -187,7 +187,7 @@ Don't forget to create the *index_about.html* file for the **About** window [lik
 
 1. Pack all the plugin files within the plugin folder into a `zip` archive and change its extension to `.plugin` (all the plugin files and subfolders must be at the archive root).
 
-2. Install a plugin [through the Plugin Manager](../tutorials/installing/onlyoffice-desktop-editors.md#adding-plugins-through-the-plugin-manager).
+2. Install a plugin [through the Plugin Manager](../development-workflow/installing-and-testing/desktop-editors-installation.md#option-1-plugin-manager-recommended).
 
 3. The plugin will appear in the *sdkjs-plugins* directory. The path to the folder depends on the operating system you use:
 
@@ -215,7 +215,7 @@ Don't forget to create the *index_about.html* file for the **About** window [lik
 
   You can edit the plugin and reload it to see the changes.
 
-  To debug the plugin in the desktop editors, follow the instructions [here](../tutorials/debugging/for-desktop-editors.md).
+  To debug the plugin in the desktop editors, follow the instructions [here](../development-workflow/debugging/browser-devtools-guide.md).
 
 ### To web editors
 
@@ -248,4 +248,4 @@ Don't forget to create the *index_about.html* file for the **About** window [lik
 
    The plugin will be displayed within the **Plugins** tab. You can edit the plugin and reload it to see the changes.
 
-   To debug the plugin in the web editors, follow the instructions [here](../tutorials/debugging/for-web-editors.md).
+   To debug the plugin in the web editors, follow the instructions [here](../development-workflow/debugging/browser-devtools-guide.md).

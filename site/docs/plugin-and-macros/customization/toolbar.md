@@ -1,8 +1,8 @@
 ---
-sidebar_position: -5
+sidebar_position: 2
 ---
 
-# Toolbar
+# Toolbar buttons
 
 Plugins can be placed on the toolbar: create their own tabs and fill them, add buttons to the standard tabs.
 
@@ -302,6 +302,8 @@ The event called when the toolbar menu button has been clicked. [Subscribe](../i
 | *id* | string | The item ID. |
 
 **Example**:
+
+<!-- eslint-skip -->
 
 ``` ts
 window.Asc.plugin.event_onToolbarMenuClick = (id) => {

@@ -1,0 +1,162 @@
+---
+sidebar_position: -1
+---
+
+# Preparing for release
+
+## Overview
+
+Before distributing your plugin, verify that it is complete, stable, and ready for other users.
+
+## Required files
+
+| File | Required | Description |
+|------|----------|-------------|
+| `config.json` | Yes | Plugin configuration and metadata |
+| `index.html` | Yes | Plugin entry point |
+| `icon.png` | Yes | Default plugin icon (40×40 pixels) |
+| `icon@2x.png` | Recommended | High-DPI icon (80×80 pixels) |
+
+Additional: `translations/` folder, additional HTML files, assets.
+
+## config.json checklist
+
+```json
+{
+  "name": "My Plugin",
+  "guid": "asc.{FFE1F462-1EA2-4391-990D-4CC84940B754}",
+  "version": "1.0.0",
+  "variations": [{
+    "description": "What the plugin does",
+    "url": "index.html",
+    "icons": ["icon.png", "icon@2x.png"],
+    "isViewer": false,
+    "EditorsSupport": ["word"]
+  }]
+}
+```
+
+**`guid`** — Must follow `asc.{UUID}` format. Generate at [uuidgenerator.net](https://www.uuidgenerator.net/).
+
+:::warning[Wrong]
+```json
+{ "guid": "my-plugin-guid" }
+```
+:::
+
+:::tip[Correct]
+```json
+{ "guid": "asc.{FFE1F462-1EA2-4391-990D-4CC84940B754}" }
+```
+:::
+
+**`version`** — Semantic versioning (`MAJOR.MINOR.PATCH`). Start at `1.0.0`.
+
+**`variations[].EditorsSupport`** — Only list tested editors: `"word"`, `"cell"`, `"slide"`, `"pdf"`.
+
+Optional recommended fields:
+```json
+{ "minVersion": "7.0.0", "help": "https://example.com/plugin-help" }
+```
+
+## Icon requirements
+
+| Property | Requirement |
+|----------|-------------|
+| Format | PNG |
+| Standard size | 40×40 pixels |
+| High-DPI size | 80×80 pixels (`icon@2x.png`) |
+| Background | Transparent or white |
+
+:::warning[Wrong]
+```json
+{ "icons": ["icon.svg"] }
+```
+:::
+
+:::tip[Correct]
+```json
+{ "icons": ["icon.png", "icon@2x.png"] }
+```
+:::
+
+## Code quality
+
+### Remove debug code
+
+:::warning[Wrong]
+```javascript
+window.Asc.plugin.init = function() {
+  debugger;
+  console.log('DEBUG: init called', arguments);
+  console.table(window.Asc.plugin);
+};
+```
+:::
+
+:::tip[Correct]
+```javascript
+window.Asc.plugin.init = function() {
+  loadData();
+};
+```
+:::
+
+### Plugin must close correctly
+
+```javascript
+window.Asc.plugin.button = function(id) {
+  if (id === 0) {
+    window.Asc.plugin.callCommand(function() { /* apply changes */ });
+  } else {
+    window.Asc.plugin.executeMethod("CloseWindow");
+  }
+};
+```
+
+### External resources
+
+- All external resources must be loaded over HTTPS
+- Avoid unreliable CDNs
+- Bundle critical dependencies locally when possible
+
+## Final folder structure
+
+```
+your-plugin-name/
+├── config.json          ✓ Required
+├── index.html           ✓ Required
+├── icon.png             ✓ Required (40×40 PNG)
+├── icon@2x.png          ✓ Recommended (80×80 PNG)
+├── plugin.css           Optional
+└── translations/        Optional
+    ├── en.json
+    └── fr.json
+```
+
+## Pre-release checklist
+
+- [ ] Plugin loads without errors in ONLYOFFICE Desktop Editors
+- [ ] Plugin loads without errors in the web editor
+- [ ] `config.json`, `index.html`, and `icon.png` are all present
+- [ ] GUID uses the correct `asc.{UUID}` format and is unique
+- [ ] Version follows `MAJOR.MINOR.PATCH`
+- [ ] `EditorsSupport` only lists tested editors
+- [ ] No `debugger` statements in the code
+- [ ] No excessive `console.log` statements
+- [ ] Icons are PNG at correct dimensions
+- [ ] External resources load over HTTPS
+- [ ] Plugin closes correctly when dismissed
+
+## Next steps
+
+- [Marketplace submission](./marketplace-submission.md)
+- [Private distribution](./private-distribution.md)
+- [Versioning and updates](./versioning-and-updates.md)
+
+## Additional resources
+
+- [Configuration](../../structure/configuration/configuration.md)
+- [Variations](../../structure/configuration/variations.md)
+- [Localization](../../structure/localization.md)
+- [Plugin examples](https://github.com/ONLYOFFICE/sdkjs-plugins)
