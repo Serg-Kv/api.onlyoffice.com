@@ -29,7 +29,7 @@ User input → AI plugin → Provider API → Response → Document
 ```
 User request → Agent → Tool selection → Tool execution → Office API → Document
 ```
-![Inline AI Agent](/assets/images/inline-ai-agent.png#gh-light-mode-only)![Inline AI Agent](/assets/images/inline-ai-agent.dark-a6a00ac7257f48aafff6c146610eda68.png#gh-dark-mode-only)
+![Inline AI Agent](/assets/images/plugins/inline-ai-agent.png#gh-light-mode-only)![Inline AI Agent](/assets/images/plugins/inline-ai-agent.dark.png#gh-dark-mode-only)
 
 ## When to use custom AI tools
 
