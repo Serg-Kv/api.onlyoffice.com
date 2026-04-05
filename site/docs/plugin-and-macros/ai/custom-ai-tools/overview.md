@@ -26,7 +26,7 @@ Use custom AI tools when:
 - you want to expose business-specific logic to the AI, such as populating a template, validating form fields, or triggering an external integration;
 - you are building a plugin that should respond to natural language instructions from the user.
 
-For ready-to-use examples, refer to the [custom AI function samples](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md).
+For ready-to-use examples, refer to the [custom AI function samples](../../samples/custom-ai-tools/custom-ai-tools.md).
 
 ## How tools fit into the AI workflow {#workflow}
 

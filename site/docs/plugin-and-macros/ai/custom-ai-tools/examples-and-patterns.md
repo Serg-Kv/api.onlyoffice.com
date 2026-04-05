@@ -275,4 +275,4 @@ CELL_FUNCTIONS.explainCell = function() {
 | Read cell or slide data, process it with AI, and write results back | Pattern 3 (spreadsheet/data tool) |
 | Combine AI-generated content with programmatic document changes | Combine patterns 1 and 2 |
 
-For more complete tool implementations, see the [custom AI function samples](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md).
+For more complete tool implementations, see the [custom AI function samples](../../samples/custom-ai-tools/custom-ai-tools.md).

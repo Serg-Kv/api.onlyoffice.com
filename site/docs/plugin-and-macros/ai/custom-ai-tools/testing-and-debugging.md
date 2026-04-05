@@ -106,4 +106,4 @@ func.call = async function(params) {
 };
 ```
 
-For more details on `StartAction` and `EndAction`, refer to [StartAction](../../interacting-with-editors/api-by-editor-type/text-document-api/Methods/StartAction.md) and [EndAction](../../interacting-with-editors/api-by-editor-type/text-document-api/Methods/EndAction.md).
+For more details on `StartAction` and `EndAction`, refer to [StartAction](../../interacting-with-editors/text-document-api/Methods/StartAction.md) and [EndAction](../../interacting-with-editors/text-document-api/Methods/EndAction.md).

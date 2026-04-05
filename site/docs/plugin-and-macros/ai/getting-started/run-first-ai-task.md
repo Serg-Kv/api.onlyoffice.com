@@ -18,6 +18,8 @@ Once the AI plugin is [installed and configured](installing-ai-plugin.md), you c
 4. The plugin responds based on the configured AI model.
 5. Insert the response into the document or use it as needed.
 
+![AI tab](/assets/images/plugins/ai-plugin.png#gh-light-mode-only)![AI tab](/assets/images/plugins/ai-plugin.dark.png#gh-dark-mode-only)
+
 ## Using the context menu
 
 You can also use the AI plugin on selected text:

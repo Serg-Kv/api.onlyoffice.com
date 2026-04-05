@@ -8,7 +8,7 @@ This page shows practical scenarios for the AI agent across different editor typ
 
 ## Text document editor
 
-![Text document editor use case](/assets/images/plugins/ai-use-case-document.png#gh-light-mode-only)![Text document editor use case](/assets/images/plugins/ai-use-case-document.dark.png#gh-dark-mode-only)
+![Text document editor use case](/assets/images/plugins/ai-agent-prompt.png#gh-light-mode-only)![Text document editor use case](/assets/images/plugins/ai-agent-prompt.dark.png#gh-dark-mode-only)
 
 **Annotating content**
 
