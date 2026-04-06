@@ -60,3 +60,38 @@ AI 助手现已安装完毕，可以开始使用了。
 要重置历史记录，请按 `Ctrl + Alt + /`。
 
 要禁用助手，请使用 `Esc`。
+
+## 如何创建 AI 助理 {#create-ai-assistant}
+
+"创建 AI 助理"功能可让您将任何重复性文本任务转化为专用工具栏按钮。只需定义一次提示词，即可在所有文档中重复使用。
+
+要创建新的助理：
+
+1. 打开**AI**选项卡，点击**创建 AI 助理**。
+
+2. 填写以下字段：
+   - **名称** — 助理的简短名称，显示为工具栏上的按钮标签。
+   - **提示词** — 点击按钮时发送给 AI 的指令。
+   - **操作** — 助理对文档执行的操作类型（提示、替换或替换 + 提示）。
+
+3. 点击**创建**。
+
+   ![创建 AI 助理](/assets/images/plugins/create-ai-assistant.png#gh-light-mode-only)![创建 AI 助理](/assets/images/plugins/create-ai-assistant.dark.png#gh-dark-mode-only)
+
+助理将作为新按钮出现在**AI**选项卡中，可在文档中使用。
+
+:::note
+如果助理无法执行请求的操作——例如，当提示词与文本编辑无关时——将显示警告并停止操作。
+:::
+
+## AI 助理示例 {#create-ai-assistant-example}
+
+以下示例展示了使用此提示词创建的**简化**助理：
+
+:::tip
+用简单明了的语言重写所选文本。避免使用技术术语，保持句子简短。
+:::
+
+选择一段文本并点击**简化**按钮后，点击高亮文本以打开**替换建议**面板。它会并排显示原始文本和建议的简化版本。下方的**说明**部分描述了文本更改的原因和方式。点击**接受**应用更改，或点击**拒绝**放弃更改。
+
+![简化助理示例](/assets/images/plugins/create-ai-assistant-example.png#gh-light-mode-only)![简化助理示例](/assets/images/plugins/create-ai-assistant-example.dark.png#gh-dark-mode-only)
