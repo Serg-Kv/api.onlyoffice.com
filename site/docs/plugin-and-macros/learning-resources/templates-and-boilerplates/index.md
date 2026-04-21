@@ -20,7 +20,7 @@ Each template provides:
 
 - A minimal `config.json` with all required fields pre-filled.
 - A ready-to-run `index.html` with the plugin SDK already included.
-- A `plugin.js` scaffold with the `init` and `button` handlers stubbed out.
+- A `code.js` scaffold with the `init` and `button` handlers stubbed out.
 
 ### How to use a plugin template
 
@@ -28,9 +28,9 @@ Each template provides:
 2. Copy the template folder that matches your plugin type (panel, window, background).
 3. Update `config.json` with your plugin name, GUID, and description.
 4. Replace the placeholder UI in `index.html` with your own panel.
-5. Implement your logic in `plugin.js` using the [Plugin API](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js).
+5. Implement your logic in `code.js` using the [Plugin API](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js).
 
-For a detailed walkthrough, see the **Using plugin templates** section in the [Quick Start Guides](../../get-started/quick-start-guides.md).
+For a detailed walkthrough, see the **Using plugin templates** section in the [Quick Start Guides](../../plugins/fundamentals/getting-started/your-first-plugin.md).
 
 ## Macro snippets
 
@@ -65,16 +65,28 @@ Take the custom AI tool samples as boilerplates for common AI tasks.
 ### Pattern: content generation
 
 ```js
-// Register a custom AI tool that generates text from a prompt
-Api.RegisterAIFunction({
-  name: "GenerateDraft",
-  description: "Generate a draft paragraph based on a topic",
-  parameters: { topic: "string" },
-  handler: async function ({ topic }) {
-    // Call your AI provider here
-    return generatedText;
-  },
-});
+(function () {
+  let func = new RegisteredFunction({
+    name: "GenerateDraft",
+    description: "Generate a draft paragraph based on a topic",
+    parameters: {
+      type: "object",
+      properties: {
+        topic: { type: "string", description: "The topic to write about" },
+      },
+      required: ["topic"],
+    },
+    examples: [{ prompt: "Write about climate change", arguments: { topic: "climate change" } }],
+  });
+
+  func.call = async function (params) {
+    let requestEngine = AI.Request.create(AI.ActionType.Chat);
+    if (!requestEngine) return;
+    // Send request and insert the generated text into the document
+  };
+
+  return func;
+})();
 ```
 
 - Full examples: [Text document Editor AI tools](../../samples/custom-ai-tools/custom-ai-tools.md#text-document-editor)
@@ -82,16 +94,28 @@ Api.RegisterAIFunction({
 ### Pattern: data analysis
 
 ```js
-// Register a custom AI tool that explains a spreadsheet formula
-Api.RegisterAIFunction({
-  name: "ExplainFormula",
-  description: "Explain what a spreadsheet formula does in plain language",
-  parameters: { formula: "string" },
-  handler: async function ({ formula }) {
-    // Call your AI provider here
-    return explanation;
-  },
-});
+(function () {
+  let func = new RegisteredFunction({
+    name: "ExplainFormula",
+    description: "Explain what a spreadsheet formula does in plain language",
+    parameters: {
+      type: "object",
+      properties: {
+        formula: { type: "string", description: "The formula to explain" },
+      },
+      required: ["formula"],
+    },
+    examples: [{ prompt: "What does SUM(A1:A10) do?", arguments: { formula: "SUM(A1:A10)" } }],
+  });
+
+  func.call = async function (params) {
+    let requestEngine = AI.Request.create(AI.ActionType.Chat);
+    if (!requestEngine) return;
+    // Send request and display the explanation
+  };
+
+  return func;
+})();
 ```
 
 - Full examples: [Spreadsheet Editor AI tools](../../samples/custom-ai-tools/custom-ai-tools.md#spreadsheet-editor)
@@ -99,16 +123,28 @@ Api.RegisterAIFunction({
 ### Pattern: document intelligence
 
 ```js
-// Register a custom AI tool that extracts key points from a document section
-Api.RegisterAIFunction({
-  name: "ExtractKeyPoints",
-  description: "Extract key points from the selected document section",
-  parameters: { content: "string" },
-  handler: async function ({ content }) {
-    // Call your AI provider here
-    return keyPoints;
-  },
-});
+(function () {
+  let func = new RegisteredFunction({
+    name: "ExtractKeyPoints",
+    description: "Extract key points from the selected document section",
+    parameters: {
+      type: "object",
+      properties: {
+        content: { type: "string", description: "The document section to analyze" },
+      },
+      required: ["content"],
+    },
+    examples: [{ prompt: "Extract key points", arguments: { content: "selected text" } }],
+  });
+
+  func.call = async function (params) {
+    let requestEngine = AI.Request.create(AI.ActionType.Chat);
+    if (!requestEngine) return;
+    // Send request and insert the extracted points
+  };
+
+  return func;
+})();
 ```
 
 - Full examples: [Presentation Editor AI tools](../../samples/custom-ai-tools/custom-ai-tools.md#presentation-editor)

@@ -18,7 +18,7 @@ import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
 
 ## Installation
 
-Download this plugin from [GitHub](https://github.com/ONLYOFFICE/onlyoffice-telegram) and install it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
+Download this plugin from [GitHub](https://github.com/ONLYOFFICE/onlyoffice-telegram) and install it following the [desktop](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 ## Usage
 
@@ -99,9 +99,9 @@ Repository on GitHub: [telegram](https://github.com/ONLYOFFICE/onlyoffice.github
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
-- [onExternalMouseUp](/docs/plugin-and-macros/interacting-with-editors/form-api/Events/onExternalMouseUp.md)
+- [button](/docs/plugin-and-macros/plugins/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/overview#how-it-works)
+- [onExternalMouseUp](/docs/plugin-and-macros/plugins/interacting-with-editors/form-api/Events/onExternalMouseUp.md)
 
 ## Support
 

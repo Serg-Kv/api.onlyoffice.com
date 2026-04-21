@@ -1,0 +1,2048 @@
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Enumeration/SelectionType.md
+================================================================================
+
+# SelectionType
+
+The current selection type ("none", "text", "drawing", or "slide").
+
+## Type
+
+Enumeration
+
+## Values
+
+- "none"
+- "text"
+- "drawing"
+- "slide"
+
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetSelectionType", [], function(type) {
+    switch (type) {
+        case "none":
+        case "drawing":
+            window.Asc.plugin.executeMethod ("PasteText", [$("#txt_shower")[0].innerText]);
+            break;
+        case "text":
+            window.Asc.plugin.callCommand (function() {
+                Api.ReplaceTextSmart (Asc.scope.arr);
+            });
+            break;
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Enumeration/comment.md
+================================================================================
+
+# comment
+
+Comment object.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Data | [CommentData](../Enumeration/CommentData.md) | An object which contains the comment data. |
+| Id | string | The comment ID. |
+## Type
+
+Object
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Enumeration/fillForms.md
+================================================================================
+
+# fillForms
+
+An object containing the form properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| tags | object | The form tags which specify the content for each form type with such a tag. |
+| tags.checkBox | string | The checkbox form value (**true** - checked, **false** - unchecked). |
+| tags.comboBox | string | The combo box form value (one of the items from the combo box list values). |
+| tags.picture | string | The image form value (a link to the image). |
+| tags.text | string | The text field value (some text). |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+var initSettings = {
+    "copyoutenabled" : false,
+    "hideContentControlTrack" : false,
+    "watermark_on_draw" : JSON.stringify({
+        "transparent" : 0.3,
+        "type" : "rect",
+        "width" : 100,
+        "height" : 100,
+        "rotate" : -45,
+        "margins" : [ 10, 10, 10, 10 ],
+        "fill" : [255, 0, 0],
+        "stroke-width" : 1,
+        "stroke" : [0, 0, 255],
+        "align" : 1,
+
+        "paragraphs" : [ {
+            "align" : 2,
+            "fill" : [255, 0, 0],
+            "linespacing" : 1,
+
+            "runs" : [
+                        {
+                            "text" : "Do not steal, %user_name%!",
+                            "fill" : [0, 0, 0],
+                            "font-family" : "Arial",
+                            "font-size" : 40,
+                            "bold" : true,
+                            "italic" : false,
+                            "strikeout" : false,
+                            "underline" : false
+                        },
+                        {
+                            "text" : "<%br%>"
+                        }
+                    ]
+            }
+        ]
+    }),
+    "disableAutostartMacros" : true,
+    "fillForms" : JSON.stringify({
+        "tags" : {
+            "111" : {
+                "text" : "Text in form with tag 111",
+                "checkBox" : "true",
+                "picture" : "https://upload.wikimedia.org/wikipedia/commons/9/91/ONLYOFFICE_logo.png",
+                "comboBox" : "item1"
+            },
+            "222" : {
+                "text" : "Text in form with tag 222",
+                "checkBox" : "false",
+                "comboBox" : "item2"
+            },
+            "333" : {
+                "text" : "OnlyOffice"
+            }
+        }
+    })
+};
+window.Asc.plugin.executeMethod("SetProperties", [initSettings]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Enumeration/watermark_on_draw.md
+================================================================================
+
+# watermark_on_draw
+
+An object containing the watermark properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| align | number | The vertical text align in the watermark shape: **0** - bottom, **1** - center, **4** - top. |
+| fill | number[] \| string | The watermark fill color in the RGB format, or the URL to image (base64 support: data:image/png;...). The empty array [] means that the watermark has no fill. |
+| height | number | The watermark height measured in millimeters. |
+| margins | number[] | The text margins measured in millimeters in the watermark shape. |
+| paragraphs | object[] | The array with paragraphs from the current watermark with their properties. |
+| paragraphs.align | number | The horizontal text align in the current paragraph: **0** - right, **1** - left, **2** - center, **3** - justify. |
+| paragraphs.fill | number[] | The paragraph highlight in the RGB format. The empty array [] means that the paragraph is not highlighted. |
+| paragraphs.linespacing | number | The text linespacing in the current paragraph. |
+| paragraphs.runs | object[] | The array with runs from the current paragraph with their properties. |
+| paragraphs.runs.bold | boolean | Defines if the current text is displayed bold or not. |
+| paragraphs.runs.fill | number[] | The text highlight in the RGB format. The empty array [] means that the text is not highlighted. |
+| paragraphs.runs.font-family | string | The text font family. |
+| paragraphs.runs.font-size | string | The text font size measured in points (pt). |
+| paragraphs.runs.italic | boolean | Defines if the current text is displayed italic or not. |
+| paragraphs.runs.strikeout | boolean | Defines if the current text is displayed struck through or not. |
+| paragraphs.runs.text | string | The run text. |
+| paragraphs.runs.underline | boolean | Defines if the current text is displayed underlined or not. |
+| rotate | number | The watermark rotation angle measured in degrees. |
+| stroke | number[] | The watermark stroke color in the RGB format. The empty array [] means that the watermark stroke has no fill. |
+| stroke-width | number | The watermark stroke width measured in millimeters. |
+| transparent | number | The watermark transparency degree. |
+| type | string | The [shape](../../../../../docs/office-api/usage-api/text-document-api/Enumeration/ShapeType.md) which specifies the preset shape geometry for the current watermark. |
+| width | number | The watermark width measured in millimeters. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+var initSettings = {
+    "copyoutenabled" : false,
+    "hideContentControlTrack" : false,
+    "watermark_on_draw" : JSON.stringify({
+        "transparent" : 0.3,
+        "type" : "rect",
+        "width" : 100,
+        "height" : 100,
+        "rotate" : -45,
+        "margins" : [ 10, 10, 10, 10 ],
+        "fill" : [255, 0, 0],
+        "stroke-width" : 1,
+        "stroke" : [0, 0, 255],
+        "align" : 1,
+
+        "paragraphs" : [ {
+            "align" : 2,
+            "fill" : [255, 0, 0],
+            "linespacing" : 1,
+
+            "runs" : [
+                        {
+                            "text" : "Do not steal, %user_name%!",
+                            "fill" : [0, 0, 0],
+                            "font-family" : "Arial",
+                            "font-size" : 40,
+                            "bold" : true,
+                            "italic" : false,
+                            "strikeout" : false,
+                            "underline" : false
+                        },
+                        {
+                            "text" : "<%br%>"
+                        }
+                    ]
+            }
+        ]
+    }),
+    "disableAutostartMacros" : true,
+    "fillForms" : JSON.stringify({
+        "tags" : {
+            "111" : {
+                "text" : "Text in form with tag 111",
+                "checkBox" : "true",
+                "picture" : "https://upload.wikimedia.org/wikipedia/commons/9/91/ONLYOFFICE_logo.png",
+                "comboBox" : "item1"
+            },
+            "222" : {
+                "text" : "Text in form with tag 222",
+                "checkBox" : "false",
+                "comboBox" : "item2"
+            },
+            "333" : {
+                "text" : "OnlyOffice"
+            }
+        }
+    })
+};
+window.Asc.plugin.executeMethod("SetProperties", [initSettings]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/Events.md
+================================================================================
+
+# Events
+
+| Event | Description |
+| ----- | ----------- |
+| [onChangeCurrentSheet](./onChangeCurrentSheet.md) | The function called when the current sheet has changed. |
+| [onChangeRestrictions](./onChangeRestrictions.md) | The function called when the restrictions in the editor are changed. |
+| [onClick](./onClick.md) | The function called when the user clicks the element. |
+| [onDocumentContentReady](./onDocumentContentReady.md) | The function called when the document is completely loaded. |
+| [onEnableMouseEvent](./onEnableMouseEvent.md) | The function called to turn the mouse or touchpad events on/off. |
+| [onExternalMouseUp](./onExternalMouseUp.md) | The function called when the mouse button is released outside the plugin iframe. |
+| [onTargetPositionChanged](./onTargetPositionChanged.md) | The function called when the target position in the editor is changed. |
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onChangeCurrentSheet.md
+================================================================================
+
+# onChangeCurrentSheet
+
+The function called when the current sheet has changed.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| index | number | The index of the newly activated worksheet. |
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onChangeRestrictions.md
+================================================================================
+
+# onChangeRestrictions
+
+The function called when the restrictions in the editor are changed.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| value | number | The restrictions value. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onChangeRestrictions", (value) => {
+    if (value == 0) {
+        console.log('You are able to edit the document');
+    }
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onClick.md
+================================================================================
+
+# onClick
+
+The function called when the user clicks the element.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| isSelectionUse | boolean | Defines if the selection is used or not. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onClick", (isSelectionUse) => {
+    window.Asc.plugin.executeMethod("GetCurrentContentControlPr", [], function(obj) {
+        window.Asc.plugin.currentContentControl = obj;
+        var controlTag = obj ? obj.Tag : "";
+        if (isSelectionUse)
+            controlTag = "";
+
+    });
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onDocumentContentReady.md
+================================================================================
+
+# onDocumentContentReady
+
+The function called when the document is completely loaded.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onDocumentContentReady", () => {
+    let oProperties = {
+        "searchString"  : "ONLYOFFICE",
+        "replaceString" : "ONLYOFFICE is cool",
+        "matchCase"     : false
+    };
+
+    window.Asc.plugin.executeMethod("SearchAndReplace", [oProperties], function() {
+            window.Asc.plugin.executeCommand("close", "");
+    });
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onEnableMouseEvent.md
+================================================================================
+
+# onEnableMouseEvent
+
+The function called to turn the mouse or touchpad events on/off.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| isEnabled | boolean | Indicates whether the mouse or touchpad is enabled (**true**) or not (**false**). |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onEnableMouseEvent", (isEnabled) => {
+    let _frames = document.getElementsByTagName("iframe");
+    if (_frames && _frames[0]) {
+        _frames[0].style.pointerEvents = isEnabled ? "none" : "";
+    }
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onExternalMouseUp.md
+================================================================================
+
+# onExternalMouseUp
+
+The function called when the mouse button is released outside the plugin iframe.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onExternalMouseUp", () => {
+    let evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent("mouseup", true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+    document.dispatchEvent(evt);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Events/onTargetPositionChanged.md
+================================================================================
+
+# onTargetPositionChanged
+
+The function called when the target position in the editor is changed.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onTargetPositionChanged", () => {
+    if (!fClickLabel) {
+        window.Asc.plugin.executeMethod("GetCurrentContentControl");
+    }
+    fClickLabel = false;
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/AddComment.md
+================================================================================
+
+# AddComment
+
+Adds a comment to the workbook.
+
+## Syntax
+
+```javascript
+expression.AddComment(oCommentData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oCommentData | Required | [CommentData](../Enumeration/CommentData.md) |  | An object which contains the comment data. |
+
+## Returns
+
+string \| null
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddComment", [
+    {
+        "UserName": "John Smith",
+        "QuoteText": "text",
+        "Text": "comment",
+        "Time": "1662737941471",
+        "Solved": true,
+        "Replies": [
+            {
+                "UserName": "Mark Potato",
+                "Text": "reply 1",
+                "Time": "1662740895892",
+                "Solved": false
+            }
+        ]
+    }
+], function (comment) {
+    console.log (comment)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/AddOleObject.md
+================================================================================
+
+# AddOleObject
+
+Adds an OLE object to the current document position.
+
+## Syntax
+
+```javascript
+expression.AddOleObject(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [OLEProperties](../Enumeration/OLEProperties.md) |  | The OLE object properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+var _param = {
+    "data": "{data}",
+    "imgSrc": "https://link-to-the-image.jpg",
+    "guid": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+    "width": 70,
+    "height": 70,
+    "widthPix": 60 * 36000,
+    "heightPix": 60 * 36000
+};
+window.Asc.plugin.executeMethod ("AddOleObject", [_param], function() {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/ChangeComment.md
+================================================================================
+
+# ChangeComment
+
+Changes the specified comment.
+
+## Syntax
+
+```javascript
+expression.ChangeComment(sId, oCommentData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sId | Required | string |  | The comment ID. |
+| oCommentData | Required | [CommentData](../Enumeration/CommentData.md) |  | An object which contains the new comment data. |
+
+## Returns
+
+boolean
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ChangeComment", ["1_631",
+    {
+        "UserName": "John Smith",
+        "QuoteText": "text",
+        "Text": "comment",
+        "Time": "1662737941471",
+        "Solved": true,
+        "Replies": [
+            {
+                "UserName": "Mark Potato",
+                "Text": "reply 1",
+                "Time": "1662740895892",
+                "Solved": false
+            }
+        ]
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/CoAuthoringChatSendMessage.md
+================================================================================
+
+# CoAuthoringChatSendMessage
+
+Sends a message to the co-authoring chat.
+
+## Syntax
+
+```javascript
+expression.CoAuthoringChatSendMessage(sText);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sText | Required | string |  | Message text. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("CoAuthoringChatSendMessage", [Asc.scope.meeting_info], function (isTrue) {
+    if (isTrue)
+        alert ("Meeting was created");
+    else
+        alert ("Meeting was create, please update SDK for checking info about created meeting in chat.");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/ConvertDocument.md
+================================================================================
+
+# ConvertDocument
+
+Converts a document to Markdown or HTML text.
+
+## Syntax
+
+```javascript
+expression.ConvertDocument(sConvertType, bHtmlHeadings, bBase64img, bDemoteHeadings, bRenderHTMLTags);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sConvertType | Optional | "markdown" \| "html" | "markdown" | Conversion type ("markdown" or "html"). |
+| bHtmlHeadings | Optional | boolean | false | Defines if the HTML headings and IDs will be generated when the Markdown renderer of your target platform does not handle Markdown-style IDs. |
+| bBase64img | Optional | boolean | false | Defines if the images will be created in the base64 format. |
+| bDemoteHeadings | Optional | boolean | false | Defines if all heading levels in your document will be demoted to conform with the following standard: single H1 as title, H2 as top-level heading in the text body. |
+| bRenderHTMLTags | Optional | boolean | false | Defines if HTML tags will be preserved in your Markdown. If you just want to use an occasional HTML tag, you can avoid using the opening angle bracket in the following way: \&lt;tag&gt;text\&lt;/tag&gt;. By default, the opening angle brackets will be replaced with the special characters. |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+let info = "";
+window.Asc.plugin.executeMethod ("ConvertDocument", ["markdown", false, false, true, false], function (output) {
+    document.getElementById ("text-area").value = info + output;
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/EditOleObject.md
+================================================================================
+
+# EditOleObject
+
+Edits an OLE object in the document.
+
+## Syntax
+
+```javascript
+expression.EditOleObject(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [OLEProperties](../Enumeration/OLEProperties.md) |  | The OLE object properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+var _param = {
+    "data": "{data}",
+    "imgSrc": "https://link-to-the-image.jpg",
+    "objectId": "5_556",
+    "width": 70,
+    "height": 70,
+    "widthPix": 60 * 36000,
+    "heightPix": 60 * 36000
+};
+window.Asc.plugin.executeMethod ("EditOleObject", [_param], function () {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/EndAction.md
+================================================================================
+
+# EndAction
+
+Specifies the end action for long operations.
+
+## Syntax
+
+```javascript
+expression.EndAction(type, description, status);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Required | number |  | A value which defines an action type which can take **"Block"** if this is the *BlockInteraction* action or **"Information** if this is the *Information* action. |
+| description | Required | string |  | A string value that specifies the description text for the operation end action. |
+| status | Required | string |  | The error status code. If no error occurs, then an empty string is passed. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("EndAction", ["Block", "Save to local storage...", ""]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/FocusEditor.md
+================================================================================
+
+# FocusEditor
+
+Returns focus to the editor.
+
+## Syntax
+
+```javascript
+expression.FocusEditor();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+This method doesn't return any data.
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetAllComments.md
+================================================================================
+
+# GetAllComments
+
+Returns all the comments from the document.
+
+## Syntax
+
+```javascript
+expression.GetAllComments();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[comment](../Enumeration/comment.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetAllComments", null, function (comments) {
+    Comments = comments;
+    addComments (comments);
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetCustomFunctions.md
+================================================================================
+
+# GetCustomFunctions
+
+Returns a library of local custom functions.
+
+## Syntax
+
+```javascript
+expression.GetCustomFunctions();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetCustomFunctions", null, function (res) {
+    console.log ("First custom function: " + res[0])
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetDocumentLang.md
+================================================================================
+
+# GetDocumentLang
+
+Returns the document language.
+
+## Syntax
+
+```javascript
+expression.GetDocumentLang();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod("GetDocumentLang", [], function(lang) {
+	let documentLang = lang || defaultLang;
+
+	let options = Array.from($('#custom_menu option'));
+	let defaultOption = options.find(function(item) {
+		if (item.value == defaultLang)
+			return item;
+	});
+
+	let matchOption = undefined;
+	matchOption = options.find(function(item) {
+		if (item.value == documentLang)
+			return true;
+	});
+	if (!matchOption) {
+		matchOption = options.find(function(item) {
+			if (item.value.search(documentLang.split('-')[0]) != -1)
+				return true;
+		});
+	}
+
+	if (!matchOption)
+		matchOption = defaultOption;
+
+	if (matchOption) {
+		$('#custom_menu').val(matchOption.value);
+		$('#custom_menu').trigger('change');
+	}
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetFileToDownload.md
+================================================================================
+
+# GetFileToDownload
+
+Returns the current file to download in the specified format.
+
+## Syntax
+
+```javascript
+expression.GetFileToDownload(format);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| format | Optional | string | " " | A format in which you need to download a file. |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFileToDownload", ["pdf"], function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetFontList.md
+================================================================================
+
+# GetFontList
+
+Returns the fonts list.
+
+## Syntax
+
+```javascript
+expression.GetFontList();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[FontInfo](../Enumeration/FontInfo.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFontList", null, function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetImageDataFromSelection.md
+================================================================================
+
+# GetImageDataFromSelection
+
+Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle.
+
+## Syntax
+
+```javascript
+expression.GetImageDataFromSelection();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ImageData](../Enumeration/ImageData.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetImageDataFromSelection", [], function (result) {
+    let image = document.createElement("img");
+    image.src = result.src;
+    image.width = result.width;
+    image.height = result.height;
+    CreateImageEditor ();
+    initializationDone = true;
+    var imageHeight = null;
+    image.height > 500 ? imageHeight = 500 : imageHeight = image.height;
+    window.Asc.plugin.resizeWindow (undefined, undefined, 870, imageHeight + 300, 0, 0);
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetInstalledPlugins.md
+================================================================================
+
+# GetInstalledPlugins
+
+Returns all the installed plugins.
+
+## Syntax
+
+```javascript
+expression.GetInstalledPlugins();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[PluginData](../Enumeration/PluginData.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetInstalledPlugins", null, function (result) {
+    postMessage (JSON.stringify ({type: 'InstalledPlugins', data: result }));
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetMacros.md
+================================================================================
+
+# GetMacros
+
+Returns the document macros.
+
+## Syntax
+
+```javascript
+expression.GetMacros();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[Macros](../Enumeration/Macros.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetMacros", [JSON.stringify(Content)], function(data) {
+
+    try
+    {
+        Content = JSON.parse (data);
+
+        for (var i = 0; i < Content.macrosArray.length; i++)
+        {
+            var value = Content.macrosArray[i].name;
+            if (undefined === value)
+                value = "";
+
+            value = value.replace (/&/g,'&amp;');
+            value = value.replace (/</g,'&lt;');
+            value = value.replace (/>/g,'&gt;');
+            value = value.replace (/'/g,'&apos;');
+            value = value.replace (/"/g,'&quot;');
+
+            Content.macrosArray[i].name = value;
+        }
+    }
+    catch (err)
+    {
+        Content = {
+            macrosArray : [],
+            current : -1
+        };
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetSelectedContent.md
+================================================================================
+
+# GetSelectedContent
+
+Returns the selected content in the specified format.
+
+## Syntax
+
+```javascript
+expression.GetSelectedContent(prop);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| prop | Required | object |  | The returned content properties. |
+| prop.type | Optional | "text" \| "html" | "text" | The format type of the returned content (text or HTML). |
+
+## Returns
+
+string
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetSelectedOleObjects.md
+================================================================================
+
+# GetSelectedOleObjects
+
+Returns an array of the selected OLE objects.
+
+## Syntax
+
+```javascript
+expression.GetSelectedOleObjects();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[OLEProperties](../Enumeration/OLEProperties.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetSelectedOleObjects");
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetSelectedText.md
+================================================================================
+
+# GetSelectedText
+
+Returns the selected text from the document.
+
+## Syntax
+
+```javascript
+expression.GetSelectedText(prop);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| prop | Required | object |  | The resulting string display properties. |
+| prop.Numbering | Required | boolean |  | Defines if the resulting string will include numbering or not. |
+| prop.Math | Required | boolean |  | Defines if the resulting string will include mathematical expressions or not. |
+| prop.TableCellSeparator | Optional | string | '\t' | Defines how the table cell separator will be specified in the resulting string. Any symbol can be used. The default separator is "\t". |
+| prop.TableRowSeparator | Optional | string | '\r\n' | Defines how the table row separator will be specified in the resulting string. Any symbol can be used. The default separator is "\r\n". |
+| prop.ParaSeparator | Optional | string | '\r\n' | Defines how the paragraph separator will be specified in the resulting string. Any symbol can be used. The default separator is "\r\n". |
+| prop.TabSymbol | Optional | string | ' ' | Defines how the tab will be specified in the resulting string. Any symbol can be used. The default symbol is " ". |
+| prop.NewLineSeparator | Optional | string | '\r' | Defines how the line separator will be specified in the resulting string. Any symbol can be used. The default separator is "\r". |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+function CorrectText () {
+    switch (window.Asc.plugin.info.editorType) {
+        case 'word':
+        case 'slide': {
+            window.Asc.plugin.executeMethod ("GetSelectedText", [{"Numbering": false, "Math": false, "TableCellSeparator": '\n', "ParaSeparator": '\n', "TabSymbol": String.fromCharCode(9)}], function (data) {
+                sText = data;
+                ExecTypograf (sText);
+            });
+            break;
+        }
+        case 'cell': {
+            window.Asc.plugin.executeMethod ("GetSelectedText", [{"Numbering": false, "Math": false, "TableCellSeparator": '\n', "ParaSeparator": '\n', "TabSymbol": String.fromCharCode(9)}], function (data) {
+                if (data == '') {
+                    sText = sText.replace (/\t/g, '\n');
+                    ExecTypograf (sText);
+                }
+                else {
+                    sText = data;
+                    ExecTypograf (sText);
+                }
+            });
+            break;
+        }
+    }
+}
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetSelectionType.md
+================================================================================
+
+# GetSelectionType
+
+Returns the type of the current selection.
+
+## Syntax
+
+```javascript
+expression.GetSelectionType();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[SelectionType](../Enumeration/SelectionType.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetSelectionType", [], function(type) {
+    switch (type) {
+        case "none":
+        case "drawing":
+            window.Asc.plugin.executeMethod ("PasteText", [$("#txt_shower")[0].innerText], function (result) {
+                paste_done = true;
+            });
+            break;
+        case "text":
+            window.Asc.plugin.callCommand (function() {
+                Api.ReplaceTextSmart (Asc.scope.arr);
+            }, undefined, undefined, function(result) {
+                paste_done = true;
+            });
+            break;
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetVBAMacros.md
+================================================================================
+
+# GetVBAMacros
+
+Returns all VBA macros from the document.
+
+## Syntax
+
+```javascript
+expression.GetVBAMacros();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string \| null
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetVBAMacros", null, function (data) {
+    if (data && typeof data === 'string' && data.includes ('<Module')) {
+        var arr = data.split ('<Module ').filter (function (el) {return el.includes ('Type="Procedural"')});
+        arr.forEach (function (el) {
+            var start = el.indexOf ('<SourceCode>') + 12;
+            var end = el.indexOf ('</SourceCode>', start);
+            var macros = el.slice (start, end);
+
+            start = el.indexOf ('Name="') + 6;
+            end = el.indexOf ('"', start);
+            var name = el.slice (start, end);
+            var index = Content.macrosArray.findIndex (function (macr) {return macr.name == name});
+            if (index == -1) {
+                macros = macros.replace (/&amp;/g,'&');
+                macros = macros.replace (/&lt;/g,'<');
+                macros = macros.replace (/&gt;/g,'>');
+                macros = macros.replace (/&apos;/g,'\'');
+                macros = macros.replace (/&quot;/g,'"');
+                macros = macros.replace (/Attribute [\w \.="\\]*/g,'');
+                Content.macrosArray.push (
+                    {
+                        name: name,
+                        value: '(function ()\n{\n\t\n})();\n\n',
+                        guid: create_guid ()
+                    }
+                );
+            }
+        });
+    }
+    updateMenu ();
+    window.CustomContextMenu.init ();
+    if (Content.current === -1)
+    {
+        let event = new Event ("click");
+        document.getElementById ("button_new").dispatchEvent (event);
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/GetVersion.md
+================================================================================
+
+# GetVersion
+
+Returns the editor version.
+
+## Syntax
+
+```javascript
+expression.GetVersion();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetVersion", [], function (version) {
+    if (version === undefined) {
+        window.Asc.plugin.executeMethod ("PasteText", [ifr.contentDocument.getElementById ("google_translate_element").outerText], function (result) {
+            paste_done = true;
+        });
+    }
+    else {
+        window.Asc.plugin.executeMethod ("GetSelectionType", [], function (type) {
+            switch (type) {
+                case "none":
+                case "drawing":
+                    window.Asc.plugin.executeMethod("PasteText", [ifr.contentDocument.getElementById ("google_translate_element").outerText], function (result) {
+                        paste_done = true;
+                    });
+                    break;
+                case "text":
+                    window.Asc.plugin.callCommand (function () {
+                        Api.ReplaceTextSmart (Asc.scope.arr);
+                    }, undefined, undefined, function (result) {
+                        paste_done = true;
+                    });
+                    break;
+            }
+        });
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/InputText.md
+================================================================================
+
+# InputText
+
+Inserts text into the document.
+
+## Syntax
+
+```javascript
+expression.InputText(text, textReplace);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| text | Required | string |  | A string value that specifies the text to be inserted into the document. |
+| textReplace | Required | string |  | A string value that specifies the text to be replaced with a new text. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("InputText", ["ONLYOFFICE Plugins", "ONLYOFFICE for developers"]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/InstallPlugin.md
+================================================================================
+
+# InstallPlugin
+
+Installs a plugin using the specified plugin config.
+
+## Syntax
+
+```javascript
+expression.InstallPlugin(config);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| config | Optional | object |  | The plugin [config](https://api.onlyoffice.com/docs/plugin-and-macros/structure/configuration/). |
+
+## Returns
+
+object
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("InstallPlugin", [config], function (result) {
+    postMessage (JSON.stringify (result));
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/Methods.md
+================================================================================
+
+# Api
+
+Represents the Api class.
+
+
+## Methods
+
+| Method | Returns | Description |
+| ------ | ------- | ----------- |
+| [AddComment](./AddComment.md) | string \| null | Adds a comment to the workbook. |
+| [AddOleObject](./AddOleObject.md) | None | Adds an OLE object to the current document position. |
+| [ChangeComment](./ChangeComment.md) | boolean | Changes the specified comment. |
+| [CoAuthoringChatSendMessage](./CoAuthoringChatSendMessage.md) | None | Sends a message to the co-authoring chat. |
+| [ConvertDocument](./ConvertDocument.md) | string | Converts a document to Markdown or HTML text. |
+| [EditOleObject](./EditOleObject.md) | None | Edits an OLE object in the document. |
+| [EndAction](./EndAction.md) | None | Specifies the end action for long operations. |
+| [FocusEditor](./FocusEditor.md) | None | Returns focus to the editor. |
+| [GetAllComments](./GetAllComments.md) | [comment](../Enumeration/comment.md)[] | Returns all the comments from the document. |
+| [GetCustomFunctions](./GetCustomFunctions.md) | string | Returns a library of local custom functions. |
+| [GetDocumentLang](./GetDocumentLang.md) | string | Returns the document language. |
+| [GetFileToDownload](./GetFileToDownload.md) | string | Returns the current file to download in the specified format. |
+| [GetFontList](./GetFontList.md) | [FontInfo](../Enumeration/FontInfo.md)[] | Returns the fonts list. |
+| [GetImageDataFromSelection](./GetImageDataFromSelection.md) | [ImageData](../Enumeration/ImageData.md) | Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle. |
+| [GetInstalledPlugins](./GetInstalledPlugins.md) | [PluginData](../Enumeration/PluginData.md)[] | Returns all the installed plugins. |
+| [GetMacros](./GetMacros.md) | [Macros](../Enumeration/Macros.md) | Returns the document macros. |
+| [GetSelectedContent](./GetSelectedContent.md) | string | Returns the selected content in the specified format. |
+| [GetSelectedOleObjects](./GetSelectedOleObjects.md) | [OLEProperties](../Enumeration/OLEProperties.md)[] | Returns an array of the selected OLE objects. |
+| [GetSelectedText](./GetSelectedText.md) | string | Returns the selected text from the document. |
+| [GetSelectionType](./GetSelectionType.md) | [SelectionType](../Enumeration/SelectionType.md) | Returns the type of the current selection. |
+| [GetVBAMacros](./GetVBAMacros.md) | string \| null | Returns all VBA macros from the document. |
+| [GetVersion](./GetVersion.md) | string | Returns the editor version. |
+| [InputText](./InputText.md) | None | Inserts text into the document. |
+| [InstallPlugin](./InstallPlugin.md) | object | Installs a plugin using the specified plugin config. |
+| [MouseMoveWindow](./MouseMoveWindow.md) | None | Sends an event to the plugin when the mouse button is moved inside the plugin iframe. |
+| [MouseUpWindow](./MouseUpWindow.md) | None | Sends an event to the plugin when the mouse button is released inside the plugin iframe. |
+| [OnDropEvent](./OnDropEvent.md) | None | Implements the external drag&drop emulation. |
+| [OnEncryption](./OnEncryption.md) | None | Encrypts the document. |
+| [PasteHtml](./PasteHtml.md) | None | Pastes text in the HTML format into the document. |
+| [PasteText](./PasteText.md) | None | Pastes text into the document. |
+| [PutImageDataToSelection](./PutImageDataToSelection.md) | None | Replaces the first selected drawing with the image specified in the parameters. If there are no drawings selected, the method inserts the image at the current position. |
+| [RemoveComments](./RemoveComments.md) | None | Removes the specified comments. |
+| [RemoveOleObject](./RemoveOleObject.md) | None | Removes the OLE object from the workbook by its internal ID. |
+| [RemovePlugin](./RemovePlugin.md) | object | Removes a plugin with the specified GUID. |
+| [ReplaceTextSmart](./ReplaceTextSmart.md) | boolean | Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings. |
+| [SetCustomFunctions](./SetCustomFunctions.md) | None | Updates a library of local custom functions. |
+| [SetMacros](./SetMacros.md) | None | Sets macros to the document. |
+| [SetPluginsOptions](./SetPluginsOptions.md) | None | Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin. For example, this method can be used to pass an authorization token to the plugin. This method can be used only with the connector class. |
+| [SetProperties](./SetProperties.md) | None | Sets the properties to the document. |
+| [ShowButton](./ShowButton.md) | None | Shows or hides buttons in the header. |
+| [ShowError](./ShowError.md) | None | Shows an error/warning message. |
+| [ShowInputHelper](./ShowInputHelper.md) | None | Shows the input helper. |
+| [StartAction](./StartAction.md) | None | Specifies the start action for long operations. |
+| [UnShowInputHelper](./UnShowInputHelper.md) | None | Unshows the input helper. |
+| [UpdatePlugin](./UpdatePlugin.md) | object | Updates a plugin using the specified plugin config. |
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/MouseMoveWindow.md
+================================================================================
+
+# MouseMoveWindow
+
+Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+
+## Syntax
+
+```javascript
+expression.MouseMoveWindow(frameId, x, y);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| frameId | Required | string |  | The frame ID. |
+| x | Required | number |  | The X coordinate. |
+| y | Required | number |  | The Y coordinate. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("MouseMoveWindow", ["iframe_asc.{BE5CBF95-C0AD-4842-B157-AC40FEDD9841}", 70, 40]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/MouseUpWindow.md
+================================================================================
+
+# MouseUpWindow
+
+Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+
+## Syntax
+
+```javascript
+expression.MouseUpWindow(frameId, x, y);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| frameId | Required | string |  | The frame ID. |
+| x | Required | number |  | The X coordinate. |
+| y | Required | number |  | The Y coordinate. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("MouseUpWindow", ["iframe_asc.{BE5CBF95-C0AD-4842-B157-AC40FEDD9841}", 70, 40]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/OnDropEvent.md
+================================================================================
+
+# OnDropEvent
+
+Implements the external drag&drop emulation.
+
+## Syntax
+
+```javascript
+expression.OnDropEvent(obj);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| obj | Required | object |  | The drag&drop emulation properties. |
+| obj.type | Required | string |  | The drag&drop event type: **onbeforedrop** - an event that is fired when the selected text or element is dragged; **ondrop** - an event that is fired when the selected text or element is dropped on a valid drop target. |
+| obj.x | Required | number |  | The horizontal coordinate (in pixels) at which the mouse was clicked, relative to the left edge of the entire document. |
+| obj.y | Required | number |  | The vertical coordinate (in pixels) at which the mouse was clicked, relative to the top edge of the entire document. |
+| obj.html | Required | string |  | The dragged HTML element. |
+| obj.text | Required | string |  | The dragged text. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("OnDropEvent", [{
+  "type": "onbeforedrop",
+  "x" : pos.x,
+  "y" : pos.y
+}]);
+
+window.Asc.plugin.executeMethod ("OnDropEvent", [{
+  "type": "ondrop",
+  "x" : pos.x,
+  "y" : pos.y,
+  "text" : "test text",
+  "html" : "<span>test html</span>"
+}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/OnEncryption.md
+================================================================================
+
+# OnEncryption
+
+Encrypts the document.
+
+## Syntax
+
+```javascript
+expression.OnEncryption(obj);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| obj | Required | object |  | The encryption properties. |
+| obj.type | Required | string |  | The type of encrypting operation: **generatePassword** - generates a password for the document, **getPasswordByFile** - sends the password when opening the document, **encryptData** - encrypts changes when co-editing, **decryptData** - decrypts changes when co-editing. |
+| obj.password | Required | string |  | A string value specifying the password to access the document. |
+| obj.data | Required | string |  | Encrypted/decrypted changes. |
+| obj.check | Required | boolean |  | Checks if the encryption/decryption operation is successful or not (used only for *encryptData* or *decryptData* types). |
+| obj.docinfo | Required | string |  | An unencrypted part of the encrypted file. |
+| obj.hash | Required | string |  | A string value specifying a file hash (*sha256* by default). |
+| obj.error | Required | string |  | A string value specifying an error that occurs (the "" value means that the operation is successful). |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("OnEncryption", [
+    {
+        "type": "getPasswordByFile",
+        "password": "123456",
+        "docinfo": "{docinfo}",
+        "hash": "sha256"
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/PasteHtml.md
+================================================================================
+
+# PasteHtml
+
+Pastes text in the HTML format into the document.
+
+## Syntax
+
+```javascript
+expression.PasteHtml(htmlText);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| htmlText | Required | string |  | A string value that specifies the text in the *HTML* format to be pasted into the document. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("PasteHtml", ["&lt;p&gt;&lt;b&gt;Plugin methods for OLE objects&lt;/b&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;AddOleObject&lt;/li&gt;&lt;li&gt;EditOleObject&lt;/li&gt;&lt;/ul&gt;"]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/PasteText.md
+================================================================================
+
+# PasteText
+
+Pastes text into the document.
+
+## Syntax
+
+```javascript
+expression.PasteText(text);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| text | Required | string |  | A string value that specifies the text to be pasted into the document. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("PasteText", ["ONLYOFFICE for developers"]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/PutImageDataToSelection.md
+================================================================================
+
+# PutImageDataToSelection
+
+Replaces the first selected drawing with the image specified in the parameters.
+If there are no drawings selected, the method inserts the image at the current position.
+
+## Syntax
+
+```javascript
+expression.PutImageDataToSelection(oImageData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oImageData | Required | [ImageData](../Enumeration/ImageData.md) |  | The information about the base64 encoded *png* image. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.saveImage = function () {
+    let imageSrc = imageEditor.toDataURL ();
+    let editorDimension = imageEditor.getCanvasSize ();
+    let width = editorDimension.width;
+    let height = editorDimension.height;
+    let imageData = {
+        "src": imageSrc,
+        "width": width,
+        "height": height
+    };
+    window.Asc.plugin.executeMethod ("PutImageDataToSelection", [imageData]);
+    window.Asc.plugin.executeCommand ("close", "");
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/RemoveComments.md
+================================================================================
+
+# RemoveComments
+
+Removes the specified comments.
+
+## Syntax
+
+```javascript
+expression.RemoveComments(arrIds);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arrIds | Required | string[] |  | An array which contains the IDs of the specified comments. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("RemoveComments", [["1_631", "1_632"]]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/RemoveOleObject.md
+================================================================================
+
+# RemoveOleObject
+
+Removes the OLE object from the workbook by its internal ID.
+
+## Syntax
+
+```javascript
+expression.RemoveOleObject(internalId);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| internalId | Required | string |  | The OLE object identifier which is used to work with OLE object added to the worksheet. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+const addOleToWorksheet = function () {
+	const worksheet = Api.GetActiveSheet();
+	const oleObject = worksheet.AddOleObject(
+		'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png',
+		130 * 36000, 90 * 36000,
+		'https://youtu.be/SKGz4pmnpgY',
+		'asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}',
+		0, 2 * 36000, 4, 3 * 36000
+	);
+	return oleObject.Drawing.GetId();
+};
+Asc.plugin.callCommand(addOleToWorksheet, false, true, (id) => {
+	console.log('We added OLE object with id: ' + id);
+	Asc.plugin.executeMethod('RemoveOleObject', [id]);
+	console.log('We removed OLE object with id: ' + id);
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/RemovePlugin.md
+================================================================================
+
+# RemovePlugin
+
+Removes a plugin with the specified GUID.
+
+## Syntax
+
+```javascript
+expression.RemovePlugin(guid, backup);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| guid | Required | string |  | The plugin identifier. It must be of the *asc.&#123;UUID&#125;* type. |
+| backup | Required | string |  | The plugin backup. This parameter is used when working with the desktop editors. |
+
+## Returns
+
+object
+
+## Example
+
+```javascript
+function removePlugin(backup) {
+    if (removeGuid)
+        window.Asc.plugin.executeMethod('RemovePlugin', [removeGuid, backup], function(result) {
+            postMessage(result);
+        });
+
+    removeGuid = null;
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/ReplaceTextSmart.md
+================================================================================
+
+# ReplaceTextSmart
+
+Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+
+## Syntax
+
+```javascript
+expression.ReplaceTextSmart(arrString, sParaTab, sParaNewLine);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arrString | Required | string[] |  | An array of replacement strings. |
+| sParaTab | Optional | string | "\t" | A character which is used to specify the tab in the source text. Any symbol can be used. The default separator is "\t". |
+| sParaNewLine | Optional | string | "\r\n" | A character which is used to specify the line break character in the source text. Any symbol can be used. The default separator is "\r\n". |
+
+## Returns
+
+boolean
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ReplaceTextSmart", [Asc.scope.arr, String.fromCharCode(9), String.fromCharCode(13)], function (isDone) {
+    if (!isDone)
+        window.Asc.plugin.callCommand (function () {
+            Api.ReplaceTextSmart (Asc.scope.arr);
+        });
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/SetCustomFunctions.md
+================================================================================
+
+# SetCustomFunctions
+
+Updates a library of local custom functions.
+
+## Syntax
+
+```javascript
+expression.SetCustomFunctions(jsonString);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| jsonString | Required | string |  | A library of custom functions in JSON format. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("SetCustomFunctions", [JSON.stringify (Content)], function () {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/SetMacros.md
+================================================================================
+
+# SetMacros
+
+Sets macros to the document.
+
+## Syntax
+
+```javascript
+expression.SetMacros(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [Macros](../Enumeration/Macros.md) |  | The *Macros* object containing the data about all the macros from the document. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("SetMacros", [JSON.stringify (Content)], function () {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/SetPluginsOptions.md
+================================================================================
+
+# SetPluginsOptions
+
+Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin.
+For example, this method can be used to pass an authorization token to the plugin. This method can be used only with the connector class.
+
+## Syntax
+
+```javascript
+expression.SetPluginsOptions(options);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| options | Required | [PluginOptions](../Enumeration/PluginOptions.md) |  | Plugin options. |
+
+## Returns
+
+This method doesn't return any data.
+

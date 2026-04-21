@@ -10,7 +10,7 @@ Inserts the *Hello world!* phrase when the user presses the button.
 
 ## Installation
 
-Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/helloworld) and install it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
+Download this plugin from [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/master/helloworld) and install it following the [desktop](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 ## Usage
 
@@ -78,11 +78,11 @@ Repository on GitHub: [helloworld](https://github.com/ONLYOFFICE/sdkjs-plugins/t
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
-- [callCommand](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#callcommand)
-- [Asc.scope](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object
-- [info.recalculate](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#recalculate)
+- [button](/docs/plugin-and-macros/plugins/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/overview#how-it-works)
+- [callCommand](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#callcommand)
+- [Asc.scope](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object
+- [info.recalculate](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#recalculate)
 
 ## Support
 

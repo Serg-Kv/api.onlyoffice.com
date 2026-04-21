@@ -20,15 +20,19 @@ import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
 
 Starting from version 9.0.4, the AI plugin was added to the server and desktop distributions built with ONLYOFFICE branding.
 
-If you need to add it manually, download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/app-directory/en/ai) and install it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
+If you need to add it manually, download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/app-directory/en/ai) and install it following the [desktop](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 The plugin guid is `{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}`.
+
+:::note
+The plugin requires ONLYOFFICE editors version 8.2.0 or later.
+:::
 
 ## Configuring
 
 To start using the plugin, you need to set up an AI provider:
 
-1. Open the **Plugins** tab and click the **Plugin Manager** icon. Find the **AI plugin** and click **Install** or **Update** if the plugin is already installed.
+1. Open the **Plugins** tab and click the **Plugin Manager** icon. Find the **AI plugin** and click **Install** (or **Update** if the plugin is already installed).
 2. Click the **Background Plugins** button and activate the **AI** switch.
 3. Go to the **AI** tab, click **Settings** to open the configuration window.
 4. Select **Edit AI models** and click ![Plus icon](/assets/images/plugins/plus.svg#gh-light-mode-only)![Plus icon](/assets/images/plugins/plus.dark.svg#gh-dark-mode-only).
@@ -47,8 +51,10 @@ To start using the AI plugin:
    - **Settings**: the configuration panel to select your AI provider, enter the API key, and select one of its models;
    - **Chatbot**: start a conversation with the AI to ask questions, rewrite text, brainstorm ideas, and more;
    - **Summarization**: automatically summarize the entered text and choose ways to insert the result;
-   - **Translation**: translate selected text using the configured AI service.
-3. You can use the plugin on selected text. To do this, select the text, right-click it, and in the AI menu choose one of the options: **Summarization**, **Text analysis**, **Translate**, **Image**, or **Chatbot**.
+   - **Translation**: translate selected text using the configured AI service;
+   - **Grammar & Spelling**: check the grammar and spelling of the selected text;
+   - **Create AI assistant**: create a new AI assistant to perform repetitive text tasks.
+3. You can use the plugin on selected text. To do this, select the text, right-click it, and in the AI menu choose one of the options: **Summarization**, **Text analysis**, **Translate**, **Image**, **Grammar & Spelling**, or **Chatbot**.
 4. The plugin will respond based on the configured AI model.
 5. Insert the response into the document or use it for your needs.
 

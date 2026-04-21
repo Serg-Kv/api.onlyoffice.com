@@ -22,7 +22,7 @@ The connector has the same interface as plugins. Below you can find methods that
 
 ## addContextMenuItem
 
-The function called to add an item to the context menu. The process of working with the context menu is the same as for [plugins](../../plugin-and-macros/customization/context-menu.md) except for the *onClick* method, which is used instead of subscribing by ID.
+The function called to add an item to the context menu. The process of working with the context menu is the same as for [plugins](../../plugin-and-macros/plugins/customization/context-menu.md) except for the *onClick* method, which is used instead of subscribing by ID.
 
 ### Parameters
 
@@ -38,7 +38,7 @@ The function called to add an item to the context menu. The process of working w
 | *text*     | string                   | The item caption.                                                                                                          |
 | *data*     | string                   | The item data (this data will be sent to the click event callback).                                                        |
 | *disabled* | boolean                  | Specifies if the current item is disabled or not.                                                                          |
-| *icons*    | string                   | The item icons (see the plugins [config](../../plugin-and-macros/structure/configuration/configuration.md#variationsicons) documentation). |
+| *icons*    | string                   | The item icons (see the plugins [config](../../plugin-and-macros/plugins/fundamentals/configuration/config-json.md#variationsicons) documentation). |
 | *onClick*  | function                 | The click event callback.                                                                                                  |
 | *items*    | ContextMenuItem[] | An array containing the context menu items for the current item.                                                           |
 
@@ -58,7 +58,7 @@ connector.attachEvent("onContextMenuShow", (options) => {
 
 ## addToolbarMenuItem
 
-The function called to add an item to the toolbar menu. The process of working with the toolbar menu is the same as for [plugins](../../plugin-and-macros/customization/toolbar.md) except for the *onClick* method, which is used instead of subscribing by ID.
+The function called to add an item to the toolbar menu. The process of working with the toolbar menu is the same as for [plugins](../../plugin-and-macros/plugins/customization/toolbar.md) except for the *onClick* method, which is used instead of subscribing by ID.
 
 ### Parameters
 
@@ -89,7 +89,7 @@ The function called to add an item to the toolbar menu. The process of working w
 | *type*           | [ToolbarMenuItemType](#toolbarmenuitemtype) | The item type.                                                                                                                           |
 | *text*           | string                                      | The item caption. If this field is "", the toolbar button is displayed only with an icon, without a caption.                             |
 | *hint*           | string                                      | The item hint.                                                                                                                           |
-| *icons*          | string \| object                            | The item icons (see the plugins [config](../../plugin-and-macros/structure/configuration/configuration.md#variationsicons) documentation). |
+| *icons*          | string \| object                            | The item icons (see the plugins [config](../../plugin-and-macros/plugins/fundamentals/configuration/config-json.md#variationsicons) documentation). |
 | *disabled*       | boolean                                     | Specifies whether the current item is locked.                                                                                            |
 | *enableToggle*   | boolean                                     | Specifies whether the toolbar menu item (when *"split == false"*) or its top part (when *"split == true"*) can be toggled.               |
 | *lockInViewMode* | boolean                                     | Specifies whether the toolbar menu item is automatically locked in the view modes (when previewing, viewing forms, disconnecting, etc.). |
@@ -175,7 +175,7 @@ To call commands and send the data back to the editor, define the callCommand me
 | callback | function | The result that the method returns. Only the js standard types are available (any objects will be replaced with undefined).                                                                                                                                                                                                                                                                                                                 |
 | isNoCalc | boolean  | Defines whether the document will be recalculated or not. The *true* value will not recalculate the document (use it only when your edits surely will not require document recalculation). The *false* value is used to recalculate the document after executing the function in the *func* parameter. The default value is *false*.                                    |
 
-This method is executed in its context isolated from other JavaScript data. If some parameters or other data need to be passed to this method, use [Asc.scope](../../plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object.
+This method is executed in its context isolated from other JavaScript data. If some parameters or other data need to be passed to this method, use [Asc.scope](../../plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object.
 
 ### Returns
 
@@ -251,7 +251,7 @@ connector.disconnect();
 
 ## executeMethod
 
-The function called to execute certain editor methods using the connector. The full list of these methods is the same as for the plugins. It can be found [here](../../plugin-and-macros/interacting-with-editors/text-document-api/Methods/Methods.md).
+The function called to execute certain editor methods using the connector. The full list of these methods is the same as for the plugins. It can be found [here](../../plugin-and-macros/plugins/interacting-with-editors/text-document-api/Methods/Methods.md).
 
 ### Parameters
 
@@ -288,7 +288,7 @@ The function called to update an item in the context menu with the specified ite
 | text     | string                   | The item text.                                                                                                             |
 | data     | string                   | The item data (this data will be sent to the click event callback).                                                        |
 | disabled | boolean                  | Specifies if the current item is disabled or not.                                                                          |
-| icons    | string                   | The item icons (see the plugins [config](../../plugin-and-macros/structure/configuration/configuration.md#variationsicons) documentation). |
+| icons    | string                   | The item icons (see the plugins [config](../../plugin-and-macros/plugins/fundamentals/configuration/config-json.md#variationsicons) documentation). |
 | items    | ContextMenuItem[] | An array containing the context menu items for the current item.                                                           |
 
 ### Example
@@ -361,7 +361,7 @@ The function called to show a modal window inside the editor.
 
 | Name     | Type   | Description                                                                                                                                      |
 | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| settings | object | The modal window parameters that are the same as for plugin [variations](../../plugin-and-macros/structure/configuration/configuration.md#variations). |
+| settings | object | The modal window parameters that are the same as for plugin [variations](../../plugin-and-macros/plugins/fundamentals/configuration/config-json.md#variations). |
 
 #### Example
 

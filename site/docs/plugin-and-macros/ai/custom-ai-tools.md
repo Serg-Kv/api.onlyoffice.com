@@ -32,7 +32,7 @@ To add a custom AI tool and make it available in the AI agent:
 
 1. Clone the [onlyoffice.github.io](https://github.com/ONLYOFFICE/onlyoffice.github.io) repository to your local machine.
 2. Write your function in the helpers folder (`sdkjs-plugins/content/ai/.dev/helpers`). Depending on the editor type, place it in the `cell/`, `slide/`, or `word/` folder (see [Function registration](#registration) below).
-3. Update the current version of the AI plugin in `config.json` to avoid caching issues (for example, `3.0.3` → `3.0.4`).
+3. Update the current version of the AI plugin in `config.json` to avoid caching issues (for example, `3.2.1` → `3.2.2`).
 4. Run the `helpers.py` file.
 5. Select all plugin files in the `ai` folder (`sdkjs-plugins/content/ai`), zip them, and rename the archive to `ai.plugin`.
 6. Place the file back into `sdkjs-plugins/content/ai/deploy`.
@@ -259,6 +259,6 @@ The full function flow is shown below, with inline comments explaining each step
 })();
 ```
 
-> To ensure the entire block of changes can be rolled back after the request is executed, we use [StartAction](../interacting-with-editors/text-document-api/Methods/StartAction.md) and [EndAction](../interacting-with-editors/text-document-api/Methods/EndAction.md) methods across the `commentText` function.
+> To ensure the entire block of changes can be rolled back after the request is executed, we use [StartAction](../plugins/interacting-with-editors/text-document-api/Methods/StartAction.md) and [EndAction](../plugins/interacting-with-editors/text-document-api/Methods/EndAction.md) methods across the `commentText` function.
 
 The AI agent functionality continues to evolve alongside the needs of today's digital world. Extend its capabilities by creating your own custom tools, tailored to your specific use cases.

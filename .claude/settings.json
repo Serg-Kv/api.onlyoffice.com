@@ -3,7 +3,39 @@
     "allow": [
       "Read(//c/Users/batet/.claude/projects/c--github-api-onlyoffice-com/64c16876-6a41-4084-b2f0-64bda4fa9525/tool-results/**)",
       "Bash(gh api:*)",
-      "Bash(python3 -c \":*)"
+      "Bash(python3 -c \":*)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\" && cat \"{}\"')",
+      "Bash(mv c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/fundamentals/getting-started/quick-start/* c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/getting-started/quick-start/)",
+      "Bash(cp c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/fundamentals/getting-started/quick-start/_category_.json c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/getting-started/quick-start/_category_.json)",
+      "Bash(rm -rf c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/fundamentals/getting-started/quick-start)",
+      "Bash(rmdir c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/fundamentals/getting-started/quick-start)",
+      "Bash(rmdir c:/github/api.onlyoffice.com/site/docs/plugin-and-macros/fundamentals/getting-started)",
+      "Read(//c/Users/batet/Downloads//**)",
+      "Read(//c/Users/batet/**)",
+      "Bash(grep -n \"plugins\" /c/github/api.onlyoffice.com/plugin_and_macros_part*.txt)",
+      "Bash(grep -l \"FILE:.*plugins/\" /c/github/api.onlyoffice.com/plugin_and_macros_part*.txt)",
+      "Bash(ls -la /c/github/api.onlyoffice.com/plugin_and_macros_part*.txt)",
+      "Read(//c/github/api.onlyoffice.com/**)",
+      "Bash(sed 's/.*FILE: //')",
+      "Read(//tmp/**)",
+      "Bash(xargs echo:*)",
+      "Bash(grep -n \"\\\\.\\\\./\" /c/github/api.onlyoffice.com/site/docs/plugin-and-macros/getting-started/quick-start/*.md)",
+      "Bash(grep -n \"sidebar_position\" /c/github/api.onlyoffice.com/site/docs/plugin-and-macros/ai/*.md)",
+      "Bash(grep -rn \"\\\\\"id\\\\\":\" site/docs/plugin-and-macros/**/_category_.json)",
+      "Bash(xargs cat:*)",
+      "Bash(grep -n \"\\\\.\\\\./fundamentals/configuration\" site/docs/plugin-and-macros/plugins/fundamentals/configuration/*.md)",
+      "Bash(find site/docs/plugin-and-macros/plugins -name \"_category_.json\" -type f -exec sh -c 'echo \"File: $1\"; cat \"$1\"; echo \"\"' _ {} \\\\;)",
+      "Bash(bash /tmp/check_links.sh)",
+      "Bash(grep -n \"sidebar_position\\\\|description:\" site/docs/plugin-and-macros/plugins/fundamentals/getting-started/*.md site/docs/plugin-and-macros/plugins/fundamentals/configuration/*.md site/docs/plugin-and-macros/plugins/fundamentals/plugin-architecture/*.md)",
+      "Bash(xargs sed:*)",
+      "Bash(sed -i 's|../../fundamentals/getting-started/quick-start-guides.md|../../plugins/fundamentals/getting-started/your-first-plugin.md|g' site/docs/plugin-and-macros/learning-resources/templates-and-boilerplates/index.md)",
+      "Bash(sed -i 's|../../../fundamentals/getting-started/get-started.md|../../../plugins/fundamentals/getting-started/your-first-plugin.md|g' site/docs/plugin-and-macros/learning-resources/tutorials/step-by-step-guides/build-a-youtube-inserter.md)",
+      "Bash(sed -i 's|../../../fundamentals/configuration/config-json.md|../../../plugins/fundamentals/configuration/config-json.md|g' site/docs/plugin-and-macros/learning-resources/tutorials/step-by-step-guides/build-a-youtube-inserter.md)",
+      "Bash(npm run:*)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\" && cat {}')"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
     ]
   }
 }

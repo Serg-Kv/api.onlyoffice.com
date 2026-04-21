@@ -22,7 +22,7 @@ import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
 
 Available by default in ONLYOFFICE Enterprise Edition and Community Edition (Docs + Workspace).
 
-You can also download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/app-directory/wordscounter) and install it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md) or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
+You can also download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/app-directory/wordscounter) and install it following the [desktop](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md) or [cloud](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 ## Usage
 
@@ -131,10 +131,10 @@ Repository on GitHub: [wordscounter](https://github.com/ONLYOFFICE/onlyoffice.gi
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
-- [onTargetPositionChanged](/docs/plugin-and-macros/interacting-with-editors/form-api/Events/onTargetPositionChanged.md)
-- [onTranslate](/docs/plugin-and-macros/structure/localization.md#applying-translations-to-plugin)
+- [button](/docs/plugin-and-macros/plugins/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/overview#how-it-works)
+- [onTargetPositionChanged](/docs/plugin-and-macros/plugins/interacting-with-editors/form-api/Events/onTargetPositionChanged.md)
+- [onTranslate](/docs/plugin-and-macros/plugins/fundamentals/configuration/localization.md#applying-translations-to-plugin)
 
 ## Support
 

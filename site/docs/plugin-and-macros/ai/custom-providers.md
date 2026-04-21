@@ -53,7 +53,7 @@ class Provider {
 | name  | string | `"Alibaba Cloud"`                                  | The name of the provider that will be displayed in the plugin.                                              |
 | url   | string | `"https://dashscope.aliyuncs.com/compatible-mode"` | The web address to which the API request will be sent.                                                      |
 | key   | string | `"yourAPIKey"`                                     | The API key issued by the provider. This is an optional field. Some providers may require a key for access. |
-| addon | string | `"v1"`                                             | A URL addon (e.g., version tag).                                                                            |
+| addon | string | `"v1"`                                             | A string appended to the base URL with a `/` separator (e.g., a version tag). The resulting request URL becomes `url/addon`.                                                                            |
 
 #### Example
 

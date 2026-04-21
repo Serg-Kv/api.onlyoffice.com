@@ -1,0 +1,1857 @@
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onExternalMouseUp.md
+================================================================================
+
+# onExternalMouseUp
+
+The function called when the mouse button is released outside the plugin iframe.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onExternalMouseUp", () => {
+    let evt = document.createEvent("MouseEvents");
+    evt.initMouseEvent("mouseup", true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+    document.dispatchEvent(evt);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onFocusAnnotation.md
+================================================================================
+
+# onFocusAnnotation
+
+The function called when an annotation receives focus.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| annotation | TextAnnotation | The annotation that received focus. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onFocusAnnotation", (data) => {
+    console.log("Annotation focused:", data.rangeId);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onFocusContentControl.md
+================================================================================
+
+# onFocusContentControl
+
+The function called to show which content control has been focused.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| control | [Event_ContentControl](../Enumeration/Event_ContentControl.md) | Defines the content control that has been focused. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onFocusContentControl", (control) => {
+    focusContentControl(control);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onHideContentControlTrack.md
+================================================================================
+
+# onHideContentControlTrack
+
+The function called when the content control loses focus in the document.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| ids | string[] | An array of content control IDs that have lost focus. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onHideContentControlTrack", (ids) => {
+    onHideContentControlTrack(ids);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onInsertOleObjects.md
+================================================================================
+
+# onInsertOleObjects
+
+The function called when one or more OLE objects are inserted into the document.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| data | object[] | An array containing information about the inserted OLE objects. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onInsertOleObjects", (arrData) => {
+    afterInsertOleObjects(arrData);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onParagraphText.md
+================================================================================
+
+# onParagraphText
+
+The function called when the paragraph text is updated in the document.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| data | Object | Event data containing information about the updated paragraph. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onParagraphText", (data) => {
+    console.log("Paragraph updated:", data.paragraphId);
+    data.annotations.forEach(a => {
+        console.log(`Annotation ${a.id}: ${a.name} at ${a.start} (${a.length} chars)`);
+    });
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onRemoveComment.md
+================================================================================
+
+# onRemoveComment
+
+The function called when the specified comment is removed with the [RemoveComments](../../text-document-api/Methods/RemoveComments.md) method.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| comment | [Event_comment](../Enumeration/Event_comment.md) | Defines the comment object containing the comment data. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onRemoveComment", (comment) => {
+    removeComments([comment.Id]);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onShowContentControlTrack.md
+================================================================================
+
+# onShowContentControlTrack
+
+The function called when the content control receives focus and its track appears.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| ids | string[] | An array of content control IDs that have received focus. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onHideContentControlTrack", (ids) => {
+    onShowContentControlTrack(ids);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onSubmitForm.md
+================================================================================
+
+# onSubmitForm
+
+The function called when the user clicks the "Complete & Submit" button.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onSubmitForm", () => {
+	Asc.scope.st = "";
+	this.callCommand(function() {
+        let oDocument = Api.GetDocument();
+		let aFormsData = oDocument.GetFormsData();
+		Asc.scope.st += "event: onSubmitForm";
+		Asc.scope.st += "\n";
+		Asc.scope.st += "The type of the first form: " + aFormsData[0]["type"];
+		Asc.scope.st += "\n";
+		Asc.scope.st += "The value of the second form: " + aFormsData[1]["value"];
+    }, false);
+	console.log(Asc.scope.st);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onTargetPositionChanged.md
+================================================================================
+
+# onTargetPositionChanged
+
+The function called when the target position in the editor is changed.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onTargetPositionChanged", () => {
+    if (!fClickLabel) {
+        window.Asc.plugin.executeMethod("GetCurrentContentControl");
+    }
+    fClickLabel = false;
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AcceptReviewChanges.md
+================================================================================
+
+# AcceptReviewChanges
+
+Accepts review changes.
+
+## Syntax
+
+```javascript
+expression.AcceptReviewChanges(isAll);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isAll | Optional | boolean | false | Specifies if all changes will be accepted (**true**) or only changes from the current selection (**false**). |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AcceptReviewChanges", [true]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddAddinField.md
+================================================================================
+
+# AddAddinField
+
+Creates a new addin field with the data specified in the request.
+
+## Syntax
+
+```javascript
+expression.AddAddinField(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [AddinFieldData](../Enumeration/AddinFieldData.md) |  | Addin field data. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+let addinFieldData = {"FieldId": "1", "Value": "Addin №1", "Content": "This is the first addin field"};
+window.Asc.plugin.executeMethod("AddAddinField", [addinFieldData]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddComment.md
+================================================================================
+
+# AddComment
+
+Adds a comment to the document.
+
+## Syntax
+
+```javascript
+expression.AddComment(oCommentData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oCommentData | Required | [CommentData](../Enumeration/CommentData.md) |  | An object which contains the comment data. |
+
+## Returns
+
+string \| null
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddComment", [
+    {
+        "UserName": "John Smith",
+        "QuoteText": "text",
+        "Text": "comment",
+        "Time": "1662737941471",
+        "Solved": true,
+        "Replies": [
+            {
+                "UserName": "Mark Potato",
+                "Text": "reply 1",
+                "Time": "1662740895892",
+                "Solved": false
+            }
+        ]
+    }
+], function (comment) {
+    console.log (comment)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddContentControl.md
+================================================================================
+
+# AddContentControl
+
+Adds an empty content control to the document.
+
+## Syntax
+
+```javascript
+expression.AddContentControl(type, commonPr);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Required | [ContentControlType](../Enumeration/ContentControlType.md) |  | A numeric value that specifies the content control type. It can have one of the following values: **1** (block), **2** (inline), **3** (row), or **4** (cell). |
+| commonPr | Optional | [ContentControlProperties](../Enumeration/ContentControlProperties.md) | &#123;&#125; | The common content control properties. |
+
+## Returns
+
+[ContentControl](../Enumeration/ContentControl.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddContentControl", [1, {"Id" : 7, "Tag" : "{tag}", "Lock" : 0}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddContentControlCheckBox.md
+================================================================================
+
+# AddContentControlCheckBox
+
+Adds an empty content control checkbox to the document.
+
+## Syntax
+
+```javascript
+expression.AddContentControlCheckBox(checkBoxPr, commonPr);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| checkBoxPr | Optional | [ContentControlCheckBoxProperties](../Enumeration/ContentControlCheckBoxProperties.md) | &#123;&#125; | The content control checkbox properties. |
+| commonPr | Optional | [ContentControlProperties](../Enumeration/ContentControlProperties.md) | &#123;&#125; | The common content control properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddContentControlCheckBox", [
+    {
+        "Checked" : false,
+        "CheckedSymbol" : 9756,
+        "UncheckedSymbol" : 9744
+    },
+    {
+        "Id" : 7,
+        "Tag" : "{tag}",
+        "Lock" : 0
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddContentControlDatePicker.md
+================================================================================
+
+# AddContentControlDatePicker
+
+Adds an empty content control datepicker to the document.
+
+## Syntax
+
+```javascript
+expression.AddContentControlDatePicker(datePickerPr, commonPr);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| datePickerPr | Optional | [ContentControlDatePickerProperties](../Enumeration/ContentControlDatePickerProperties.md) | &#123;&#125; | The content control datepicker properties. |
+| commonPr | Optional | [ContentControlProperties](../Enumeration/ContentControlProperties.md) | &#123;&#125; | The common content control properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddContentControlDatePicker", [
+    {
+        "DateFormat" : "DD\ MMMM\ YYYY",
+        "Date" : new window.Date()
+    },
+    {
+        "Id" : 7,
+        "Tag" : "{tag}",
+        "Lock" : 0
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddContentControlList.md
+================================================================================
+
+# AddContentControlList
+
+Adds an empty content control list to the document.
+
+## Syntax
+
+```javascript
+expression.AddContentControlList(type, List, commonPr);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Required | [ContentControlType](../Enumeration/ContentControlType.md) |  | A numeric value that specifies the content control type. It can have one of the following values: **1** (combo box), **0** (dropdown list). |
+| List | Optional | [ContentControlListElement](../Enumeration/ContentControlListElement.md)[] |  | A list of the content control elements that consists of two items: **Display** - an item that will be displayed to the user in the content control list, **Value** - a value of each item from the content control list. |
+| commonPr | Optional | [ContentControlProperties](../Enumeration/ContentControlProperties.md) | &#123;&#125; | The common content control properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddContentControlList", [0,
+    [
+        {
+            "Display": "Item1_D",
+            "Value": "Item1_V"
+        },
+        {
+            "Display": "Item2_D",
+            "Value": "Item2_V"
+        }
+    ], 
+    {
+        "Id" : 7,
+        "Tag" : "{tag}",
+        "Lock" : 0
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddContentControlPicture.md
+================================================================================
+
+# AddContentControlPicture
+
+Adds an empty content control picture to the document.
+
+## Syntax
+
+```javascript
+expression.AddContentControlPicture(commonPr);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| commonPr | Optional | [ContentControlProperties](../Enumeration/ContentControlProperties.md) | &#123;&#125; | The common content control properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("AddContentControlPicture", [{"Id" : 7, "Tag" : "{tag}", "Lock" : 0}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AddOleObject.md
+================================================================================
+
+# AddOleObject
+
+Adds an OLE object to the current document position.
+
+## Syntax
+
+```javascript
+expression.AddOleObject(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [OLEProperties](../Enumeration/OLEProperties.md) |  | The OLE object properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+var _param = {
+    "data": "{data}",
+    "imgSrc": "https://link-to-the-image.jpg",
+    "guid": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+    "width": 70,
+    "height": 70,
+    "widthPix": 60 * 36000,
+    "heightPix": 60 * 36000
+};
+window.Asc.plugin.executeMethod ("AddOleObject", [_param], function() {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/AnnotateParagraph.md
+================================================================================
+
+# AnnotateParagraph
+
+Adds annotations to the specified paragraph.
+
+## Syntax
+
+```javascript
+expression.AnnotateParagraph(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | Object |  | Annotation data specifying what to annotate. |
+| data.type | Required | string |  | The type of annotation operation (e.g., `"highlightText"`). |
+| data.name | Optional | string |  | Optional name of the annotation. |
+| data.paragraphId | Required | string |  | ID of the paragraph being annotated. |
+| data.recalcId | Required | string |  | Paragraph recalculation ID. |
+| data.ranges | Optional | [TextAnnotationRange](../Enumeration/TextAnnotationRange.md)[] |  | Array of text ranges to highlight (for highlightText type) |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod("AnnotateParagraph", [{
+    type: "highlightText",
+    name: "grammar",
+    paragraphId: "p1",
+    recalcId: "r12",
+    ranges: [
+        { start: 5, length: 10, id: "a1" }
+    ]
+}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/CanRedo.md
+================================================================================
+
+# CanRedo
+
+Checks if it possible to revert the user's last undone action.
+
+## Syntax
+
+```javascript
+expression.CanRedo();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+```javascript
+const addTextToDocument = function () {
+	const doc = Api.GetDocument();
+	const paragraph = doc.GetElement(0);
+	paragraph.AddText(Asc.scope.text);
+};
+
+Asc.plugin.executeMethod('CanRedo', [], result => console.log('Can redo: ' + result));
+
+Asc.scope.text = 'The text string that we added to the document.\n';
+Asc.plugin.callCommand(addTextToDocument);
+Asc.plugin.executeMethod('CanRedo', [], result => console.log('Can redo: ' + result));
+
+Asc.plugin.executeMethod('Undo');
+Asc.plugin.executeMethod('CanRedo', [], result => console.log('Can redo: ' + result));
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/CanUndo.md
+================================================================================
+
+# CanUndo
+
+Checks if it is possible to undo the user's last action.
+
+## Syntax
+
+```javascript
+expression.CanUndo();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+```javascript
+const addTextToDocument = function () {
+	const doc = Api.GetDocument();
+	const paragraph = doc.GetElement(0);
+	paragraph.AddText(Asc.scope.text);
+};
+
+Asc.plugin.executeMethod('CanUndo', [], result => console.log('Can undo: ' + result));
+Asc.scope.text = 'The text string that we added to the document so that we have an action to Undo.\n';
+Asc.plugin.callCommand(addTextToDocument);
+
+Asc.plugin.executeMethod('CanUndo', [], result => console.log('Can undo: ' + result));
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/ChangeComment.md
+================================================================================
+
+# ChangeComment
+
+Changes the specified comment.
+
+## Syntax
+
+```javascript
+expression.ChangeComment(sId, oCommentData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sId | Required | string |  | The comment ID. |
+| oCommentData | Required | [CommentData](../Enumeration/CommentData.md) |  | An object which contains the new comment data. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ChangeComment", ["1_631",
+    {
+        "UserName": "John Smith",
+        "QuoteText": "text",
+        "Text": "comment",
+        "Time": "1662737941471",
+        "Solved": true,
+        "Replies": [
+            {
+                "UserName": "Mark Potato",
+                "Text": "reply 1",
+                "Time": "1662740895892",
+                "Solved": false
+            }
+        ]
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/ChangeOleObject.md
+================================================================================
+
+# ChangeOleObject
+
+Changes the OLE object with the *InternalId* specified in OLE object data.
+
+## Syntax
+
+```javascript
+expression.ChangeOleObject(ObjectData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| ObjectData | Required | [OLEObjectData](../Enumeration/OLEObjectData.md) |  | The OLEObjectData object. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ChangeOleObject", [
+    {
+        "Data": "{data}",
+        "ImageData": "data:image/png;base64,image-in-the-base64-format",
+        "ApplicationId": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+        "InternalId": "5_556",
+        "ParaDrawingId": "1_713",
+        "Width": 70,
+        "Height": 70,
+        "WidthPix": 60 * 36000,
+        "HeightPix": 60 * 36000
+    }
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/ChangeOleObjects.md
+================================================================================
+
+# ChangeOleObjects
+
+Changes multiple OLE objects with the *InternalIds* specified in OLE object data.
+
+## Syntax
+
+```javascript
+expression.ChangeOleObjects(arrObjectData);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arrObjectData | Required | [OLEObjectData](../Enumeration/OLEObjectData.md)[] |  | An array of OLE object data. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ChangeOleObjects", [
+    [
+        {
+            "Data": "{data}",
+            "ImageData": "data:image/png;base64,image-in-the-base64-format",
+            "ApplicationId": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+            "InternalId": "5_556",
+            "ParaDrawingId": "1_713",
+            "Width": 70,
+            "Height": 70,
+            "WidthPix": 60 * 36000,
+            "HeightPix": 60 * 36000
+        }
+    ]
+]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/CoAuthoringChatSendMessage.md
+================================================================================
+
+# CoAuthoringChatSendMessage
+
+Sends a message to the co-authoring chat.
+
+## Syntax
+
+```javascript
+expression.CoAuthoringChatSendMessage(sText);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sText | Required | string |  | Message text. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("CoAuthoringChatSendMessage", [Asc.scope.meeting_info], function (isTrue) {
+    if (isTrue)
+        alert ("Meeting was created");
+    else
+        alert ("Meeting was create, please update SDK for checking info about created meeting in chat.");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/ConvertDocument.md
+================================================================================
+
+# ConvertDocument
+
+Converts a document to Markdown or HTML text.
+
+## Syntax
+
+```javascript
+expression.ConvertDocument(sConvertType, bHtmlHeadings, bBase64img, bDemoteHeadings, bRenderHTMLTags);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sConvertType | Optional | "markdown" \| "html" | "markdown" | Conversion type ("markdown" or "html"). |
+| bHtmlHeadings | Optional | boolean | false | Defines if the HTML headings and IDs will be generated when the Markdown renderer of your target platform does not handle Markdown-style IDs. |
+| bBase64img | Optional | boolean | false | Defines if the images will be created in the base64 format. |
+| bDemoteHeadings | Optional | boolean | false | Defines if all heading levels in your document will be demoted to conform with the following standard: single H1 as title, H2 as top-level heading in the text body. |
+| bRenderHTMLTags | Optional | boolean | false | Defines if HTML tags will be preserved in your Markdown. If you just want to use an occasional HTML tag, you can avoid using the opening angle bracket in the following way: \&lt;tag&gt;text\&lt;/tag&gt;. By default, the opening angle brackets will be replaced with the special characters. |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+let info = "";
+window.Asc.plugin.executeMethod ("ConvertDocument", ["markdown", false, false, true, false], function (output) {
+    document.getElementById ("text-area").value = info + output;
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/EditOleObject.md
+================================================================================
+
+# EditOleObject
+
+Edits an OLE object in the document.
+
+## Syntax
+
+```javascript
+expression.EditOleObject(data);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [OLEProperties](../Enumeration/OLEProperties.md) |  | The OLE object properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+var _param = {
+    "data": "{data}",
+    "imgSrc": "https://link-to-the-image.jpg",
+    "objectId": "5_556",
+    "width": 70,
+    "height": 70,
+    "widthPix": 60 * 36000,
+    "heightPix": 60 * 36000
+};
+window.Asc.plugin.executeMethod ("EditOleObject", [_param], function () {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/EndAction.md
+================================================================================
+
+# EndAction
+
+Specifies the end action for long operations.
+
+## Syntax
+
+```javascript
+expression.EndAction(type, description, status);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Required | number |  | A value which defines an action type which can take **"Block"** if this is the *BlockInteraction* action or **"Information** if this is the *Information* action. |
+| description | Required | string |  | A string value that specifies the description text for the operation end action. |
+| status | Required | string |  | The error status code. If no error occurs, then an empty string is passed. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("EndAction", ["Block", "Save to local storage...", ""]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/FocusEditor.md
+================================================================================
+
+# FocusEditor
+
+Returns focus to the editor.
+
+## Syntax
+
+```javascript
+expression.FocusEditor();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+This method doesn't return any data.
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetAllAddinFields.md
+================================================================================
+
+# GetAllAddinFields
+
+Returns all addin fields from the current document.
+
+## Syntax
+
+```javascript
+expression.GetAllAddinFields();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[AddinFieldData](../Enumeration/AddinFieldData.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod("GetAllAddinFields", null, function(fields) {
+	let count = 0;
+	fields.forEach(function(field) {
+		if (field.Value.includes(bibPrefix) || field.Value.includes(citPrefix)) {
+			count++;
+			window.Asc.plugin.executeMethod("RemoveFieldWrapper", [field.FieldId], function() {
+				count--;
+				if (!count)
+					window.Asc.plugin.executeCommand("close", "");
+			});
+		}
+	});
+
+	if (!fields.length)
+		window.Asc.plugin.executeCommand("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetAllComments.md
+================================================================================
+
+# GetAllComments
+
+Returns all the comments from the document.
+
+## Syntax
+
+```javascript
+expression.GetAllComments();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[comment](../Enumeration/comment.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetAllComments", null, function (comments) {
+    Comments = comments;
+    addComments (comments);
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetAllContentControls.md
+================================================================================
+
+# GetAllContentControls
+
+Returns information about all the content controls that have been added to the page.
+
+## Syntax
+
+```javascript
+expression.GetAllContentControls();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ContentControl](../Enumeration/ContentControl.md)[]
+
+## Example
+
+```javascript
+var flagInit = false;
+window.Asc.plugin.init = function (text) {
+    if (!flagInit) {
+        this.executeMethod ("GetAllContentControls", null, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].Tag == 11) {
+                    this.Asc.plugin.executeMethod ("SelectContentControl", [data[i].InternalId]);
+                    break;
+                }
+            }
+        });
+        flagInit = true;
+        ...
+    }
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetAllForms.md
+================================================================================
+
+# GetAllForms
+
+Returns information about all the forms that have been added to the document.
+
+## Syntax
+
+```javascript
+expression.GetAllForms();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ContentControl](../Enumeration/ContentControl.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetAllForms", null, function (data) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].Tag == 11) {
+            this.Asc.plugin.executeMethod ("SelectContentControl", [data[i].InternalId]);
+            break;
+        }
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetAllOleObjects.md
+================================================================================
+
+# GetAllOleObjects
+
+Returns all OLE object data for objects which can be opened by the specified plugin.
+If *sPluginId* is not defined, this method returns all OLE objects contained in the currrent document.
+
+## Syntax
+
+```javascript
+expression.GetAllOleObjects(sPluginId);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sPluginId | Required | string |  | Plugin identifier. It must be of the *asc.&#123;UUID&#125;* type. |
+
+## Returns
+
+[OLEObjectData](../Enumeration/OLEObjectData.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetAllOleObjects", ["asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}"], function (data) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].InternalId == "5_665") {
+            this.Asc.plugin.executeMethod ("SelectOleObject", [data[i].InternalId]);
+            break;
+        }
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetCurrentBookmark.md
+================================================================================
+
+# GetCurrentBookmark
+
+Returns the current bookmark.
+
+## Syntax
+
+```javascript
+expression.GetCurrentBookmark();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string \| null
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetCurrentContentControl.md
+================================================================================
+
+# GetCurrentContentControl
+
+Returns an identifier of the selected content control (i.e. the content control where the mouse cursor is currently positioned).
+
+## Syntax
+
+```javascript
+expression.GetCurrentContentControl();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+document.getElementById ("buttonIDChangeState").onclick = function () {
+    var _Control = [];
+    window.buttonIDChangeState_click = true;
+    window.Asc.plugin.executeMethod("GetCurrentContentControl");
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetCurrentContentControlPr.md
+================================================================================
+
+# GetCurrentContentControlPr
+
+Returns the current content control properties.
+
+## Syntax
+
+```javascript
+expression.GetCurrentContentControlPr(contentFormat);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| contentFormat | Required | string |  | The content format ("none", "text", "html", "ole" or "desktop"). |
+
+## Returns
+
+[ContentControlProperties](../Enumeration/ContentControlProperties.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.event_onClick = function (isSelectionUse) {
+    window.Asc.plugin.executeMethod ("GetCurrentContentControlPr", [], function (obj) {
+        window.Asc.plugin.currentContentControl = obj;
+        var controlTag = obj ? obj.Tag : "";
+        if (isSelectionUse)
+            controlTag = "";
+        ... 
+    }); 
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetCurrentSentence.md
+================================================================================
+
+# GetCurrentSentence
+
+Returns the current sentence.
+
+## Syntax
+
+```javascript
+expression.GetCurrentSentence(type);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Optional | [TextPartType](../Enumeration/TextPartType.md) | "entirely" | Specifies if the whole sentence or only its part will be returned. |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetCurrentSentence", ["entirely"], function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetCurrentWord.md
+================================================================================
+
+# GetCurrentWord
+
+Returns the current word.
+
+## Syntax
+
+```javascript
+expression.GetCurrentWord(type);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Optional | [TextPartType](../Enumeration/TextPartType.md) | "entirely" | Specifies if the whole word or only its part will be returned. |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetCurrentWord", ["entirely"], function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetDocumentLang.md
+================================================================================
+
+# GetDocumentLang
+
+Returns the document language.
+
+## Syntax
+
+```javascript
+expression.GetDocumentLang();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod("GetDocumentLang", [], function(lang) {
+	let documentLang = lang || defaultLang;
+
+	let options = Array.from($('#custom_menu option'));
+	let defaultOption = options.find(function(item) {
+		if (item.value == defaultLang)
+			return item;
+	});
+
+	let matchOption = undefined;
+	matchOption = options.find(function(item) {
+		if (item.value == documentLang)
+			return true;
+	});
+	if (!matchOption) {
+		matchOption = options.find(function(item) {
+			if (item.value.search(documentLang.split('-')[0]) != -1)
+				return true;
+		});
+	}
+
+	if (!matchOption)
+		matchOption = defaultOption;
+
+	if (matchOption) {
+		$('#custom_menu').val(matchOption.value);
+		$('#custom_menu').trigger('change');
+	}
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetFields.md
+================================================================================
+
+# GetFields
+
+Returns all fields as a text.
+
+## Syntax
+
+```javascript
+expression.GetFields();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFields", null, function (res) {
+    console.log ("First field: " + res[0])
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetFileHTML.md
+================================================================================
+
+# GetFileHTML
+
+Returns file content in the HTML format.
+
+## Syntax
+
+```javascript
+expression.GetFileHTML();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFileHTML", null, function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetFileToDownload.md
+================================================================================
+
+# GetFileToDownload
+
+Returns the current file to download in the specified format.
+
+## Syntax
+
+```javascript
+expression.GetFileToDownload(format);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| format | Optional | string | " " | A format in which you need to download a file. |
+
+## Returns
+
+string
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFileToDownload", ["pdf"], function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetFontList.md
+================================================================================
+
+# GetFontList
+
+Returns the fonts list.
+
+## Syntax
+
+```javascript
+expression.GetFontList();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[FontInfo](../Enumeration/FontInfo.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFontList", null, function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetFormValue.md
+================================================================================
+
+# GetFormValue
+
+Returns a value of the specified form.
+
+## Syntax
+
+```javascript
+expression.GetFormValue(internalId);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| internalId | Required | string |  | A unique internal identifier of the form. |
+
+## Returns
+
+null \| string \| boolean
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFormValue", ["1_713"], function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetFormsByTag.md
+================================================================================
+
+# GetFormsByTag
+
+Returns information about all the forms that have been added to the document with specified tag.
+
+## Syntax
+
+```javascript
+expression.GetFormsByTag(tag);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| tag | Required | string |  | The form tag. |
+
+## Returns
+
+[ContentControl](../Enumeration/ContentControl.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetFormsByTag", ["{tag}"], function (data) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].InternalId == "5_556") {
+            this.Asc.plugin.executeMethod ("SelectContentControl", [data[i].InternalId]);
+            break;
+        }
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetImageDataFromSelection.md
+================================================================================
+
+# GetImageDataFromSelection
+
+Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle.
+
+## Syntax
+
+```javascript
+expression.GetImageDataFromSelection();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ImageData](../Enumeration/ImageData.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetImageDataFromSelection", [], function (result) {
+    let image = document.createElement("img");
+    image.src = result.src;
+    image.width = result.width;
+    image.height = result.height;
+    CreateImageEditor ();
+    initializationDone = true;
+    var imageHeight = null;
+    image.height > 500 ? imageHeight = 500 : imageHeight = image.height;
+    window.Asc.plugin.resizeWindow (undefined, undefined, 870, imageHeight + 300, 0, 0);
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetInstalledPlugins.md
+================================================================================
+
+# GetInstalledPlugins
+
+Returns all the installed plugins.
+
+## Syntax
+
+```javascript
+expression.GetInstalledPlugins();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[PluginData](../Enumeration/PluginData.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetInstalledPlugins", null, function (result) {
+    postMessage (JSON.stringify ({type: 'InstalledPlugins', data: result }));
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetMacros.md
+================================================================================
+
+# GetMacros
+
+Returns the document macros.
+
+## Syntax
+
+```javascript
+expression.GetMacros();
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[Macros](../Enumeration/Macros.md)
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetMacros", [JSON.stringify(Content)], function(data) {
+
+    try
+    {
+        Content = JSON.parse (data);
+
+        for (var i = 0; i < Content.macrosArray.length; i++)
+        {
+            var value = Content.macrosArray[i].name;
+            if (undefined === value)
+                value = "";
+
+            value = value.replace (/&/g,'&amp;');
+            value = value.replace (/</g,'&lt;');
+            value = value.replace (/>/g,'&gt;');
+            value = value.replace (/'/g,'&apos;');
+            value = value.replace (/"/g,'&quot;');
+
+            Content.macrosArray[i].name = value;
+        }
+    }
+    catch (err)
+    {
+        Content = {
+            macrosArray : [],
+            current : -1
+        };
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Methods/GetSelectedContent.md
+================================================================================
+
+# GetSelectedContent
+
+Returns the selected content in the specified format.
+
+## Syntax
+
+```javascript
+expression.GetSelectedContent(prop);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| prop | Required | object |  | The returned content properties. |
+| prop.type | Optional | "text" \| "html" | "text" | The format type of the returned content (text or HTML). |
+
+## Returns
+
+string
+

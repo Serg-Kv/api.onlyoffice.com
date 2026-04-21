@@ -1,0 +1,1890 @@
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/SetProperties.md
+================================================================================
+
+# SetProperties
+
+Sets the properties to the document.
+
+## Syntax
+
+```javascript
+expression.SetProperties(obj);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| obj | Required | object |  | The document properties. |
+| obj.copyoutenabled | Required | boolean |  | Disables copying from the editor if it is set to **false**. |
+| obj.hideContentControlTrack | Required | boolean |  | Disables tracking the content control if it is set to **true**. |
+| obj.watermark_on_draw | Required | string |  | A string value for [watermark](../Enumeration/watermark_on_draw.md) in JSON format. |
+| obj.disableAutostartMacros | Required | boolean |  | Sets a flag that specifies that macros are started automatically when the editor opens. |
+| obj.fillForms | Required | string |  | Sets rules in JSON format for filling document [forms](../Enumeration/fillForms.md) by tags. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+var initSettings = {
+    "copyoutenabled" : false,
+    "hideContentControlTrack" : false,
+    "watermark_on_draw" : JSON.stringify ( {
+        "transparent" : 0.3,
+        "type" : "rect",
+        "width" : 100,
+        "height" : 100,
+        "rotate" : -45,
+        "margins" : [ 10, 10, 10, 10 ],
+        "fill" : [255, 0, 0],
+        "stroke-width" : 1,
+        "stroke" : [0, 0, 255],
+        "align" : 1,
+
+        "paragraphs" : [ {
+            "align" : 2,
+            "fill" : [255, 0, 0],
+            "linespacing" : 1,
+
+            "runs" : [
+                        {
+                            "text" : "Do not steal, %user_name%!",
+                            "fill" : [0, 0, 0],
+                            "font-family" : "Arial",
+                            "font-size" : 40,
+                            "bold" : true,
+                            "italic" : false,
+                            "strikeout" : false,
+                            "underline" : false
+                        },
+                        {
+                            "text" : "<%br%>"
+                        }
+                    ]
+            }
+        ]
+    }),
+    "disableAutostartMacros" : true,
+    "fillForms" : JSON.stringify ( {
+        "tags" : {
+            "111" : {
+                "text" : "Text in form with tag 111",
+                "checkBox" : "true",
+                "picture" : "https://upload.wikimedia.org/wikipedia/commons/9/91/ONLYOFFICE_logo.png",
+                "comboBox" : "item1"
+            },
+            "222" : {
+                "text" : "Text in form with tag 222",
+                "checkBox" : "false",
+                "comboBox" : "item2"
+            },
+            "333" : {
+                "text" : "OnlyOffice"
+            }
+        }
+    })
+};
+window.Asc.plugin.executeMethod ("SetProperties", [initSettings], function () {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/ShowButton.md
+================================================================================
+
+# ShowButton
+
+Shows or hides buttons in the header.
+
+## Syntax
+
+```javascript
+expression.ShowButton(id, bShow, align);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| id | Required | string |  | The button ID. |
+| bShow | Required | boolean |  | The flag specifies whether the button is shown (**true**) or hidden (**false**). |
+| align | Required | string |  | The parameter indicates whether the button will be displayed on the right side of the window or on the left. The default value is "left". |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ShowButton", ["back", false, "right"]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/ShowError.md
+================================================================================
+
+# ShowError
+
+Shows an error/warning message.
+
+## Syntax
+
+```javascript
+expression.ShowError(error, level);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| error | Required | string |  | The error text. |
+| level | Required | number |  | -1 or 0 for error or warning. |
+
+## Returns
+
+This method doesn't return any data.
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/ShowInputHelper.md
+================================================================================
+
+# ShowInputHelper
+
+Shows the input helper.
+
+## Syntax
+
+```javascript
+expression.ShowInputHelper(guid, w, h, isKeyboardTake);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| guid | Required | string |  | A string value which specifies a plugin identifier which must be of the *asc.&#123;UUID&#125;* type. |
+| w | Required | number |  | A number which specifies the window width measured in millimeters. |
+| h | Required | number |  | A number which specifies the window height measured in millimeters. |
+| isKeyboardTake | Required | boolean |  | Defines if the keyboard is caught (**true**) or not (**false**). |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("ShowInputHelper", ["asc.{UUID}", 70, 70, true]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/StartAction.md
+================================================================================
+
+# StartAction
+
+Specifies the start action for long operations.
+
+## Syntax
+
+```javascript
+expression.StartAction(type, description);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| type | Required | number |  | A value which defines an action type which can take **0** if this is an *Information* action or **1** if this is a *BlockInteraction* action. |
+| description | Required | string |  | A string value that specifies the description text for the start action of the operation. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("StartAction", ["Block", "Save to local storage..."], function () {
+    setPasswordByFile ("sha256", "123456");
+
+    setTimeout (function () {
+        window.Asc.plugin.executeMethod ("EndAction", ["Block", "Save to localstorage..."]);
+    }, 200););
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/UnShowInputHelper.md
+================================================================================
+
+# UnShowInputHelper
+
+Unshows the input helper.
+
+## Syntax
+
+```javascript
+expression.UnShowInputHelper(guid, isclear);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| guid | Required | string |  | A string value which specifies a plugin identifier which must be of the *asc.&#123;UUID&#125;* type. |
+| isclear | Required | string |  | Defines if the input context will be cleared (**true**) or not (**false**). |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("UnShowInputHelper", ["asc.{UUID}", true]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/spreadsheet-api/Methods/UpdatePlugin.md
+================================================================================
+
+# UpdatePlugin
+
+Updates a plugin using the specified plugin config.
+
+## Syntax
+
+```javascript
+expression.UpdatePlugin(config);
+```
+
+`expression` - A variable that represents a [Api](Methods.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| config | Optional | object |  | The plugin [config](https://api.onlyoffice.com/docs/plugin-and-macros/structure/configuration/). |
+
+## Returns
+
+object
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("UpdatePlugin", [config], function (result) {
+    postMessage (JSON.stringify (result));
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/AddinFieldData.md
+================================================================================
+
+# AddinFieldData
+
+The addin field data.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Content | string | Field text content. |
+| FieldId | string | Field identifier. |
+| Value | string | Field value. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let addinFieldData = {"FieldId": "1", "Value": "Addin №1", "Content": "This is the first addin field"};
+window.Asc.plugin.executeMethod("AddAddinField", [addinFieldData]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/Color.md
+================================================================================
+
+# Color
+
+No description provided.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Color.A | number | Alpha color component value. |
+| Color.B | number | Blue color component value. |
+| Color.G | number | Green color component value. |
+| Color.R | number | Red color component value. |
+## Type
+
+Object
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/CommentData.md
+================================================================================
+
+# CommentData
+
+The comment data.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| QuoteText | string | The quote comment text. |
+| Replies | [CommentData](../Enumeration/CommentData.md)[] | An array containing the comment replies represented as the *CommentData* object. |
+| Solved | boolean | Specifies if the comment is resolved (**true**) or not (**false**). |
+| Text | string | The comment text. |
+| Time | string | The time when the comment was posted (in milliseconds). |
+| UserName | string | The comment author. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let commentData = {
+    "UserName": "John Smith",
+    "Text": "comment",
+    "Time": "1662737941471",
+    "Solved": true,
+    "Replies": [
+        {
+            "UserName": "Mark Potato",
+            "Text": "reply 1",
+            "Time": "1662740895892",
+            "Solved": false
+        }
+    ]
+};
+window.Asc.plugin.executeMethod ("AddComment", [commentData]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControl.md
+================================================================================
+
+# ContentControl
+
+Content control object.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Id | string | A unique identifier of the content control. It can be used to search for a certain content control and make reference to it in the code. |
+| InternalId | string | A unique internal identifier of the content control. It is used for all operations with content controls. |
+| Lock | [ContentControlLock](../Enumeration/ContentControlLock.md) | A value that defines if it is possible to delete and/or edit the content control or not: 0 - only deleting, 1 - no deleting or editing, 2 - only editing, 3 - full access. |
+| Tag | string | A tag assigned to the content control. The same tag can be assigned to several content controls so that it is possible to make reference to them in your code. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let contentControl = {
+    "Tag": "Document",
+    "Id": 0,
+    "Lock": 0,
+    "InternalId": "1_713"
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlCheckBoxProperties.md
+================================================================================
+
+# ContentControlCheckBoxProperties
+
+The content control checkbox properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Checked | boolean | Defines if the content control checkbox is checked or not. |
+| CheckedSymbol | number | A symbol in the HTML code format that is used when the checkbox is checked. |
+| UncheckedSymbol | number | A symbol in the HTML code format that is used when the checkbox is not checked. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let controlCheckBoxPr = {
+    "Checked" : false,
+    "CheckedSymbol" : 9756,
+    "UncheckedSymbol" : 9744
+};
+window.Asc.plugin.executeMethod ("AddContentControlCheckBox", [controlCheckBoxPr, {"Id" : 7, "Tag" : "{tag}", "Lock" : 0}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlDatePickerProperties.md
+================================================================================
+
+# ContentControlDatePickerProperties
+
+The content control datepicker properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Date | object | The current date and time. |
+| DateFormat | string | A format in which the date will be displayed. For example: *"MM/DD/YYYY", "dddd\,\ mmmm\ dd\,\ yyyy", "DD\ MMMM\ YYYY", "MMMM\ DD\,\ YYYY", "DD-MMM-YY", "MMMM\ YY", "MMM-YY", "MM/DD/YYYY\ hh:mm\ AM/PM", "MM/DD/YYYY\ hh:mm:ss\ AM/PM", "hh:mm", "hh:mm:ss", "hh:mm\ AM/PM", "hh:mm:ss:\ AM/PM"*. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let date = new window.Date();
+let controlDatePickerPr = {
+    "DateFormat" : "DD\ MMMM\ YYYY",
+    "Date" : date
+};
+window.Asc.plugin.executeMethod ("AddContentControlDatePicker", [controlDatePickerPr, {"Id" : 7, "Tag" : "{tag}", "Lock" : 0}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlListElement.md
+================================================================================
+
+# ContentControlListElement
+
+The content control list element.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Display | string | The element display text. |
+| Value | string | The element value. |
+## Type
+
+Object
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlLock.md
+================================================================================
+
+# ContentControlLock
+
+A value that defines if it is possible to delete and/or edit the content control or not:
+**0** - only deleting
+**1** - disable deleting or editing
+**2** - only editing
+**3** - full access
+
+## Type
+
+Enumeration
+
+## Values
+
+- 0
+- 1
+- 2
+- 3
+
+
+## Example
+
+```javascript
+let documents = [{
+    "Props": {
+        "Id": 100,
+        "Tag": "CC_Tag",
+        "Lock": 3
+    },
+    "Script": "var oParagraph = Api.CreateParagraph();oParagraph.AddText('Hello world!');Api.GetDocument().InsertContent([oParagraph]);"
+}];
+window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [documents]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlParentPr.md
+================================================================================
+
+# ContentControlParentPr
+
+The content control parent properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Count | number | A number of elements in the parent object. |
+| Parent | object | The content control parent. For example, oParagraph. |
+| Pos | number | The content control position within the parent object. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let contentControlParentPr = {
+    "Parent" : oParagraph,
+    "Pos" : 0,
+    "Count" : 1
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlProperties.md
+================================================================================
+
+# ContentControlProperties
+
+The content control properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Alias | string | The alias attribute. |
+| Appearance | number | Defines if the content control is shown as the bounding box (**1**) or not (**2**). |
+| Border | Object | The border properties. |
+| Border.Color | [Color](../Enumeration/Color.md) | The border color in RGBA format. |
+| Color | [Color](../Enumeration/Color.md) | The color for the current content control in RGBA format. |
+| Id | string | A unique identifier of the content control. It can be used to search for a certain content control and make reference to it in the code. |
+| InternalId | string | A unique internal identifier of the content control. |
+| Lock | [ContentControlLock](../Enumeration/ContentControlLock.md) | A value that defines if it is possible to delete and/or edit the content control or not. |
+| PlaceHolderText | string | The content control placeholder text. |
+| Shd | Object | The background shading properties. |
+| Shd.Color | [Color](../Enumeration/Color.md) | The shading color in RGBA format. |
+| Tag | string | A tag assigned to the content control. The same tag can be assigned to several content controls so that it is possible to make reference to them in the code. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let contentControlPr = {
+    "Id" : 7,
+    "Tag" : "{tag}",
+    "Lock" : 0
+};
+window.Asc.plugin.executeMethod ("AddContentControl", [1, contentControlPr]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlPropertiesAndContent.md
+================================================================================
+
+# ContentControlPropertiesAndContent
+
+The content control properties and contents.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ContentControlProperties | [ContentControlProperties](../Enumeration/ContentControlProperties.md) | The content control properties. |
+| Script | string | A script that will be executed to generate the data within the content control (can be replaced with the *Url* parameter). |
+| Url | string | A link to the shared file (can be replaced with the *Script* parameter). |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let documents = [{
+    "Props": {
+        "Id": 100,
+        "Tag": "CC_Tag",
+        "Lock": 3
+    },
+    "Script": "var oParagraph = Api.CreateParagraph();oParagraph.AddText('Hello world!');Api.GetDocument().InsertContent([oParagraph]);"
+}];
+window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [documents]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ContentControlType.md
+================================================================================
+
+# ContentControlType
+
+A numeric value that specifies the content control type:
+-**1** - block content control
+-**2** - inline content control
+-**3** - row content control
+-**4** - cell content control
+
+## Type
+
+Enumeration
+
+## Values
+
+- 1
+- 2
+- 3
+- 4
+
+
+## Example
+
+```javascript
+let contentControlType = 1;
+window.Asc.plugin.executeMethod ("AddContentControl", [contentControlType, {"Id" : 7, "Tag" : "{tag}", "Lock" : 0}]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/DocumentEditingRestrictions.md
+================================================================================
+
+# DocumentEditingRestrictions
+
+The document editing restrictions:
+-**none** - no editing restrictions,
+-**comments** - allows editing comments,
+-**forms** - allows editing form fields,
+-**readOnly** - does not allow editing.
+
+## Type
+
+Enumeration
+
+## Values
+
+- 'none'
+- 'comments'
+- 'forms'
+- 'readOnly'
+
+
+## Example
+
+```javascript
+let documentEditingRestrictions = "readOnly";
+window.Asc.plugin.executeMethod("SetEditingRestrictions", [documentEditingRestrictions]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/Event_CommentData.md
+================================================================================
+
+# Event_CommentData
+
+The comment data.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Replies | [Event_CommentData](../Enumeration/Event_CommentData.md)[] | An array containing the comment replies represented as the *CommentData* object. |
+| Solved | boolean | Specifies if the comment is resolved (**true**) or not (**false**). |
+| Text | string | The comment text. |
+| Time | string | The time when the comment was posted (in milliseconds). |
+| UserName | string | The comment author. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let commentData = {
+    "UserName": "John Smith",
+    "Text": "comment",
+    "Time": "1662737941471",
+    "Solved": true,
+    "Replies": [
+        {
+            "UserName": "Mark Potato",
+            "Text": "reply 1",
+            "Time": "1662740895892",
+            "Solved": false
+        }
+    ]
+};
+window.Asc.plugin.executeMethod ("AddComment", [commentData]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/Event_ContentControl.md
+================================================================================
+
+# Event_ContentControl
+
+The content control object.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Id | string | A unique content control identifier. It can be used to search for a certain content control and make reference to it in your code. |
+| InternalId | string | A unique internal identifier of the content control. It is used for all operations with content controls. |
+| Lock | [Event_ContentControlLock](../Enumeration/Event_ContentControlLock.md) | A value that defines if it is possible to delete and/or edit the content control or not. |
+| Tag | string | A tag assigned to the content control. The same tag can be assigned to several content controls so that you can make reference to them in your code. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let contentControl = {
+    "Tag": "Document",
+    "Id": 0,
+    "Lock": 0,
+    "InternalId": "1_713"
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/Event_ContentControlLock.md
+================================================================================
+
+# Event_ContentControlLock
+
+Defines the access restrictions for a content control.
+Possible values:
+-**0** - only deleting,
+-**1** - disable deleting or editing,
+-**2** - only editing,
+-**3** - full access.
+
+## Type
+
+Enumeration
+
+## Values
+
+- 0
+- 1
+- 2
+- 3
+
+
+## Example
+
+```javascript
+let documents = [{
+    "Props": {
+        "Id": 100,
+        "Tag": "CC_Tag",
+        "Lock": 3
+    },
+    "Script": "var oParagraph = Api.CreateParagraph();oParagraph.AddText('Hello world!');Api.GetDocument().InsertContent([oParagraph]);"
+}];
+window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [documents]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/Event_comment.md
+================================================================================
+
+# Event_comment
+
+The comment object.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Data | [Event_CommentData](../Enumeration/Event_CommentData.md) | An object which contains the comment data. |
+| Id | string | The comment ID. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let comment = {
+    "Id": "1_631",
+    "Data": {
+        "UserName": "John Smith",
+        "Text": "comment",
+        "Time": "1662737941471",
+        "Solved": true,
+        "Replies": [
+            {
+                "UserName": "Mark Potato",
+                "Text": "reply 1",
+                "Time": "1662740895892",
+                "Solved": false
+            }
+        ]
+    }
+}
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/FontInfo.md
+================================================================================
+
+# FontInfo
+
+An object containing the font information.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| m_aPanose | number[] | The PANOSE Typeface Classification Number, a compact 10-byte description of the font critical visual characteristics, such as contrast, weight, and serif style. |
+| m_bBold | boolean | Specifies if the font characters are bold or not. |
+| m_bIsFixed | boolean | Specifies if the current font is monospaced or not. |
+| m_bItalic | boolean | Specifies if the font characters are italic or not. |
+| m_eFontFormat | number | The specific file type(s) used to store font data: **0** - *.fon, **1** - *.ttf, **2** - *.ttf, *.otf (CFF), **3** - unknown font format. |
+| m_lIndex | number | The font number in the file if there is more than one font in the file. |
+| m_sFamilyClass | number | The font family class which values are assigned by IBM to each font family. |
+| m_shAscent | number | The height above the baseline for a clipping region. |
+| m_shAvgCharWidth | number | The arithmetic average of the escapement (width) of all non-zero width glyphs in the font. |
+| m_shCapHeight | number | The distance between the baseline and the approximate height of uppercase letters measured in FUnits. |
+| m_shDescent | number | The vertical extent below the baseline for a clipping region. |
+| m_shLineGap | number | The typographic line gap for the current font. |
+| m_shXHeight | number | The distance between the baseline and the approximate height of non-ascending lowercase letters measured in FUnits. |
+| m_ulCodePageRange1 | number | The code pages encompassed by the font file (Bits 0-31). |
+| m_ulCodePageRange2 | number | The code pages encompassed by the font file (Bits 32-63). |
+| m_ulUnicodeRange1 | number | The Unicode range encompassed by the font file (Bits 0-31). |
+| m_ulUnicodeRange2 | number | The Unicode range encompassed by the font file (Bits 32-63). |
+| m_ulUnicodeRange3 | number | The Unicode range encompassed by the font file (Bits 64-95). |
+| m_ulUnicodeRange4 | number | The Unicode range encompassed by the font file (Bits 96-127). |
+| m_usWeigth | number | The visual weight (stroke blackness or thickness) of the font characters (1-1000). |
+| m_usWidth | number | The relative change from the normal aspect ratio (width to height ratio). |
+| m_wsFontName | string | The font name. |
+| m_wsFontPath | string | The path to the file with the current font. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let fontInfo = {
+    "m_wsFontName": "Open Sans",
+    "m_wsFontPath": "OpenSans-Bold.ttf",
+    "m_lIndex": 0,
+    "m_bBold": true,
+    "m_bItalic": false,
+    "m_bIsFixed": false,
+    "m_aPanose": [2, 11, 8, 6, 3, 5, 4, 2, 2, 4],
+    "m_ulUnicodeRange1": 3758097135,
+    "m_ulUnicodeRange2": 1073750107,
+    "m_ulUnicodeRange3": 40,
+    "m_ulUnicodeRange4": 0,
+    "m_ulCodePageRange1": 536871327,
+    "m_ulCodePageRange2": 0,
+    "m_usWeigth": 700,
+    "m_usWidth": 5,
+    "m_sFamilyClass": 2050,
+    "m_eFontFormat": 1,
+    "m_shAvgCharWidth": 632,
+    "m_shAscent": 765,
+    "m_shDescent": -240,
+    "m_shLineGap": 64,
+    "m_shXHeight": 545,
+    "m_shCapHeight": 713
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ImageData.md
+================================================================================
+
+# ImageData
+
+An object containing the information about the base64 encoded *png* image.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| height | number | The image height in pixels. |
+| replaceMode | [ReplaceImageMode](../Enumeration/ReplaceImageMode.md) | Specifies how to adjust the image object in case of replacing the selected image. |
+| src | string | The image source in the base64 format. |
+| width | number | The image width in pixels. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+window.saveImage = function () {
+    let imageSrc = imageEditor.toDataURL();
+    let editorDimension = imageEditor.getCanvasSize();
+    let width = editorDimension.width;
+    let height = editorDimension.height;
+    let imageData = {
+        "src": imageSrc,
+        "width": width,
+        "height": height,
+        "replaceMode": "original"
+    };
+    window.Asc.plugin.executeMethod ("PutImageDataToSelection", [imageData]);
+    window.Asc.plugin.callCommand("close", "");
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/Macros.md
+================================================================================
+
+# Macros
+
+An object containing the data about all the macros from the document.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| current | number | A current macro index. |
+| macrosArray | string[] | An array of macros codes (*[&#123;"name": "Macros1", "value": "&#123;macrosCode&#125;"&#125;]*). |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let macros = {
+    "macrosArray": [
+        {
+            "name": "Macros 1",
+            "value": "(function()\n{oDocument = Api.GetDocument();\noParagraph = Api.CreateParagraph();\noParagraph.AddText(\"This is a new paragraph\");\noDocument.Push(oParagraph);\n})();"
+        },
+        {
+            "name": "Macros 2",
+            "value": "(function()\n{oDocument = Api.GetDocument();\noParagraph = oDocument.GetElement(0);\noParagraph.AddText(\"ONLYOFFICE Document Builder\");\noRange = oDocument.GetRange(0, 24);\noRange.SetBold(true);\n})();"
+        }
+    ],
+    "current": 1
+};
+window.Asc.plugin.executeMethod("SetMacros", [macros]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/OLEObjectData.md
+================================================================================
+
+# OLEObjectData
+
+The OLE object data.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ApplicationId | string | An identifier of the plugin which can edit the current OLE object and must be of the *asc.&#123;UUID&#125;* type. |
+| Data | string | OLE object data (internal format). |
+| Height | number | The OLE object height measured in millimeters. |
+| HeightPix | number | The OLE object image height in pixels. |
+| ImageData | string | An image in the base64 format stored in the OLE object and used by the plugin. |
+| InternalId | string | The OLE object identifier which is used to work with OLE object added to the document. |
+| ParaDrawingId | string | An identifier of the drawing object containing the current OLE object. |
+| Width | number | The OLE object width measured in millimeters. |
+| WidthPix | number | The OLE object image width in pixels. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let oleObjectData = {
+    "Data": "{data}",
+    "ImageData": "data:image/png;base64,image-in-the-base64-format",
+    "ApplicationId": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+    "Width": 70,
+    "Height": 70,
+    "WidthPix": 60 * 36000,
+    "HeightPix": 60 * 36000
+};
+window.Asc.plugin.executeMethod("InsertOleObject", [oleObjectData, true]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/OLEProperties.md
+================================================================================
+
+# OLEProperties
+
+The OLE object properties
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| data | string | OLE object data (internal format). |
+| guid | string | An identifier of the plugin which can edit the current OLE object and must be of the *asc.&#123;UUID&#125;* type. |
+| height | number | The OLE object height measured in millimeters. |
+| heightPix | number | The OLE object image height in pixels. |
+| imgSrc | string | A link to the image (its visual representation) stored in the OLE object and used by the plugin. |
+| width | number | The OLE object width measured in millimeters. |
+| widthPix | number | The OLE object image width in pixels. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let oleProperties = {
+    "data": "{data}",
+    "imgSrc": "https://link-to-the-image.jpg",
+    "guid": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+    "width": 70,
+    "height": 70,
+    "widthPix": 60 * 36000,
+    "heightPix": 60 * 36000
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/PluginData.md
+================================================================================
+
+# PluginData
+
+The plugin object.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| canRemoved | boolean | Specifies if the plugin can be removed (**true**) or not (**false**). |
+| guid | string | The plugin identifier. It must be of the *asc.&#123;UUID&#125;* type. |
+| obj | object | The [config](https://api.onlyoffice.com/docs/plugin-and-macros/structure/configuration/) of the installed plugin. The version is taken from the config and compared with the current one to check for updates. |
+| url | string | The URL to plugin config. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let plugin = {
+    "url": "https://example.com/plugin/config.json",
+    "guid": "asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}",
+    "canRemoved": true,
+    "obj": {
+        "baseUrl": "",
+        "guid": "asc.{FFE1F462-1EA2-4391-990D-4CC84940B754}",
+        "version": "1.0",
+        "minVersion": "6.3.0",
+        ...
+    }
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/PluginOptions.md
+================================================================================
+
+# PluginOptions
+
+The plugin options.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| all | object | The parameters which will be set for all plugins (&#123; "all" : &#123; key, value &#125; &#125;). |
+| plugin_guid | object | The parameters which will be set for a specific plugin. The plugin must be specified with the plugin GUID of the asc.&#123;UUID&#125; type (&#123; "plugin_guid" : &#123; keyForSpecificPlugin : valueForSpecificPlugin &#125; &#125;). |
+## Type
+
+Object
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/ReplaceImageMode.md
+================================================================================
+
+# ReplaceImageMode
+
+Specifies how to adjust the image object in case of replacing the selected image.
+
+## Type
+
+Enumeration
+
+## Values
+
+- "fill"
+- "fit"
+- "original"
+- "stretch"
+
+
+## Example
+
+```javascript
+window.saveImage = function () {
+    let imageSrc = imageEditor.toDataURL();
+    let editorDimension = imageEditor.getCanvasSize();
+    let width = editorDimension.width;
+    let height = editorDimension.height;
+    let imageData = {
+        "src": imageSrc,
+        "width": width,
+        "height": height,
+        "replaceMode": "original"
+    };
+    window.Asc.plugin.executeMethod ("PutImageDataToSelection", [imageData]);
+    window.Asc.plugin.executeCommand("close", "");
+};
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/SelectionType.md
+================================================================================
+
+# SelectionType
+
+The current selection type ("none", "text", "drawing", or "slide").
+
+## Type
+
+Enumeration
+
+## Values
+
+- "none"
+- "text"
+- "drawing"
+- "slide"
+
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetSelectionType", [], function(type) {
+    switch (type) {
+        case "none":
+        case "drawing":
+            window.Asc.plugin.executeMethod ("PasteText", [$("#txt_shower")[0].innerText]);
+            break;
+        case "text":
+            window.Asc.plugin.callCommand (function() {
+                Api.ReplaceTextSmart (Asc.scope.arr);
+            });
+            break;
+    }
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/TextAnnotation.md
+================================================================================
+
+# TextAnnotation
+
+No description provided.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | string | Annotation type (e.g., `"grammar"`). |
+| paragraphId | string | ID of the paragraph containing the annotation. |
+| rangeId | string | ID of the annotation range. |
+## Type
+
+Object
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/TextAnnotationRange.md
+================================================================================
+
+# TextAnnotationRange
+
+No description provided.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | string | Unique identifier for the range. |
+| length | number | Length of the text range. |
+| name | string | Annotation type (e.g., `"grammar"`). |
+| start | number | Starting index of the text range. |
+## Type
+
+Object
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/TextPartType.md
+================================================================================
+
+# TextPartType
+
+Specifies if the whole text or only its part will be returned or replaced:
+-**entirely** - replaces/returns the whole text,
+-**beforeCursor** - replaces/returns only the part of the text before the cursor,
+-**afterCursor** - replaces/returns only the part of the text after the cursor.
+
+## Type
+
+Enumeration
+
+## Values
+
+- "entirely"
+- "beforeCursor"
+- "afterCursor"
+
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetCurrentWord", ["entirely"], function (res) {
+    console.log (res)
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/comment.md
+================================================================================
+
+# comment
+
+Comment object.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Data | [CommentData](../Enumeration/CommentData.md) | An object which contains the comment data. |
+| Id | string | The comment ID. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+let comment = {
+    "Id": "1_631",
+    "Data": {
+        "UserName": "John Smith",
+        "Text": "comment",
+        "Time": "1662737941471",
+        "Solved": true,
+        "Replies": [
+            {
+                "UserName": "Mark Potato",
+                "Text": "reply 1",
+                "Time": "1662740895892",
+                "Solved": false
+            }
+        ]
+    }
+}
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/fillForms.md
+================================================================================
+
+# fillForms
+
+An object containing the form properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| tags | object | The form tags which specify the content for each form type with such a tag. |
+| tags.checkBox | string | The checkbox form value (**true** - checked, **false** - unchecked). |
+| tags.comboBox | string | The combo box form value (one of the items from the combo box list values). |
+| tags.picture | string | The image form value (a link to the image). |
+| tags.text | string | The text field value (some text). |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+var initSettings = {
+    "copyoutenabled" : false,
+    "hideContentControlTrack" : false,
+    "watermark_on_draw" : JSON.stringify({
+        "transparent" : 0.3,
+        "type" : "rect",
+        "width" : 100,
+        "height" : 100,
+        "rotate" : -45,
+        "margins" : [ 10, 10, 10, 10 ],
+        "fill" : [255, 0, 0],
+        "stroke-width" : 1,
+        "stroke" : [0, 0, 255],
+        "align" : 1,
+
+        "paragraphs" : [ {
+            "align" : 2,
+            "fill" : [255, 0, 0],
+            "linespacing" : 1,
+
+            "runs" : [
+                        {
+                            "text" : "Do not steal, %user_name%!",
+                            "fill" : [0, 0, 0],
+                            "font-family" : "Arial",
+                            "font-size" : 40,
+                            "bold" : true,
+                            "italic" : false,
+                            "strikeout" : false,
+                            "underline" : false
+                        },
+                        {
+                            "text" : "<%br%>"
+                        }
+                    ]
+            }
+        ]
+    }),
+    "disableAutostartMacros" : true,
+    "fillForms" : JSON.stringify({
+        "tags" : {
+            "111" : {
+                "text" : "Text in form with tag 111",
+                "checkBox" : "true",
+                "picture" : "https://upload.wikimedia.org/wikipedia/commons/9/91/ONLYOFFICE_logo.png",
+                "comboBox" : "item1"
+            },
+            "222" : {
+                "text" : "Text in form with tag 222",
+                "checkBox" : "false",
+                "comboBox" : "item2"
+            },
+            "333" : {
+                "text" : "OnlyOffice"
+            }
+        }
+    })
+};
+window.Asc.plugin.executeMethod("SetProperties", [initSettings]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Enumeration/watermark_on_draw.md
+================================================================================
+
+# watermark_on_draw
+
+An object containing the watermark properties.
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| align | number | The vertical text align in the watermark shape: **0** - bottom, **1** - center, **4** - top. |
+| fill | number[] \| string | The watermark fill color in the RGB format, or the URL to image (base64 support: data:image/png;...). The empty array [] means that the watermark has no fill. |
+| height | number | The watermark height measured in millimeters. |
+| margins | number[] | The text margins measured in millimeters in the watermark shape. |
+| paragraphs | object[] | The array with paragraphs from the current watermark with their properties. |
+| paragraphs.align | number | The horizontal text align in the current paragraph: **0** - right, **1** - left, **2** - center, **3** - justify. |
+| paragraphs.fill | number[] | The paragraph highlight in the RGB format. The empty array [] means that the paragraph is not highlighted. |
+| paragraphs.linespacing | number | The text linespacing in the current paragraph. |
+| paragraphs.runs | object[] | The array with runs from the current paragraph with their properties. |
+| paragraphs.runs.bold | boolean | Defines if the current text is displayed bold or not. |
+| paragraphs.runs.fill | number[] | The text highlight in the RGB format. The empty array [] means that the text is not highlighted. |
+| paragraphs.runs.font-family | string | The text font family. |
+| paragraphs.runs.font-size | string | The text font size measured in points (pt). |
+| paragraphs.runs.italic | boolean | Defines if the current text is displayed italic or not. |
+| paragraphs.runs.strikeout | boolean | Defines if the current text is displayed struck through or not. |
+| paragraphs.runs.text | string | The run text. |
+| paragraphs.runs.underline | boolean | Defines if the current text is displayed underlined or not. |
+| rotate | number | The watermark rotation angle measured in degrees. |
+| stroke | number[] | The watermark stroke color in the RGB format. The empty array [] means that the watermark stroke has no fill. |
+| stroke-width | number | The watermark stroke width measured in millimeters. |
+| transparent | number | The watermark transparency degree. |
+| type | string | The [shape](../../../../../docs/office-api/usage-api/text-document-api/Enumeration/ShapeType.md) which specifies the preset shape geometry for the current watermark. |
+| width | number | The watermark width measured in millimeters. |
+## Type
+
+Object
+
+
+
+## Example
+
+```javascript
+var initSettings = {
+    "copyoutenabled" : false,
+    "hideContentControlTrack" : false,
+    "watermark_on_draw" : JSON.stringify({
+        "transparent" : 0.3,
+        "type" : "rect",
+        "width" : 100,
+        "height" : 100,
+        "rotate" : -45,
+        "margins" : [ 10, 10, 10, 10 ],
+        "fill" : [255, 0, 0],
+        "stroke-width" : 1,
+        "stroke" : [0, 0, 255],
+        "align" : 1,
+
+        "paragraphs" : [ {
+            "align" : 2,
+            "fill" : [255, 0, 0],
+            "linespacing" : 1,
+
+            "runs" : [
+                        {
+                            "text" : "Do not steal, %user_name%!",
+                            "fill" : [0, 0, 0],
+                            "font-family" : "Arial",
+                            "font-size" : 40,
+                            "bold" : true,
+                            "italic" : false,
+                            "strikeout" : false,
+                            "underline" : false
+                        },
+                        {
+                            "text" : "<%br%>"
+                        }
+                    ]
+            }
+        ]
+    }),
+    "disableAutostartMacros" : true,
+    "fillForms" : JSON.stringify({
+        "tags" : {
+            "111" : {
+                "text" : "Text in form with tag 111",
+                "checkBox" : "true",
+                "picture" : "https://upload.wikimedia.org/wikipedia/commons/9/91/ONLYOFFICE_logo.png",
+                "comboBox" : "item1"
+            },
+            "222" : {
+                "text" : "Text in form with tag 222",
+                "checkBox" : "false",
+                "comboBox" : "item2"
+            },
+            "333" : {
+                "text" : "OnlyOffice"
+            }
+        }
+    })
+};
+window.Asc.plugin.executeMethod("SetProperties", [initSettings]);
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/Events.md
+================================================================================
+
+# Events
+
+| Event | Description |
+| ----- | ----------- |
+| [onAddComment](./onAddComment.md) | The function called when a comment is added to the document with the [AddComment](../../text-document-api/Methods/AddComment.md) method. |
+| [onBlurAnnotation](./onBlurAnnotation.md) | The function called when an annotation loses focus. |
+| [onBlurContentControl](./onBlurContentControl.md) | The function called to show which content control has been blurred. |
+| [onChangeCommentData](./onChangeCommentData.md) | The function called when the specified comment is changed with the [ChangeComment](../../text-document-api/Methods/ChangeComment.md) method. |
+| [onChangeContentControl](./onChangeContentControl.md) | The function called to show which content control has been changed. |
+| [onChangeCurrentPage](./onChangeCurrentPage.md) | The function called when the current page has changed. |
+| [onChangeRestrictions](./onChangeRestrictions.md) | The function called when the restrictions in the editor are changed. |
+| [onClick](./onClick.md) | The function called when the user clicks the element. |
+| [onClickAnnotation](./onClickAnnotation.md) | The function called when the user clicks an annotation. |
+| [onDocumentContentReady](./onDocumentContentReady.md) | The function called when the document is completely loaded. |
+| [onEnableMouseEvent](./onEnableMouseEvent.md) | The function called to turn the mouse or touchpad events on/off. |
+| [onExternalMouseUp](./onExternalMouseUp.md) | The function called when the mouse button is released outside the plugin iframe. |
+| [onFocusAnnotation](./onFocusAnnotation.md) | The function called when an annotation receives focus. |
+| [onFocusContentControl](./onFocusContentControl.md) | The function called to show which content control has been focused. |
+| [onHideContentControlTrack](./onHideContentControlTrack.md) | The function called when the content control loses focus in the document. |
+| [onInsertOleObjects](./onInsertOleObjects.md) | The function called when one or more OLE objects are inserted into the document. |
+| [onParagraphText](./onParagraphText.md) | The function called when the paragraph text is updated in the document. |
+| [onRemoveComment](./onRemoveComment.md) | The function called when the specified comment is removed with the [RemoveComments](../../text-document-api/Methods/RemoveComments.md) method. |
+| [onShowContentControlTrack](./onShowContentControlTrack.md) | The function called when the content control receives focus and its track appears. |
+| [onSubmitForm](./onSubmitForm.md) | The function called when the user clicks the "Complete & Submit" button. |
+| [onTargetPositionChanged](./onTargetPositionChanged.md) | The function called when the target position in the editor is changed. |
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onAddComment.md
+================================================================================
+
+# onAddComment
+
+The function called when a comment is added to the document with the [AddComment](../../text-document-api/Methods/AddComment.md) method.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| comment | [Event_comment](../Enumeration/Event_comment.md) | Defines the comment object containing the comment data. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onAddComment", (comment) => {
+    Comments.push(comment);
+    $('#scrollable-container-id').append(makeComment(comment.Id, comment));
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onBlurAnnotation.md
+================================================================================
+
+# onBlurAnnotation
+
+The function called when an annotation loses focus.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| annotation | TextAnnotation | The annotation that lost focus. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onBlurAnnotation", (data) => {
+    console.log("Annotation blur:", data.rangeId);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onBlurContentControl.md
+================================================================================
+
+# onBlurContentControl
+
+The function called to show which content control has been blurred.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| control | [Event_ContentControl](../Enumeration/Event_ContentControl.md) | Defines the content control that has been blurred. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onBlurContentControl", (oPr) => {
+    if (oPr && "BankBIC" === oPr["Tag"]) {
+        window.Asc.plugin.executeMethod("GetFormValue", [oPr["InternalId"]], function(value) {
+            if ("12345678" !== value) {
+                return;
+            }
+
+            window.Asc.plugin.executeMethod.executeMethod("GetFormsByTag", ["BankAccount"], function(forms) {
+                for (let i = 0; i < forms.length; ++i) {
+                    connector.executeMethod("SetFormValue", [forms[i]["InternalId"], "10101110100000000123"], null);
+                }
+            });
+
+            window.Asc.plugin.executeMethod.executeMethod("GetFormsByTag", ["BankName"], function(forms) {
+                for (let i = 0; i < forms.length; ++i) {
+                    connector.executeMethod("SetFormValue", [forms[i]["InternalId"], "OnlyOffice BANK"], null);
+                }
+            });
+
+            window.Asc.plugin.executeMethod.executeMethod("GetFormsByTag", ["BankPlace"], function(forms) {
+                for (let i = 0; i < forms.length; ++i) {
+                    connector.executeMethod("SetFormValue", [forms[i]["InternalId"], "Himalayas"], null);
+                }
+            });
+        });
+    }
+    console.log("event: onBlurContentControl");
+});
+```
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onChangeCommentData.md
+================================================================================
+
+# onChangeCommentData
+
+The function called when the specified comment is changed with the [ChangeComment](../../text-document-api/Methods/ChangeComment.md) method.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| comment | [Event_comment](../Enumeration/Event_comment.md) | Defines the comment object containing the comment data. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onChangeCommentData", (comment) => {
+    changeComment(comment);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onChangeContentControl.md
+================================================================================
+
+# onChangeContentControl
+
+The function called to show which content control has been changed.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| control | [Event_ContentControl](../Enumeration/Event_ContentControl.md) | Defines the content control that has been changed. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onChangeContentControl", (control) => {
+    changeContentControl(control);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onChangeCurrentPage.md
+================================================================================
+
+# onChangeCurrentPage
+
+The function called when the current page has changed.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| index | number | The index of the newly activated page. |
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onChangeRestrictions.md
+================================================================================
+
+# onChangeRestrictions
+
+The function called when the restrictions in the editor are changed.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| value | number | The restrictions value. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onChangeRestrictions", (value) => {
+    if (value == 0) {
+        console.log('You are able to edit the document');
+    }
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onClick.md
+================================================================================
+
+# onClick
+
+The function called when the user clicks the element.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| isSelectionUse | boolean | Defines if the selection is used or not. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onClick", (isSelectionUse) => {
+    window.Asc.plugin.executeMethod("GetCurrentContentControlPr", [], function(obj) {
+        window.Asc.plugin.currentContentControl = obj;
+        var controlTag = obj ? obj.Tag : "";
+        if (isSelectionUse)
+            controlTag = "";
+
+    });
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onClickAnnotation.md
+================================================================================
+
+# onClickAnnotation
+
+The function called when the user clicks an annotation.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| annotation | TextAnnotation | The annotation that was clicked. |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onClickAnnotation", (data) => {
+    console.log("Annotation clicked:", data.rangeId);
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onDocumentContentReady.md
+================================================================================
+
+# onDocumentContentReady
+
+The function called when the document is completely loaded.
+
+## Parameters
+
+This event has no parameters.
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onDocumentContentReady", () => {
+    let oProperties = {
+        "searchString"  : "ONLYOFFICE",
+        "replaceString" : "ONLYOFFICE is cool",
+        "matchCase"     : false
+    };
+
+    window.Asc.plugin.executeMethod("SearchAndReplace", [oProperties], function() {
+            window.Asc.plugin.executeCommand("close", "");
+    });
+});
+```
+
+
+
+================================================================================
+FILE: site/docs/plugin-and-macros/interacting-with-editors/api-by-editor-type/text-document-api/Events/onEnableMouseEvent.md
+================================================================================
+
+# onEnableMouseEvent
+
+The function called to turn the mouse or touchpad events on/off.
+
+## Parameters
+
+| **Name** | **Data type** | **Description** |
+| --------- | ------------- | ----------- |
+| isEnabled | boolean | Indicates whether the mouse or touchpad is enabled (**true**) or not (**false**). |
+
+```javascript
+window.Asc.plugin.attachEditorEvent("onEnableMouseEvent", (isEnabled) => {
+    let _frames = document.getElementsByTagName("iframe");
+    if (_frames && _frames[0]) {
+        _frames[0].style.pointerEvents = isEnabled ? "none" : "";
+    }
+});
+```
+
+
+

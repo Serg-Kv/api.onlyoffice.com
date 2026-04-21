@@ -18,7 +18,7 @@ import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
 
 Available by default in ONLYOFFICE Enterprise Edition, Community Edition (Docs + Workspace), and ONLYOFFICE cloud.
 
-You can also download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/app-directory/en/zotero) and install it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md) installation instruction.
+You can also download this plugin from the [ONLYOFFICE App Directory](https://www.onlyoffice.com/app-directory/en/zotero) and install it following the [desktop](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md) installation instruction.
 
 ## Connect ONLYOFFICE to Zotero account
 
@@ -77,8 +77,8 @@ Repository on GitHub: [zotero](https://github.com/ONLYOFFICE/onlyoffice.github.i
     "de": "Zotero"
   },
   "guid": "asc.{BFC5D5C6-89DE-4168-9565-ABD8D1E48711}",
-  "version": "1.0.3",
-  "minVersion": "7.3.3",
+  "version": "1.0.7",
+  "minVersion": "9.3.0",
 
   "variations": [
     {
@@ -89,6 +89,7 @@ Repository on GitHub: [zotero](https://github.com/ONLYOFFICE/onlyoffice.github.i
         "pt-BR": "Crie bibliografias no estilo desejado usando o serviço Zotero.",
         "de": "Erstellen Sie Literaturverzeichnisse im gewünschten Stil mittels Zotero."
       },
+      "events": ["onContextMenuShow", "onContextMenuClick"],
       "url": "index.html",
       "icons": ["resources/light/icon.png", "resources/light/icon@2x.png"],
       "icons2": [
@@ -161,10 +162,10 @@ Repository on GitHub: [zotero](https://github.com/ONLYOFFICE/onlyoffice.github.i
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
-- [onTranslate](/docs/plugin-and-macros/structure/localization.md#applying-translations-to-plugin)
-- [executeMethod ("PasteHtml")](/docs/plugin-and-macros/interacting-with-editors/text-document-api/Methods/PasteHtml.md)
+- [button](/docs/plugin-and-macros/plugins/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/overview#how-it-works)
+- [onTranslate](/docs/plugin-and-macros/plugins/fundamentals/configuration/localization.md#applying-translations-to-plugin)
+- [executeMethod ("PasteHtml")](/docs/plugin-and-macros/plugins/interacting-with-editors/text-document-api/Methods/PasteHtml.md)
 
 ## Support
 

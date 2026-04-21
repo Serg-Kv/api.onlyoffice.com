@@ -255,7 +255,7 @@ func.call = async function (params) {
 return func;
 ```
 
-Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet/), [GetSelection](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetSelection/), [GetRange](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange/), [GetCells](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetCells/), [GetValue2](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/GetValue2/), [GetAddress](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/GetAddress/), [AddComment](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/AddComment/), [Asc.scope object](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands#ascscope-object)
+Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet.md), [GetSelection](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetSelection.md), [GetRange](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange.md), [GetCells](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetCells.md), [GetValue2](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/GetValue2.md), [GetAddress](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/GetAddress.md), [AddComment](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/AddComment.md), [Asc.scope object](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands#ascscope-object)
 
 ## Result
 

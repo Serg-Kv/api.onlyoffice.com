@@ -12,7 +12,7 @@ Connects the [Toast UI Image Editor](https://ui.toast.com/tui-image-editor) for 
 
 Available by default in the cloud, on-premises and desktop versions of ONLYOFFICE editors.
 
-You can remove it following the [desktop](/docs/plugin-and-macros/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
+You can remove it following the [desktop](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md), [on-premises](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/docs-on-premises-installation.md), or [cloud](/docs/plugin-and-macros/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md) installation instructions.
 
 The plugin guid: `{07FD8DFA-DFE0-4089-AL24-0730933CC80A}`.
 
@@ -181,16 +181,16 @@ Repository on GitHub: [photoeditor](https://github.com/ONLYOFFICE/onlyoffice.git
 
 ## Methods and events
 
-- [button](/docs/plugin-and-macros/customization/custom-buttons.md)
-- [init](/docs/plugin-and-macros/interacting-with-editors/overview/overview#how-it-works)
-- [onTranslate](/docs/plugin-and-macros/structure/localization.md#applying-translations-to-plugin)
-- [callCommand](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#callcommand)
-- [executeMethod ("GetImageDataFromSelection")](/docs/plugin-and-macros/interacting-with-editors/text-document-api/Methods/GetImageDataFromSelection.md)
-- [executeMethod ("GerVersion")](/docs/plugin-and-macros/interacting-with-editors/text-document-api/Methods/GetVersion.md)
-- [executeMethod ("PutImageDataToSelection")](/docs/plugin-and-macros/interacting-with-editors/text-document-api/Methods/PutImageDataToSelection.md)
-- [resizeWindow](/docs/plugin-and-macros/customization/windows-and-panels.md#interacting-with-a-window)
-- [Asc.scope](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object
-- [info.editorType](/docs/plugin-and-macros/interacting-with-editors/overview/how-to-call-commands.md#editorType)
+- [button](/docs/plugin-and-macros/plugins/customization/custom-buttons.md)
+- [init](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/overview#how-it-works)
+- [onTranslate](/docs/plugin-and-macros/plugins/fundamentals/configuration/localization.md#applying-translations-to-plugin)
+- [callCommand](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#callcommand)
+- [executeMethod ("GetImageDataFromSelection")](/docs/plugin-and-macros/plugins/interacting-with-editors/text-document-api/Methods/GetImageDataFromSelection.md)
+- [executeMethod ("GetVersion")](/docs/plugin-and-macros/plugins/interacting-with-editors/text-document-api/Methods/GetVersion.md)
+- [executeMethod ("PutImageDataToSelection")](/docs/plugin-and-macros/plugins/interacting-with-editors/text-document-api/Methods/PutImageDataToSelection.md)
+- [resizeWindow](/docs/plugin-and-macros/plugins/customization/windows-and-panels.md#interacting-with-a-window)
+- [Asc.scope](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object
+- [info.editorType](/docs/plugin-and-macros/plugins/interacting-with-editors/overview/how-to-call-commands.md#editorType)
 
 ## Support
 
