@@ -19,7 +19,6 @@ If you prefer to start coding right away, go directly to the [quick start guides
 ### Sample code
 
 - **[Macro examples](/samples/?doctype=docs&text=macros)** — Common automation scripts
-- **[AI function examples](/samples/?doctype=ai&text=ai+tools)** — AI integration patterns
 
 ### Documentation
 
@@ -51,4 +50,4 @@ If you prefer to start coding right away, go directly to the [quick start guides
 **Learn more:**
 
 - [API reference](/docs/office-api/get-started/overview)
-- [Best practices](/docs/plugins/development-workflow/developing/for-web-editors)
+- [Writing macros](/docs/macros/macros/writing-macros)

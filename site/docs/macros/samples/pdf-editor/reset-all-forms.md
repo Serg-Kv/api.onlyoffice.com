@@ -4,6 +4,8 @@ description: Reset all form fields to empty values.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Reset all forms
 
 Clears all fields if necessary, for example after printing the document.
@@ -23,9 +25,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/reset-all-forms.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/reset-all-forms.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/reset-all-forms" dark />

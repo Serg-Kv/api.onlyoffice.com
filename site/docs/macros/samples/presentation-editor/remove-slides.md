@@ -4,6 +4,8 @@ description: Remove specific slides from a presentation.
 tags: ["Docs", "Macros", "Presentations"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Remove slides
 
 Removes slides from your presentation based on the slide title.
@@ -55,9 +57,4 @@ Methods used: [GetPresentation](/docs/office-api/usage-api/presentation-api/Api/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/remove-slides.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/remove-slides.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/presentation-editor/remove-slides" dark />

@@ -4,6 +4,8 @@ description: Remove specific values from combo box option lists.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Modify list values
 
 Deletes certain list values from all combo boxes that contain a specific key.
@@ -35,9 +37,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/modify-list-values.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/modify-list-values.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/modify-list-values" dark />

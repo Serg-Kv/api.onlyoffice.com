@@ -4,8 +4,6 @@ sidebar_position: 2
 
 # Common errors and solutions
 
-## Overview
-
 This guide covers the most common errors encountered during ONLYOFFICE plugin development and their solutions.
 
 ## Plugin initialization errors
@@ -255,7 +253,3 @@ function setupUI() {
 }
 ```
 :::
-
-## Conclusion
-
-Understanding common errors and their solutions accelerates plugin development. Check the console first, validate your configuration, and handle errors gracefully.

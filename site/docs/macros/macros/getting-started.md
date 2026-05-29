@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: Writing your first macro
 ---
 
-# Getting started
+# Writing your first macro
 
 Macros are small scripts used to facilitate your day-to-day routine work with different types of documents. ONLYOFFICE macros use the JavaScript syntax and [Office JavaScript API](../../office-api/get-started/overview.md) scripting notation.
 
@@ -20,7 +21,7 @@ You can find ready-to-use macros [here](/samples/?doctype=docs&text=macros) or c
 
 ## How to start writing your macro
 
-1. Open ONLYOFFICE Desktop Editors.
+1. Open any document in ONLYOFFICE.
 2. Navigate to the **View** tab on the top toolbar.
 3. Click the **Macros** button to open the macro editor.
 

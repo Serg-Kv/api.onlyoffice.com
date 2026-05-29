@@ -4,11 +4,13 @@ description: Auto-fill the state field based on the entered zip code.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Add state from zip code
 
 Adds the "State" label and the text form prefilled with "CA" if the zip code of California is entered. It can be extended by using API to prefill "State" when entering the zip code.
 
-``` ts
+```ts
 (function()
 {
     let doc = Api.GetDocument();
@@ -44,9 +46,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/add-state-from-zip-code.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/add-state-from-zip-code.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/add-state-from-zip-code" dark />

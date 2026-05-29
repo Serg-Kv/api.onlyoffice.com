@@ -76,43 +76,61 @@ func.call = async function (params) {
 将提示发送给 AI 模型，并将其响应作为注释或脚注插入文档。
 
 :::info Asc.scope
-`Asc.scope` 是一个共享对象，用于向 `callCommand` 闭包传递数据。由于 `callCommand` 在独立上下文中运行，局部变量无法直接在其中访问 — `Asc.scope` 起到桥接两个上下文的作用。
+`Asc.scope` 是一个共享对象，用于向 `callCommand` 闭包传递数据。由于 `callCommand` 在独立上下文中运行，局部变量无法直接在其中访问 — `Asc.scope` 起到桥接两个上下文的作用。请务必在进入 `callCommand` **之前**完成 `Asc.scope` 的赋值，如下所示。
 :::
 
 以注释形式插入：
 
 ```javascript
   // Insert as a comment
+  let commentId = null;
   let result = await requestEngine.chatRequest(
     argPrompt,
     false,
     async function (data) {
       if (!data) return;
-      await Asc.Editor.callCommand(function () {
-        let range = Api.GetDocument().GetRangeBySelect();
-        let comment = range.AddComment(
-          Asc.scope.data,
-          Asc.scope.model,
-          "uid" + Asc.scope.model,
-        );
-        Api.GetDocument().ShowComment([comment.GetId()]);
+      Asc.scope.data = data;
+      Asc.scope.model = requestEngine.modelUI.name;
+      Asc.scope.commentId = commentId;
+      commentId = await Asc.Editor.callCommand(function () {
+        let doc = Api.GetDocument();
+        if (!Asc.scope.commentId) {
+          let range = doc.GetRangeBySelect();
+          if (!range) return null;
+          let comment = range.AddComment(Asc.scope.data, Asc.scope.model, "uid" + Asc.scope.model);
+          if (!comment) return null;
+          doc.ShowComment([comment.GetId()]);
+          return comment.GetId();
+        }
+        let comment = doc.GetCommentById(Asc.scope.commentId);
+        if (!comment) return Asc.scope.commentId;
+        comment.SetText(comment.GetText() + Asc.scope.data);
+        return Asc.scope.commentId;
       });
     }
   );
 ```
 
+`commentId` 变量用于在流式传输过程中追踪注释，确保每个到达的 token 都追加到同一条注释中，而不是创建新注释。
+
 以脚注形式插入：
 
 ```javascript
   // Insert as a footnote
+  let addFootnote = true;
   let result = await requestEngine.chatRequest(
     argPrompt,
     false,
     async function (data) {
       if (!data) return;
-      await Asc.Editor.callCommand(function () {
-        Api.GetDocument().AddFootnote();
-      });
+      Asc.scope.data = data;
+      Asc.scope.model = requestEngine.modelUI.name;
+      if (addFootnote) {
+        await Asc.Editor.callCommand(function () {
+          Api.GetDocument().AddFootnote();
+        });
+        addFootnote = false;
+      }
       await Asc.Library.PasteText(data);
     }
   );

@@ -1,14 +1,16 @@
 ---
 hide_table_of_contents: true
-description: Unhide all hidden rows and columns.
+description: Unhide all hidden rows.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
-# Unhide all rows and columns
+import Video from '@site/src/components/Video/Video';
 
-Unhides all the rows and columns in the active spreadsheet.
+# Unhide all rows
 
-``` ts
+Unhides all the rows in the active spreadsheet.
+
+```ts
 (function()
 {
     let activeSheet = Api.ActiveSheet;
@@ -19,12 +21,12 @@ Unhides all the rows and columns in the active spreadsheet.
         n++;
     }
     let newRange = activeSheet.GetRange("A1");
-    newRange.SetValue("All the rows and columns are unhidden now");
+    newRange.SetValue("All rows are unhidden now");
 })();
 ```
 
-Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet.md), [GetRows](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRows.md), [SetHidden](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/SetValue.md), [GetRange](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange.md), [SetValue](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/SetValue.md)
+Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet.md), [GetRows](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRows.md), [SetHidden](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/SetHidden.md), [GetRange](/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange.md), [SetValue](/docs/office-api/usage-api/spreadsheet-api/ApiRange/Methods/SetValue.md)
 
 ## Result
 
-![Unhide all rows](/assets/images/plugins/unhide-all-rows.png#gh-light-mode-only)![Unhide all rows](/assets/images/plugins/unhide-all-rows.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/unhide-all-rows-and-columns" dark />

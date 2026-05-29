@@ -4,11 +4,13 @@ description: Auto-complete address fields from partial data.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Complete address information
 
 Completes the basic address data with detailed address information and inserts it into a spreadsheet.
 
-``` ts
+```ts
 // Macros structure:
 // Read Address (Cell A2) ->
 // REQUEST Data -> 
@@ -18,8 +20,8 @@ Completes the basic address data with detailed address information and inserts i
 
 (function()
 {
-    let API_KEY = 'YOUR_API_KEY';
-    let ENDPOINT = 'https://api.geoapify.com/v1/geocode/search';
+    const API_KEY = 'YOUR_API_KEY';
+    const ENDPOINT = 'https://api.geoapify.com/v1/geocode/search';
     let oWorksheet = Api.GetActiveSheet();
     let row = 2;
     makeRequest(oWorksheet.GetRange(`A${row}`).GetText());
@@ -91,4 +93,4 @@ For the macros to function, replace *YOUR_API_KEY* with the API key obtained fro
 
 ## Result
 
-![Write data](/assets/images/plugins/complete-address-information.png#gh-light-mode-only)![Write data](/assets/images/plugins/complete-address-information.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/complete-address-information" dark />

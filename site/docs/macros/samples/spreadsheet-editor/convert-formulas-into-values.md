@@ -4,19 +4,20 @@ description: Convert cell formulas into their computed values.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Convert formulas into values
 
 Converts all formulas in the active worksheet into values.
 
 :::note
-This macro was converted from VBA code using the [AI plugin](/docs/macros/macros/converting-vba-macros.md#automatic-conversion-using-ai-plugin).
+This macro was converted from VBA code using the [AI plugin](/docs/macros/macros/converting-vba-macros#automatic-conversion-using-ai-plugin).
 :::
 
-``` ts
+```ts
 (function(){
     // Get the active sheet
     var oWorksheet = Api.GetActiveSheet();
-    
     // Get the used range of the active sheet
     var oUsedRange = oWorksheet.GetUsedRange();
     
@@ -45,4 +46,4 @@ End Sub
 
 ## Result
 
-![Convert formulas into values](/assets/images/plugins/convert-formulas-into-values.png#gh-light-mode-only)![Convert formulas into values](/assets/images/plugins/convert-formulas-into-values.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/convert-formulas-into-values" dark />

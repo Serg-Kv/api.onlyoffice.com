@@ -4,6 +4,8 @@ description: Clear all checkboxes in a PDF form.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Clear checkboxes
 
 Clears all checkboxes in the document.
@@ -26,9 +28,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/clear-checkboxes.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/clear-checkboxes.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/clear-checkboxes" dark />

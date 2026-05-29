@@ -4,8 +4,6 @@ sidebar_position: 4
 
 # Versioning and updates
 
-## Overview
-
 Once your plugin is published in the ONLYOFFICE Plugin Marketplace, you will need to release updates to fix bugs, add features, or maintain compatibility with new ONLYOFFICE versions.
 
 ## Versioning scheme

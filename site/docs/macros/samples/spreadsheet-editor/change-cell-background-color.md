@@ -4,11 +4,13 @@ description: Change the background color of specified cells.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Change cell background color
 
 Sets the background color of the cell **B3** to blue.
 
-``` ts
+```ts
 (function()
 {
     Api.GetActiveSheet().GetRange("B3").SetFillColor(Api.CreateColorFromRGB(0, 0, 250));
@@ -27,4 +29,4 @@ End Sub
 
 ## Result
 
-![Background color](/assets/images/plugins/background-color.png#gh-light-mode-only)![Background color](/assets/images/plugins/background-color.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/change-cell-background-color" dark />

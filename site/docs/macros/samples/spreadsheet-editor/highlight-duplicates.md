@@ -4,11 +4,13 @@ description: Highlight duplicate values in a cell range.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Highlight duplicates
 
 Highlights duplicates in the selected area with different colors to recognize duplicated values quickly.
 
-``` ts
+```ts
 (function () 
 {
     // Background color of cells with non-repeating values
@@ -112,4 +114,4 @@ End Sub
 
 ## Result
 
-![Highlight duplicates](/assets/images/plugins/highlight-duplicates.png#gh-light-mode-only)![Highlight duplicates](/assets/images/plugins/highlight-duplicates.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/highlight-duplicates" dark />

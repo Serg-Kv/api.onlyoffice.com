@@ -12,32 +12,32 @@ Identifies all acronyms in the document and adds their full forms in comments.
 
 ```ts
 (function () {
-  function addAcronymComments() {
-    let doc = Api.GetDocument();
-    let acronymDictionary = new Map([
-      ["API", "Application Programming Interface"],
-      ["HTTP", "HyperText Transfer Protocol"],
-      ["HTML", "HyperText Markup Language"],
-      ["CSS", "Cascading Style Sheets"],
-      ["JSON", "JavaScript Object Notation"],
-      ["XML", "eXtensible Markup Language"],
-      ["SQL", "Structured Query Language"],
-      ["URL", "Uniform Resource Locator"],
-      // Add more acronyms as needed
-    ]);
+    function addAcronymComments() {
+        let doc = Api.GetDocument();
+        let acronymDictionary = new Map([
+            ["API", "Application Programming Interface"],
+            ["HTTP", "HyperText Transfer Protocol"],
+            ["HTML", "HyperText Markup Language"],
+            ["CSS", "Cascading Style Sheets"],
+            ["JSON", "JavaScript Object Notation"],
+            ["XML", "eXtensible Markup Language"],
+            ["SQL", "Structured Query Language"],
+            ["URL", "Uniform Resource Locator"],
+            // Add more acronyms as needed
+        ]);
 
-    acronymDictionary.forEach((fullForm, acronym) => {
-      let searchResults = doc.Search(acronym, true);
+        acronymDictionary.forEach((fullForm, acronym) => {
+            let searchResults = doc.Search(acronym, true);
 
-      if (searchResults && searchResults.length) {
-        searchResults.forEach((result) => {
-          result.AddComment(fullForm);
+            if (searchResults && searchResults.length) {
+                searchResults.forEach((result) => {
+                    result.AddComment(fullForm);
+                });
+            }
         });
-      }
-    });
-  }
+    }
 
-  addAcronymComments();
+    addAcronymComments();
 })();
 ```
 

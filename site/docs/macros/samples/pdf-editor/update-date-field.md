@@ -4,23 +4,25 @@ description: Set the current date in all date form fields.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Update date field
 
 Sets the current date to all date form fields in the document.
 
 ```ts
 (function () {
-  let doc = Api.GetDocument();
-  let forms = doc.GetAllForms();
+    let doc = Api.GetDocument();
+    let forms = doc.GetAllForms();
 
-  forms.forEach((form) => {
-    if (form.GetFormType() === "dateForm") {
-      form.SetFormat("dddd, dd MMMM yyyy");
-      form.SetLanguage("en-CA");
+    forms.forEach((form) => {
+        if (form.GetFormType() === "dateForm") {
+            form.SetFormat("dddd, dd MMMM yyyy");
+            form.SetLanguage("en-CA");
 
-      form.SetBackgroundColor(255, 0, 0); // Set background color to red.
-    }
-  });
+            form.SetBackgroundColor(255, 0, 0); // Set background color to red.
+        }
+    });
 })();
 ```
 
@@ -28,9 +30,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/update-date-field.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/update-date-field.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/update-date-field" dark />

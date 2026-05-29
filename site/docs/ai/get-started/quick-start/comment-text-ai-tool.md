@@ -76,43 +76,61 @@ Combine the user's instruction with the retrieved text, then create a request en
 Send the prompt to the AI model and insert its response into the document as a comment or footnote.
 
 :::info Asc.scope
-`Asc.scope` is a shared object used to pass data into `callCommand` closures. Because `callCommand` runs in a separate context, local variables are not directly accessible inside it — `Asc.scope` bridges the two contexts.
+`Asc.scope` is a shared object used to pass data into `callCommand` closures. Because `callCommand` runs in a separate context, local variables are not directly accessible inside it — `Asc.scope` bridges the two contexts. Always assign values to `Asc.scope` **before** entering `callCommand`, as shown below.
 :::
 
 To insert as a comment:
 
 ```javascript
   // Insert as a comment
+  let commentId = null;
   let result = await requestEngine.chatRequest(
     argPrompt,
     false,
     async function (data) {
       if (!data) return;
-      await Asc.Editor.callCommand(function () {
-        let range = Api.GetDocument().GetRangeBySelect();
-        let comment = range.AddComment(
-          Asc.scope.data,
-          Asc.scope.model,
-          "uid" + Asc.scope.model,
-        );
-        Api.GetDocument().ShowComment([comment.GetId()]);
+      Asc.scope.data = data;
+      Asc.scope.model = requestEngine.modelUI.name;
+      Asc.scope.commentId = commentId;
+      commentId = await Asc.Editor.callCommand(function () {
+        let doc = Api.GetDocument();
+        if (!Asc.scope.commentId) {
+          let range = doc.GetRangeBySelect();
+          if (!range) return null;
+          let comment = range.AddComment(Asc.scope.data, Asc.scope.model, "uid" + Asc.scope.model);
+          if (!comment) return null;
+          doc.ShowComment([comment.GetId()]);
+          return comment.GetId();
+        }
+        let comment = doc.GetCommentById(Asc.scope.commentId);
+        if (!comment) return Asc.scope.commentId;
+        comment.SetText(comment.GetText() + Asc.scope.data);
+        return Asc.scope.commentId;
       });
     }
   );
 ```
 
+The `commentId` variable tracks the comment across streaming chunks so that each arriving token appends to the same comment rather than creating a new one.
+
 To insert as a footnote instead:
 
 ```javascript
   // Insert as a footnote
+  let addFootnote = true;
   let result = await requestEngine.chatRequest(
     argPrompt,
     false,
     async function (data) {
       if (!data) return;
-      await Asc.Editor.callCommand(function () {
-        Api.GetDocument().AddFootnote();
-      });
+      Asc.scope.data = data;
+      Asc.scope.model = requestEngine.modelUI.name;
+      if (addFootnote) {
+        await Asc.Editor.callCommand(function () {
+          Api.GetDocument().AddFootnote();
+        });
+        addFootnote = false;
+      }
       await Asc.Library.PasteText(data);
     }
   );

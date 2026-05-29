@@ -4,11 +4,13 @@ description: Set the width of specified columns.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Set column width
 
 Sets the width for the column **B**.
 
-``` ts
+```ts
 (function()
 {
     Api.GetActiveSheet().SetColumnWidth(1, 25);
@@ -27,4 +29,4 @@ End Sub
 
 ## Result
 
-![Column width](/assets/images/plugins/column-width.png#gh-light-mode-only)![Column width](/assets/images/plugins/column-width.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/set-column-width" dark />

@@ -4,8 +4,6 @@ sidebar_position: 1
 
 # Preparing for release
 
-## Overview
-
 Before distributing your plugin, verify that it is complete, stable, and ready for other users.
 
 ## Required files

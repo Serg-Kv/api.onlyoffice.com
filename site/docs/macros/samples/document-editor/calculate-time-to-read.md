@@ -4,6 +4,8 @@ description: Calculate the estimated reading time of a document.
 tags: ["Docs", "Macros", "Documents"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Calculate time to read
 
 Analyzes the text content of the entire document, counts the number of words, adjusts for the text complexity, and calculates how long it would take an average adult to read it.
@@ -11,9 +13,8 @@ Analyzes the text content of the entire document, counts the number of words, ad
 ```ts
 (function () {
     let doc = Api.GetDocument();
-    // Constants for reading speed calculations
-    let WORDS_PER_MINUTE = 238; // Average adult reading speed
-    let COMPLEX_WORD_LENGTH = 7; // Words with this many chars or more are considered complex
+    const WORDS_PER_MINUTE = 238; // Average adult reading speed
+    const COMPLEX_WORD_LENGTH = 7; // Words with this many chars or more are considered complex
 
     function countWords(text) {
         if (!text) return 0;
@@ -82,5 +83,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-![TimeToRead](/assets/images/plugins/time-to-read.png#gh-light-mode-only)
-![TimeToRead](/assets/images/plugins/time-to-read.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/document-editor/calculate-time-to-read" dark />

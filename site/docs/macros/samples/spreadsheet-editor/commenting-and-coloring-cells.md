@@ -4,24 +4,26 @@ description: Add comments to cells and change their background color.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Commenting and coloring cells
 
 Adds comments to the cells in the selection and can also change the background color of the cells.
 
 ```ts
 (function () {
-  let worksheet = Api.GetActiveSheet();
-  let range = Api.GetSelection();
-  range.ForEach(function (range) {
-    let sValue = range.GetValue();
-    if (sValue > 100) {
-      range.AddComment("The value is bigger than 100.");
-      range.SetFillColor(Api.CreateColorFromRGB(255, 213, 191));
-    } else {
-      range.AddComment("The value is less than 100.");
-      range.SetFillColor(Api.CreateColorFromRGB(204, 255, 255));
-    }
-  });
+    let worksheet = Api.GetActiveSheet();
+    let range = Api.GetSelection();
+    range.ForEach(function (range) {
+        let sValue = range.GetValue();
+        if (sValue > 100) {
+            range.AddComment("The value is bigger than 100.");
+            range.SetFillColor(Api.CreateColorFromRGB(255, 213, 191));
+        } else {
+            range.AddComment("The value is less than 100.");
+            range.SetFillColor(Api.CreateColorFromRGB(204, 255, 255));
+        }
+    });
 })();
 ```
 
@@ -31,12 +33,12 @@ Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Me
 
 ```vb
 Sub SimpleAddCommentsAndChangeColor()
-    Range("A1").ClearComments
-    Range("A1").AddComment "This is a comment for A1"
-    Range("A1").Interior.Color = RGB(255, 255, 0)
+        Range("A1").ClearComments
+        Range("A1").AddComment "This is a comment for A1"
+        Range("A1").Interior.Color = RGB(255, 255, 0)
 End Sub
 ```
 
 ## Result
 
-![Add comments and change cell colors in spreadsheet](/assets/images/plugins/add-comments-and-highlight-cells-spreadsheet.png#gh-light-mode-only)![Add comments and change cell colors in spreadsheet](/assets/images/plugins/add-comments-and-highlight-cells-spreadsheet.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/commenting-and-coloring-cells" dark />

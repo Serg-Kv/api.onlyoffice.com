@@ -4,6 +4,8 @@ description: Adjust paragraph indentation on all slides.
 tags: ["Docs", "Macros", "Presentations"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Adjust indentation
 
 Adjusts the first line indentation for all paragraphs in your presentation.
@@ -21,7 +23,7 @@ Adjusts the first line indentation for all paragraphs in your presentation.
         // Iterate through each slide
         for (let slideIndex = 0; slideIndex < slidesNumber; slideIndex++) {
             let slide = presentation.GetSlideByIndex(slideIndex); // Retrieve the slide by index
-            let shapes = slide.GetAllShapes(); // Retrieve all shapes on the slide
+            let shapes = slide.GetAllShapes();
 
             // Iterate through each shape on the slide
             for (let shapeIndex = 0; shapeIndex < shapes.length; shapeIndex++) {
@@ -47,9 +49,4 @@ Methods used: [GetPresentation](/docs/office-api/usage-api/presentation-api/Api/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/adjust-indentation.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/adjust-indentation.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/presentation-editor/adjust-indentation" dark />

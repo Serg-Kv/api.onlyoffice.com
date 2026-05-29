@@ -4,11 +4,13 @@ description: Calculate the sum of highlighted cells.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Sum of highlighted cells
 
 Sums the answer of all highlighted cells in a spreadsheet.
 
-``` ts
+```ts
 (function () {
     let worksheet = Api.GetActiveSheet();
     let range1 = worksheet.GetRange("B1"); // Set your range for the color reference
@@ -63,4 +65,4 @@ End Sub
 
 ## Result
 
-![Sum of highlighted cells](/assets/images/plugins/sum-of-highlighted-cells.png#gh-light-mode-only)![Sum of highlighted cells](/assets/images/plugins/sum-of-highlighted-cells.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/sum-of-highlighted-cells" dark />

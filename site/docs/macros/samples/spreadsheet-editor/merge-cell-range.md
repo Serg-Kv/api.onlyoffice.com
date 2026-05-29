@@ -4,11 +4,13 @@ description: Merge a range of cells in a spreadsheet.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Merge cell range
 
 Merges the selected cell range.
 
-``` ts
+```ts
 (function()
 {
     Api.GetActiveSheet().GetRange("A1:B3").Merge(true);
@@ -27,4 +29,4 @@ End Sub
 
 ## Result
 
-![Merge cells](/assets/images/plugins/merge-cells.png#gh-light-mode-only)![Insert text](/assets/images/plugins/merge-cells.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/merge-cell-range" dark />

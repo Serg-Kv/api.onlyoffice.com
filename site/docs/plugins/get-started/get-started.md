@@ -5,13 +5,9 @@ description: Learn how to build and deploy plugins for ONLYOFFICE editors.
 
 # Getting started
 
-ONLYOFFICE supports three ways to extend editor functionality: **plugins**, **macros**, and **custom AI tools**. This page helps you choose the right approach and get started.
+Plugins are full-featured extensions that add interactive UI panels, toolbar buttons, and deep editor integrations to ONLYOFFICE. They run as web apps embedded inside the editor and can communicate with external services.
 
 If you prefer to start coding right away, go directly to the [quick start guides](quick-start/hello-world-plugin.md) or try things out in the [interactive playground](playground.md).
-
-import GetStartedOverview from '../../_shared/_get-started-overview.md';
-
-<GetStartedOverview />
 
 ## Resources {#resources}
 
@@ -25,8 +21,6 @@ import GetStartedOverview from '../../_shared/_get-started-overview.md';
 ### Sample code
 
 - **[Plugin examples](/samples/?doctype=docs&text=plugin)** — Working examples
-- **[Macro examples](/samples/?doctype=docs&text=macros)** — Common automation scripts
-- **[AI function examples](/samples/?doctype=ai&text=ai+tools)** — AI integration patterns
 
 ### Documentation
 

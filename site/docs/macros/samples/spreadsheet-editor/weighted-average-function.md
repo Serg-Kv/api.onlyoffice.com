@@ -4,9 +4,11 @@ description: Calculate a weighted average from cell values.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Weighted average function
 
-Creates a [custom function](/docs/macros/macros/adding-custom-functions.md) to calculate a weighted average.
+Creates a [custom function](/docs/macros/macros/adding-custom-functions) to calculate a weighted average.
 
 ```ts
 (function () {
@@ -33,7 +35,6 @@ Creates a [custom function](/docs/macros/macros/adding-custom-functions.md) to c
     */
 
     function wa(values, weights) {
-        console.log("start");
         // Flatten arrays if needed
         if (Array.isArray(values[0])) {
             values = values.map(function (row) { return row[0]; });
@@ -65,4 +66,4 @@ Methods used: [GetActiveSheet](/docs/office-api/usage-api/spreadsheet-api/Api/Me
 
 ## Result
 
-![WeightedAverageFunction](/assets/images/plugins/weighted-average-function.png#gh-light-mode-only)![WeightedAverageFunction](/assets/images/plugins/weighted-average-function.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/weighted-average-function" dark />

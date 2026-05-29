@@ -51,7 +51,7 @@ AI 助手现已安装完毕，可以开始使用了。
 
 1. 在任何编辑器中按 `Ctrl + /` 打开 AI 助手输入框。
 
-   ![commentText execution](/assets/images/plugins/inline-ai-agent.png#gh-light-mode-only)![commentText execution](/assets/images/plugins/inline-ai-agent.dark.png#gh-dark-mode-only)
+   ![AI agent input](/assets/images/plugins/inline-ai-agent.png#gh-light-mode-only)![AI agent input](/assets/images/plugins/inline-ai-agent.dark.png#gh-dark-mode-only)
 
 2. 输入您的请求并按 `Enter` 立即获得响应。
 

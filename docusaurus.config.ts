@@ -172,7 +172,82 @@ const config: Config = {
       {
         trackingID: 'GTM-5NW47TX'
       },
-    ]
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath: string) {
+          // samples: /docs/macros/samples/... ← /docs/plugin-and-macros/samples/macros/...
+          if (existingPath.startsWith('/docs/macros/samples/')) {
+            return existingPath.replace('/docs/macros/samples/', '/docs/plugin-and-macros/samples/macros/');
+          }
+          // samples: /docs/ai/samples/... ← /docs/plugin-and-macros/samples/custom-ai-tools/...
+          if (existingPath.startsWith('/docs/ai/samples/')) {
+            return existingPath.replace('/docs/ai/samples/', '/docs/plugin-and-macros/samples/custom-ai-tools/');
+          }
+          // samples: /docs/plugins/samples/... ← /docs/plugin-and-macros/samples/plugins/...
+          if (existingPath.startsWith('/docs/plugins/samples/')) {
+            return existingPath.replace('/docs/plugins/samples/', '/docs/plugin-and-macros/samples/plugins/');
+          }
+          // API ref: /docs/plugins/interacting-with-editors/... ← /docs/plugin-and-macros/interacting-with-editors/...
+          if (existingPath.startsWith('/docs/plugins/interacting-with-editors/')) {
+            return existingPath.replace('/docs/plugins/interacting-with-editors/', '/docs/plugin-and-macros/interacting-with-editors/');
+          }
+          return undefined;
+        },
+        redirects: [
+          // get-started
+          { from: '/docs/plugin-and-macros/get-started/get-started', to: '/docs/plugins/get-started/get-started' },
+          { from: '/docs/plugin-and-macros/get-started/playground', to: '/docs/plugins/get-started/playground' },
+          { from: '/docs/plugin-and-macros/get-started/quick-start/hello-world-plugin', to: '/docs/plugins/get-started/quick-start/hello-world-plugin' },
+          { from: '/docs/plugin-and-macros/get-started/quick-start/hello-world-macro', to: '/docs/macros/get-started/quick-start/hello-world-macro' },
+          { from: '/docs/plugin-and-macros/get-started/quick-start/comment-text-ai-tool', to: '/docs/ai/get-started/quick-start/comment-text-ai-tool' },
+          // macros
+          { from: '/docs/plugin-and-macros/macros/adding-custom-functions', to: '/docs/macros/macros/adding-custom-functions' },
+          { from: '/docs/plugin-and-macros/macros/converting-vba-macros', to: '/docs/macros/macros/converting-vba-macros' },
+          { from: '/docs/plugin-and-macros/macros/debugging', to: '/docs/macros/macros/debugging' },
+          { from: '/docs/plugin-and-macros/macros/getting-started', to: '/docs/macros/macros/getting-started' },
+          { from: '/docs/plugin-and-macros/macros/recording-macros', to: '/docs/macros/macros/recording-macros' },
+          { from: '/docs/plugin-and-macros/macros/writing-macros', to: '/docs/macros/macros/writing-macros' },
+          // more-information (old unified → plugins as canonical)
+          { from: '/docs/plugin-and-macros/more-information/changelog', to: '/docs/plugins/more-information/changelog' },
+          { from: '/docs/plugin-and-macros/more-information/faq', to: '/docs/plugins/more-information/faq' },
+          // structure → fundamentals
+          { from: '/docs/plugin-and-macros/structure/configuration/configuration', to: '/docs/plugins/fundamentals/configuration/config-json' },
+          { from: '/docs/plugin-and-macros/structure/configuration/types', to: '/docs/plugins/fundamentals/configuration/types' },
+          { from: '/docs/plugin-and-macros/structure/configuration/variations', to: '/docs/plugins/fundamentals/configuration/variations' },
+          { from: '/docs/plugin-and-macros/structure/entry-point', to: '/docs/plugins/fundamentals/configuration/entry-point' },
+          { from: '/docs/plugin-and-macros/structure/getting-started', to: '/docs/plugins/fundamentals/getting-started/what-is-a-plugin' },
+          { from: '/docs/plugin-and-macros/structure/localization', to: '/docs/plugins/fundamentals/configuration/localization' },
+          // customization
+          { from: '/docs/plugin-and-macros/customization/buttons', to: '/docs/plugins/customization/custom-buttons' },
+          { from: '/docs/plugin-and-macros/customization/content-control-buttons', to: '/docs/plugins/customization/content-control-buttons' },
+          { from: '/docs/plugin-and-macros/customization/context-menu', to: '/docs/plugins/customization/context-menu' },
+          { from: '/docs/plugin-and-macros/customization/icons', to: '/docs/plugins/fundamentals/configuration/icons-and-branding' },
+          { from: '/docs/plugin-and-macros/customization/input-helper', to: '/docs/plugins/customization/input-helper' },
+          { from: '/docs/plugin-and-macros/customization/styles', to: '/docs/plugins/fundamentals/configuration/styles-and-theming' },
+          { from: '/docs/plugin-and-macros/customization/toolbar', to: '/docs/plugins/customization/toolbar' },
+          { from: '/docs/plugin-and-macros/customization/windows-and-panels', to: '/docs/plugins/customization/windows-and-panels' },
+          // tutorials → development-workflow
+          { from: '/docs/plugin-and-macros/tutorials/debugging/for-desktop-editors', to: '/docs/plugins/development-workflow/debugging/browser-devtools-guide' },
+          { from: '/docs/plugin-and-macros/tutorials/debugging/for-web-editors', to: '/docs/plugins/development-workflow/debugging/browser-devtools-guide' },
+          { from: '/docs/plugin-and-macros/tutorials/developing/for-desktop-editors', to: '/docs/plugins/development-workflow/developing/for-desktop-editors' },
+          { from: '/docs/plugin-and-macros/tutorials/developing/for-web-editors', to: '/docs/plugins/development-workflow/developing/for-web-editors' },
+          { from: '/docs/plugin-and-macros/tutorials/installing/onlyoffice-cloud', to: '/docs/plugins/development-workflow/installing-and-testing/cloud-saas-installation' },
+          { from: '/docs/plugin-and-macros/tutorials/installing/onlyoffice-desktop-editors', to: '/docs/plugins/development-workflow/installing-and-testing/desktop-editors-installation' },
+          { from: '/docs/plugin-and-macros/tutorials/installing/onlyoffice-docs-on-premises', to: '/docs/plugins/development-workflow/installing-and-testing/docs-on-premises-installation' },
+          { from: '/docs/plugin-and-macros/tutorials/publishing', to: '/docs/plugins/development-workflow/publishing/marketplace-submission' },
+          // ai
+          { from: '/docs/plugin-and-macros/ai/ai-agent', to: '/docs/ai/ai/ai-agent' },
+          { from: '/docs/plugin-and-macros/ai/ai-plugin', to: '/docs/ai/ai/ai-plugin' },
+          { from: '/docs/plugin-and-macros/ai/configuring-ollama-with-cors', to: '/docs/ai/ai/configuring-ollama-with-cors' },
+          { from: '/docs/plugin-and-macros/ai/converting-vba-macros', to: '/docs/ai/ai/converting-vba-macros' },
+          { from: '/docs/plugin-and-macros/ai/custom-ai-tools', to: '/docs/ai/ai/custom-ai-tools' },
+          { from: '/docs/plugin-and-macros/ai/custom-providers', to: '/docs/ai/ai/custom-providers' },
+          { from: '/docs/plugin-and-macros/ai/text-annotations-guide', to: '/docs/ai/ai/text-annotations-guide' },
+        ],
+      },
+    ],
   ],
 
   themeConfig: {

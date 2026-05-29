@@ -4,6 +4,8 @@ description: Clear specific default values from text form fields.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Remove default values
 
 Automatically removes a specific default value from all text fields in the entire document.
@@ -26,9 +28,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/remove-default-values.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/remove-default-values.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/remove-default-values" dark />

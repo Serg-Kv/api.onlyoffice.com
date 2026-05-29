@@ -4,6 +4,8 @@ description: Generate a presentation outline from slide titles.
 tags: ["Docs", "Macros", "Presentations"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Generate outline
 
 Automatically generates a presentation outline based on titles.
@@ -55,9 +57,4 @@ Methods used: [GetPresentation](/docs/office-api/usage-api/presentation-api/Api/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/generate-outline.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/generate-outline.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/presentation-editor/generate-outline" dark />

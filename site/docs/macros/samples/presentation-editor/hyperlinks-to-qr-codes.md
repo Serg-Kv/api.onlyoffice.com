@@ -4,6 +4,8 @@ description: Convert hyperlinks on slides to QR codes.
 tags: ["Docs", "Macros", "Presentations"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Hyperlinks to QR codes
 
 Converts all the hyperlinks in the presentation into QR codes using an external API.
@@ -31,8 +33,6 @@ Converts all the hyperlinks in the presentation into QR codes using an external 
                             let url = match[0].replace(/[.,;!?)]+$/, "");
                             if (!processedUrls.has(url)) {
                                 processedUrls.add(url);
-                                console.log("Processing URL: " + url);
-
                                 // Encode the URL for the API request
                                 let encodedUrl = encodeURIComponent(url);
                                 let apiUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodedUrl}&size=200x200`;
@@ -56,7 +56,6 @@ Converts all the hyperlinks in the presentation into QR codes using an external 
         });
     }
 
-    console.log("Macro execution completed.");
 })();
 ```
 
@@ -64,9 +63,4 @@ Methods used: [GetPresentation](/docs/office-api/usage-api/presentation-api/Api/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/hyperlinks-to-qr-codes.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/hyperlinks-to-qr-codes.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/presentation-editor/hyperlinks-to-qr-codes" dark />

@@ -4,11 +4,13 @@ description: Mask credit card numbers showing only first and last digits.
 tags: ["Docs", "Macros", "PDF"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Mask card numbers
 
 Applies the mask to all forms with the specified form key to hide card numbers.
 
-``` ts
+```ts
 (function()
 {
     let doc = Api.GetDocument();
@@ -33,9 +35,4 @@ Methods used: [GetDocument](/docs/office-api/usage-api/document-api/Api/Methods/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/mask-card-numbers.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/pdf-editor/mask-card-numbers.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/pdf-editor/mask-card-numbers" dark />

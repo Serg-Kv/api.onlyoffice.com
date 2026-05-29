@@ -4,27 +4,29 @@ description: Remove all shapes from presentation slides.
 tags: ["Docs", "Macros", "Presentations"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Remove shapes from slides
 
 Removes shapes from slides in a presentation.
 
-``` ts
+```ts
 (function () {
-  let presentation = Api.GetPresentation();
-  let slidesCount = presentation.GetSlidesCount();
-  for (let i = 0; i < slidesCount; i++) {
-    let slide = presentation.GetSlideByIndex(i);
-    if (!slide) continue;
-    let shapes = slide.GetAllShapes();
-    for (let j = shapes.length - 1; j >= 0; j--) {
-      let shape = shapes[j];
-      let placeholder = shape.GetPlaceholder();
-      // Skip placeholders
-      if (placeholder === null) {
-        shape.Delete();
-      }
+    let presentation = Api.GetPresentation();
+    let slidesCount = presentation.GetSlidesCount();
+    for (let i = 0; i < slidesCount; i++) {
+        let slide = presentation.GetSlideByIndex(i);
+        if (!slide) continue;
+        let shapes = slide.GetAllShapes();
+        for (let j = shapes.length - 1; j >= 0; j--) {
+            let shape = shapes[j];
+            let placeholder = shape.GetPlaceholder();
+            // Skip placeholders
+            if (placeholder === null) {
+                shape.Delete();
+            }
+        }
     }
-  }
 })();
 ```
 
@@ -32,9 +34,4 @@ Methods used: [GetPresentation](/docs/office-api/usage-api/presentation-api/Api/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/remove-shapes-from-slides.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/remove-shapes-from-slides.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/presentation-editor/remove-shapes-from-slides" dark />

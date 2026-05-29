@@ -4,8 +4,6 @@ sidebar_position: 2
 
 # Marketplace submission
 
-## Overview
-
 The ONLYOFFICE Plugin Marketplace is a public repository hosted on GitHub where users can discover and install community plugins directly from within ONLYOFFICE editors.
 
 ## Before you submit

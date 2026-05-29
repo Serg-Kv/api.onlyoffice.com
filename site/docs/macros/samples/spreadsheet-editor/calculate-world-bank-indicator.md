@@ -4,9 +4,11 @@ description: Calculate indicators using World Bank data.
 tags: ["Docs", "Macros", "Spreadsheets"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Calculate World Bank indicator
 
-Creates an [asynchronous custom function](/docs/macros/macros/adding-custom-functions.md#asynchronous-functions) to calculate a World Bank indicator value for a specific year.
+Creates an [asynchronous custom function](/docs/macros/macros/adding-custom-functions#asynchronous-functions) to calculate a World Bank indicator value for a specific year.
 
 The following indicators can be calculated:
 
@@ -24,66 +26,66 @@ For more information, visit the [World Bank documentation](https://data.worldban
 //custom function:
 
 (function () {
-  /**
-   * Calculates the World Bank indicator value for a specific year.
-   * @customfunction
-   * @param {string} country ISO-3 code, e.g. "TUR".
-   * @param {string} indicator Indicator code, e.g. "SP.POP.TOTL".
-   * @param {number} year Four-digit year, e.g. 2024.
-   * @returns {any} Numeric value or #N/A.
-   *
-   * @example =WB("TUR", "SP.POP.TOTL", 2024)
-   */
-  async function WB(country, indicator, year) {
-    // Build URL (World Bank allows CORS)
-    const url =
-      `https://api.worldbank.org/v2/country/${country}/indicator/${indicator}` +
-      `?format=json&per_page=20000`;
+    /**
+      * Calculates the World Bank indicator value for a specific year.
+      * @customfunction
+      * @param {string} country ISO-3 code, e.g. "TUR".
+      * @param {string} indicator Indicator code, e.g. "SP.POP.TOTL".
+      * @param {number} year Four-digit year, e.g. 2024.
+      * @returns {any} Numeric value or #N/A.
+      *
+      * @example =WB("TUR", "SP.POP.TOTL", 2024)
+      */
+    async function WB(country, indicator, year) {
+        // Build URL (World Bank allows CORS)
+        const url =
+            `https://api.worldbank.org/v2/country/${country}/indicator/${indicator}` +
+            `?format=json&per_page=20000`;
 
-    try {
-      const r = await fetch(url);
-      const [meta, data] = await r.json();
+        try {
+            const r = await fetch(url);
+            const [meta, data] = await r.json();
 
-      // Find a row for the requested year
-      const row = data.find((v) => v.date === year.toString());
-      if (!row || row.value == null) return "#N/A";
+            // Find a row for the requested year
+            const row = data.find((v) => v.date === year.toString());
+            if (!row || row.value == null) return "#N/A";
 
-      return row.value; // resolves the Promise
-    } catch (e) {
-      return "#ERROR";
+            return row.value; // resolves the Promise
+        } catch (e) {
+            return "#ERROR";
+        }
     }
-  }
 
-  // Register the function so it becomes a sheet formula
-  Api.AddCustomFunction(WB);
+    // Register the function so it becomes a sheet formula
+    Api.AddCustomFunction(WB);
 })();
 
 (function () {
-    // Get the active worksheet
-    let worksheet = Api.GetActiveSheet();
+        // Get the active worksheet
+        let worksheet = Api.GetActiveSheet();
 
-    // Insert labels into cells A1 and B1
-    worksheet.GetRange("A1").SetValue("Country");
-    worksheet.GetRange("B1").SetValue("GDP 2024");
+        // Insert labels into cells A1 and B1
+        worksheet.GetRange("A1").SetValue("Country");
+        worksheet.GetRange("B1").SetValue("GDP 2024");
 
-    // Add countries in the ISO-3 format
-    let countries = ["USA", "CHN", "JPN", "DEU", "IND", "GBR", "FRA", "ITA", "CAN"];
-    for (let i = 0; i < countries.length; i++) {
-      worksheet.GetRange("A" + (i + 2)).SetValue(countries[i]);
-    }
+        // Add countries in the ISO-3 format
+        let countries = ["USA", "CHN", "JPN", "DEU", "IND", "GBR", "FRA", "ITA", "CAN"];
+        for (let i = 0; i < countries.length; i++) {
+            worksheet.GetRange("A" + (i + 2)).SetValue(countries[i]);
+        }
 
-    worksheet.FormatAsTable("A1:B10");
+        worksheet.FormatAsTable("A1:B10");
 
-    // Insert the formula for each country
-    // This calls the custom function 'WB' that was registered above
-    for (let i = 0; i < countries.length; i++) {
-      let country = worksheet.GetRange("A" + (i + 2)).GetValue();
-      worksheet.GetRange("B" + (i + 2)).SetValue(`=WB("${country}", "NY.GDP.MKTP.CD", 2024)`);
-    }
+        // Insert the formula for each country
+        // This calls the custom function 'WB' that was registered above
+        for (let i = 0; i < countries.length; i++) {
+            let country = worksheet.GetRange("A" + (i + 2)).GetValue();
+            worksheet.GetRange("B" + (i + 2)).SetValue(`=WB("${country}", "NY.GDP.MKTP.CD", 2024)`);
+        }
 
-    // Build a chart
-    let chart = worksheet.AddChart("'Sheet1'!$A$1:$B$10", true, "bar", 2, 100 * 36000, 60 * 36000, 0, 0, 10, 0);
-    chart.SetTitle("GDP  2024", 13);
+        // Build a chart
+        let chart = worksheet.AddChart("'Sheet1'!$A$1:$B$10", true, "bar", 2, 100 * 36000, 60 * 36000, 0, 0, 10, 0);
+        chart.SetTitle("GDP  2024", 13);
 })();
 ```
 
@@ -91,4 +93,4 @@ Methods used: [AddCustomFunction](/docs/office-api/usage-api/spreadsheet-api/Api
 
 ## Result
 
-![World Bank indicator](/assets/images/plugins/world-bank-indicator.png#gh-light-mode-only)![World Bank indicator](/assets/images/plugins/world-bank-indicator.dark.png#gh-dark-mode-only)
+<Video src="/assets/video/macros/spreadsheet-editor/calculate-world-bank-indicator" dark />

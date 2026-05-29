@@ -4,6 +4,8 @@ description: Create individual slides from list items.
 tags: ["Docs", "Macros", "Presentations"]
 ---
 
+import Video from '@site/src/components/Video/Video';
+
 # Create slides from list items
 
 Creates new slides based on the listed items in the current slide. Each list item becomes a slide title.
@@ -59,7 +61,7 @@ Creates new slides based on the listed items in the current slide. Each list ite
         let slideWidth = presentation.GetWidth();
         let slideHeight = presentation.GetHeight();
 
-        let shapeWidth = slideWidth * 0.7; // Ajdust this value to your liking
+        let shapeWidth = slideWidth * 0.7; // Adjust this value to your liking
         let shapeHeight = slideHeight * 0.25; // Adjust this value to your liking
 
         let posX = (slideWidth - shapeWidth) / 2; // Centered, adjust this value to your liking
@@ -106,9 +108,4 @@ Methods used: [GetPresentation](/docs/office-api/usage-api/presentation-api/Api/
 
 ## Result
 
-<video className="light-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/create-slides-from-list-items.webm" type="video/webm" />
-</video>
-<video className="dark-video" autoPlay loop muted playsInline controls style={{maxWidth: '848px'}}>
-  <source src="/assets/video/macros/presentation-editor/create-slides-from-list-items.dark.webm" type="video/webm" />
-</video>
+<Video src="/assets/video/macros/presentation-editor/create-slides-from-list-items" dark />
