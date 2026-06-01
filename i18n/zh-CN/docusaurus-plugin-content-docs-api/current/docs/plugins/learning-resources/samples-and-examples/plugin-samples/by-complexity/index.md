@@ -6,6 +6,8 @@ sidebar_position: 2
 
 Filter plugin samples by how much experience you have or how much complexity you're ready to tackle.
 
+[浏览所有插件示例](/samples/?doctype=docs&text=plugin)
+
 ## Beginner
 
 5 examples — minimal setup, core API usage, no external dependencies.

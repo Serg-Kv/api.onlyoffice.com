@@ -6,6 +6,8 @@ sidebar_position: 1
 
 Filter plugin samples by the type of integration or functionality you need.
 
+[Browse all plugin samples](/samples/?doctype=docs&text=plugin)
+
 ## Integration plugins
 
 Connect ONLYOFFICE editors to external services and content sources.
