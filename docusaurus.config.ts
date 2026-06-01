@@ -115,8 +115,11 @@ const config: Config = {
               },
             });
             keyPath = args.item.dirName;
-            sidebarItems.forEach(sidebarRecursive);
-            return sidebarItems;
+            const visibleItems = sidebarItems.filter(
+              item => !(item.type === 'category' && item.customProps?.sidebar_hide)
+            );
+            visibleItems.forEach(sidebarRecursive);
+            return visibleItems;
           },
         },
         theme: {

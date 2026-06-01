@@ -2,5 +2,5 @@
   "position": 6,
   "collapsed": false,
   "label": "Samples",
-  "hidden": true
+  "customProps": { "sidebar_hide": true }
 }

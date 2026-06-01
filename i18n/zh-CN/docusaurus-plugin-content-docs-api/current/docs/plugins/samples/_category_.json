@@ -1,5 +1,5 @@
 {
   "position": 6,
   "label": "示例",
-  "hidden": true
+  "customProps": { "sidebar_hide": true }
 }
