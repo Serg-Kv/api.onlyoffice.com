@@ -19,7 +19,7 @@ Build rich extensions that integrate with ONLYOFFICE editors.
 
 Automate document operations and add custom logic without a full plugin.
 
-- [Browse macro samples](/docs/macros/samples)
+- [Browse macro samples](/samples/?doctype=docs&text=macros)
 
 - **Text formatting:** Manipulate text appearance, styles, and structure
 - **Table operations:** Create, modify, and format spreadsheet and document tables
@@ -29,7 +29,7 @@ Automate document operations and add custom logic without a full plugin.
 
 Extend the ONLYOFFICE AI agent with your own domain-specific logic.
 
-- [Browse custom AI tool samples](/docs/ai/samples)
+- [Browse custom AI tool samples](/samples/?doctype=ai&text=ai+tools)
 
 - **Content generation:** Draft, rewrite, and summarize with AI
 - **Data analysis:** Interpret spreadsheet data and explain formulas
