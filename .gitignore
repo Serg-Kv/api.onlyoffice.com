@@ -1,3 +1,6 @@
+# Local scripts
+build-ghpages-preview.ps1
+
 # Dependencies
 /node_modules
 /openapi/docspace/node_modules

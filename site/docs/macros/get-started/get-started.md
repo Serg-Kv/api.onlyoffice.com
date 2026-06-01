@@ -32,7 +32,7 @@ If you prefer to start coding right away, go directly to the [quick start guides
 - **[Forum](https://forum.onlyoffice.com/)** — Ask questions, share projects
 - **[GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins)** — Source code, issues, contributions
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice)** — Technical Q&A
-- **[Changelog](/docs/macros/more-information/changelog)** — Latest API updates
+- **[Changelog](/docs/plugins/more-information/changelog)** — Latest API updates
 
 ## Next steps {#next-steps}
 

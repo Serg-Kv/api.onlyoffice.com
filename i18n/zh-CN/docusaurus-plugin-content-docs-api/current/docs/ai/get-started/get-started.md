@@ -34,7 +34,7 @@ description: 了解如何为 ONLYOFFICE 编辑器构建自定义 AI 工具。
 - **[论坛](https://forum.onlyoffice.com/)** — 提问、分享项目
 - **[GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins)** — 源代码、Issues、贡献
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice)** — 技术问答
-- **[更新日志](/docs/ai/more-information/changelog)** — 最新 API 更新
+- **[更新日志](/docs/plugins/more-information/changelog)** — 最新 API 更新
 
 ## 下一步 {#next-steps}
 
