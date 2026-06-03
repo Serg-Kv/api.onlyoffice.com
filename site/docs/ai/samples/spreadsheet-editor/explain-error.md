@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Spreadsheets"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Explain error
 
 This function explains the error in the specified cell by adding a comment with the explanation.

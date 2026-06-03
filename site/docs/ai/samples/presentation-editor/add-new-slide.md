@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Add new slide
 
 This function adds a new slide at the end of presentation using default layout from the current slide's master.

@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Rename form keys
 
 This function collects all form fields (keys/placeholders), renames the fields to UPPER_SNAKE_CASE, and optionally updates placeholders.

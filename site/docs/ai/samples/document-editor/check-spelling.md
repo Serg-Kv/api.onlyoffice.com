@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Check spelling
 
 This function checks spelling or fixes other text errors in the current paragraph.

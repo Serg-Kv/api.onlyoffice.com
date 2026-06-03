@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Spreadsheets"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Set auto filter
 
 This function applies or modifies an AutoFilter on a given cell range or the active selection.

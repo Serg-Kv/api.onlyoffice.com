@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Spreadsheets"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Calculate values
 
 This function performs basic mathematical operations (addition, subtraction, multiplication, division, median, average) on selected cells or a specified range and writes the result to a specified cell or below the last used cell in the column.

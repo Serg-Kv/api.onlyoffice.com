@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Delete slide
 
 This function deletes the specified slide from the current presentation.

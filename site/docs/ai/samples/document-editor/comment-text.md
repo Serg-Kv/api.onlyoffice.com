@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Comment text
 
 This function adds an explanation or comment to the text. If no text or paragraph number is specified, the current paragraph is used by default. Specify whether the explanation should be added as a comment or as a footnote. The AI will generate the content based on your prompt and insert it in the chosen format.

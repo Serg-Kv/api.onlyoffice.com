@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Smart headline generator
 
 This function generates a clear and relevant headline from the currently selected text (paragraph, slide, or section). This headline is meant to accurately represent the content, not be overly catchy.

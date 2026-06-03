@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Describe image
 
 This function analyzes the selected image and generates a title, caption, description, or alt text using an AI model. The generated text is inserted into the document.

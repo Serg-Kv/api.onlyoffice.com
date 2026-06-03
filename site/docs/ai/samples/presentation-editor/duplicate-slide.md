@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Duplicate slide
 
 This function duplicates the specified slide in the current presentation.

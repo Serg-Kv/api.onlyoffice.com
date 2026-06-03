@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Spreadsheets"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Explain formula
 
 This function explains a formula from the specified range or, if omitted, the active/selected range.

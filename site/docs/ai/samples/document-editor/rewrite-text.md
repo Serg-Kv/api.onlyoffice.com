@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Rewrite text
 
 This function rewrites or replaces text. If no text or paragraph number is specified, the current paragraph is used by default.

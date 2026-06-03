@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Add chart to slide
 
 This function adds a chart to the specified or the current slide. By default, the chart is 152x89 mm and centered.

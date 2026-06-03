@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Insert list
 
 This function creates simple numbered or bulleted lists at the current cursor position or at the start/end of the document.

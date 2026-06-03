@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Change slide background
 
 This function changes the background of a specified slide. Supports solid colors and gradient fills.

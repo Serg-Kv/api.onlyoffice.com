@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Describe image
 
 This function analyzes the currently selected image and generates a title, caption, description, or alt text using an AI model. The generated text is then inserted into the slide.

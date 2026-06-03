@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Spreadsheets"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Add chart
 
 This function creates a chart of the specified type from the given range or the selected range.

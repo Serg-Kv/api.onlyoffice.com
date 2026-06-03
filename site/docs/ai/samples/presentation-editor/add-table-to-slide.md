@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Add table to slide
 
 This function adds a table to the specified or the current slide. By default, the table is 194x97 mm and centered.

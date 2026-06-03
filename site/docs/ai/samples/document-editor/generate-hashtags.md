@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Generate hashtags
 
 This function generates relevant hashtags based on the selected text or the current word.

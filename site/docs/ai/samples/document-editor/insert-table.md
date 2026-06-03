@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Insert table
 
 This function inserts a table at the current cursor position or at the start/end of the document. You can specify the number of rows and columns, and optionally add headers.

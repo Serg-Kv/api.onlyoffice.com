@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Extract action items
 
 This function analyzes selected text, meeting notes, or a document section and extracts clear action items or to-dos, formatting them as a structured list. It can optionally remove the original text.

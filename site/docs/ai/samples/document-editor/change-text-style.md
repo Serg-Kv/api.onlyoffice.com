@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Documents"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Change text style
 
 This function modifies the visual style of the selected text. If no text is selected, the current word is used by default.

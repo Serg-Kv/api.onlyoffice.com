@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Presentations"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Add shape to slide
 
 This function adds a shape to the slide with optional text. By default, the shape is 139x42 mm, centered, with a blue fill and a dark border.

@@ -5,6 +5,7 @@ tags: ["Docs", "Plugins", "AI Tools", "Spreadsheets"]
 
 
 import Video from '@site/src/components/Video/Video';
+
 # Insert pivot table
 
 This function inserts a pivot table into the specified range or the currently selected range.
