@@ -198,6 +198,7 @@ sudo systemctl restart ollama
 ```bash
 export OLLAMA_ORIGINS=http://*,https://*,onlyoffice://*
 export OLLAMA_HOST=0.0.0.0
+ollama serve
 ```
 
   </TabItem>
@@ -214,7 +215,7 @@ ollama serve
 
 ```bash
 docker run -d \
-  -e OLLAMA_ORIGINS="https://*" \
+  -e OLLAMA_ORIGINS="http://*,https://*,onlyoffice://*" \
   -e OLLAMA_HOST="0.0.0.0" \
   -p 11434:11434 \
   -v ollama:/root/.ollama \
@@ -334,6 +335,23 @@ server {
 }
 ```
 
+:::warning[Security consideration]
+The `$http_origin` variable reflects any origin back with `Access-Control-Allow-Credentials: true`, which allows any website to make authenticated requests to your Ollama instance. For production environments, restrict allowed origins using a `map` block:
+
+```nginx
+map $http_origin $cors_origin {
+    ~^https://trusted\.example\.com$ $http_origin;
+    ~^https://app\.example\.com$ $http_origin;
+    default "";
+}
+
+add_header 'Access-Control-Allow-Origin' $cors_origin always;
+add_header 'Vary' 'Origin' always;
+```
+
+The `Vary: Origin` header is required when the `Access-Control-Allow-Origin` value changes based on the request, to ensure proper caching behavior.
+:::
+
 ### Additional protection via HTTP basic authentication
 
 To restrict API access:
@@ -412,6 +430,15 @@ sudo systemctl restart ollama
 Quit and relaunch the Ollama application.
 
   </TabItem>
+  <TabItem value="windows" label="Windows">
+
+```powershell
+Stop-Process -Name ollama -Force; ollama serve
+```
+
+Or quit and relaunch the Ollama application via the system tray icon.
+
+  </TabItem>
   <TabItem value="docker" label="Docker">
 
 ```bash
@@ -448,6 +475,28 @@ systemctl show ollama --property=Environment
 
 ```bash
 cat /proc/$(pgrep ollama)/environ | tr '\0' '\n' | grep OLLAMA
+```
+
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+
+```powershell
+Get-ChildItem Env:OLLAMA*
+```
+
+Or check system environment variables:
+
+```powershell
+[System.Environment]::GetEnvironmentVariable("OLLAMA_ORIGINS", "User")
+[System.Environment]::GetEnvironmentVariable("OLLAMA_HOST", "User")
+```
+
+  </TabItem>
+  <TabItem value="macos" label="macOS">
+
+```bash
+launchctl getenv OLLAMA_ORIGINS
+launchctl getenv OLLAMA_HOST
 ```
 
   </TabItem>

@@ -198,6 +198,7 @@ sudo systemctl restart ollama
 ```bash
 export OLLAMA_ORIGINS=http://*,https://*,onlyoffice://*
 export OLLAMA_HOST=0.0.0.0
+ollama serve
 ```
 
   </TabItem>
@@ -214,7 +215,7 @@ ollama serve
 
 ```bash
 docker run -d \
-  -e OLLAMA_ORIGINS="https://*" \
+  -e OLLAMA_ORIGINS="http://*,https://*,onlyoffice://*" \
   -e OLLAMA_HOST="0.0.0.0" \
   -p 11434:11434 \
   -v ollama:/root/.ollama \
@@ -334,6 +335,23 @@ server {
 }
 ```
 
+:::warning[安全注意事项]
+`$http_origin` 变量会将任何来源反射回去，并带有 `Access-Control-Allow-Credentials: true`，这允许任何网站向您的 Ollama 实例发出经过身份验证的请求。在生产环境中，使用 `map` 块限制允许的来源：
+
+```nginx
+map $http_origin $cors_origin {
+    ~^https://trusted\.example\.com$ $http_origin;
+    ~^https://app\.example\.com$ $http_origin;
+    default "";
+}
+
+add_header 'Access-Control-Allow-Origin' $cors_origin always;
+add_header 'Vary' 'Origin' always;
+```
+
+当 `Access-Control-Allow-Origin` 值根据请求变化时，需要 `Vary: Origin` 头以确保正确的缓存行为。
+:::
+
 ### 通过 HTTP 基本身份验证提供额外保护
 
 要限制 API 访问：
@@ -412,6 +430,15 @@ sudo systemctl restart ollama
 退出并重新启动 Ollama 应用程序。
 
   </TabItem>
+  <TabItem value="windows" label="Windows">
+
+```powershell
+Stop-Process -Name ollama -Force; ollama serve
+```
+
+或通过系统托盘图标退出并重新启动 Ollama 应用程序。
+
+  </TabItem>
   <TabItem value="docker" label="Docker">
 
 ```bash
@@ -448,6 +475,28 @@ systemctl show ollama --property=Environment
 
 ```bash
 cat /proc/$(pgrep ollama)/environ | tr '\0' '\n' | grep OLLAMA
+```
+
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+
+```powershell
+Get-ChildItem Env:OLLAMA*
+```
+
+或检查系统环境变量：
+
+```powershell
+[System.Environment]::GetEnvironmentVariable("OLLAMA_ORIGINS", "User")
+[System.Environment]::GetEnvironmentVariable("OLLAMA_HOST", "User")
+```
+
+  </TabItem>
+  <TabItem value="macos" label="macOS">
+
+```bash
+launchctl getenv OLLAMA_ORIGINS
+launchctl getenv OLLAMA_HOST
 ```
 
   </TabItem>
