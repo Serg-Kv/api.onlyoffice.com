@@ -24,3 +24,6 @@ yarn-error.log*
 
 # IDE's
 /.idea
+
+# Local scripts (not for repo)
+build-ghpages-preview.ps1
