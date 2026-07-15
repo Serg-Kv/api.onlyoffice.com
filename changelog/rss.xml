@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>ONLYOFFICE Blog</title>
+        <link>https://serg-kv.github.io/api.onlyoffice.com/changelog</link>
+        <description>ONLYOFFICE Blog</description>
+        <lastBuildDate>Wed, 17 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Version 9.0.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/06/17/version-9-0-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/06/17/version-9-0-0</guid>
+            <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/06/17/version-9-0-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Added command-line flags page for Desktop editors.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added Uploader embedding mode documentation for Embed SDK.</li>
+<li class="">Added Authentication &amp; Security page to Embed SDK.</li>
+</ul>
+</li>
+<li class=""><strong>Homepage</strong>:<!-- -->
+<ul>
+<li class="">Added icons to navbar dropdowns and split Plugins/Macros/AI sections.</li>
+<li class="">Added separators between Docs dropdown groups.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Added Asc.plugin reference page with consolidated API documentation.</li>
+<li class="">Added step-by-step plugin tutorial pages.</li>
+<li class="">Added quick-start pages for macros and AI sections.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/06/17/version-9-0-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Restructured debugging documentation into per-platform pages.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Renamed JavaScript SDK to Embed SDK throughout documentation.</li>
+<li class="">Updated Embed SDK version to 2.2.0 for DocSpace v3.7.0.</li>
+<li class="">Restructured Get Started section with quickstart, overview, and authentication guides.</li>
+<li class="">Improved embedding mode pages with use cases and reduced duplication.</li>
+<li class="">Improved Basic Concepts and authentication overview pages.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api reference documentation.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Restructured plugin documentation by dissolving legacy sections and promoting content to top level.</li>
+<li class="">Consolidated API reference into the Asc.plugin page.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/06/17/version-9-0-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>: Fixed broken links to the moved debugging page.</li>
+<li class=""><strong>DocSpace</strong>: Fixed broken links and formatting issues in Embed SDK documentation.</li>
+<li class=""><strong>Plugins and macros</strong>: Fixed broken links, anchor references, and code examples across plugin, macro, and AI docs. Fixed broken links to consolidated debugging page.</li>
+<li class=""><strong>Localization</strong>: Fixed broken links in zh-CN translations for plugins, macros, and AI sections. Fixed broken custom functions guide link in zh-CN weighted average sample.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.8.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/29/version-8-8-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/29/version-8-8-0</guid>
+            <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/29/version-8-8-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added row permalink anchors to API tables.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/29/version-8-8-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Consolidated server configuration documentation into a single page.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Updated MCP server documentation with improved formatting and restructured reference section.</li>
+</ul>
+</li>
+<li class=""><strong>Homepage</strong>:<!-- -->
+<ul>
+<li class="">Redesigned homepage with system fonts, design tokens, and theme-aware icons.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/29/version-8-8-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>: Fixed PageActions visibility on doc pages.</li>
+<li class=""><strong>Docs API</strong>: Fixed broken references after server configuration page consolidation.</li>
+<li class=""><strong>DocSpace</strong>: Fixed version in MCP server configuration documentation.</li>
+<li class=""><strong>Playground</strong>: Fixed Monaco API library loading to use GitHub raw instead of document server.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.7.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/25/version-8-7-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/25/version-8-7-0</guid>
+            <pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/25/version-8-7-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added <code>editorConfig.plugins.disable</code> parameter documentation.</li>
+<li class="">Added Croatian language to version 9.4 changelog.</li>
+<li class="">Removed deprecated <code>editorConfig.customization.commentAuthorOnly</code> parameter.</li>
+<li class="">Added <code>roles</code> parameter to <code>onStartFilling</code> event and <code>destroyEditor</code> memory leak fix for v9.4.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api reference documentation for version 9.4.</li>
+<li class="">Added version 9.4 changelog with MergeDocuments and Color methods.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated plugins API reference documentation for version 9.4 (text annotations, form methods, comment events).</li>
+<li class="">Added version 9.4 changelog.</li>
+<li class="">Improved <code>callCommand</code> documentation and added <code>asc_plugin_commands_log</code> debugging guide.</li>
+<li class="">Added warning against calling API methods in <code>onTranslate</code> handler.</li>
+</ul>
+</li>
+<li class=""><strong>Document Builder</strong>:<!-- -->
+<ul>
+<li class="">Published document comparison documentation and fixed CompareDocuments signature.</li>
+<li class="">Added ability to select a specific sample via link.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added Video component and migrated all raw video tags.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/25/version-8-7-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api reference documentation.</li>
+<li class="">Fixed <code>CreateTable</code> argument order to match new (rows, cols) signature in samples.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Updated screenshots with dark theme support across editor, customization, events, permissions, co-editing, reviewing, and other pages.</li>
+<li class="">Added onRequestStartFilling screenshot to events page.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Normalized formatting to use backtick references across plugin configuration and customization pages.</li>
+<li class="">Moved default values to header format on plugin configuration page.</li>
+<li class="">Replaced static images with webm videos in macro samples.</li>
+<li class="">Replaced generic "here" links with descriptive anchor text.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Replaced custom URL utilities with native URLSearchParams.</li>
+<li class="">Loaded Monaco type libraries from Document Server.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Added dark theme support for zh-CN documentation screenshots.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/25/version-8-7-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed <code>onMakeActionLink</code> action.type to use string literal union.</li>
+<li class="">Restructured <code>event.data</code> parameter tables on events page.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Fixed <code>doc</code> variable usage in <code>callCommand</code> error handling example.</li>
+<li class="">Aligned <code>callCommand</code> parameter table column widths.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed developer plugin installation to only apply for plugin script type.</li>
+<li class="">Fixed null URL parameters coalesced to undefined.</li>
+<li class="">Disabled Run button until editor is ready.</li>
+<li class="">Fixed word type library loading for form editor.</li>
+<li class="">Removed <code>installDeveloperPlugin</code> shim for v9.3.1.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Fixed stray Latin letters in zh-CN changelog.</li>
+<li class="">Added missing Video import and frontmatter to zh-CN plugin pages.</li>
+<li class="">Fixed ASCII quotes and spacing in zh-CN pages.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Fixed broken anchor link to command logging in changelog.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.6.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/19/version-8-6-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/19/version-8-6-0</guid>
+            <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/19/version-8-6-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added custom theme customization guide.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Added custom theme customization guide.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/19/version-8-6-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Removed "Defines"/"Specifies" prefix from parameter descriptions across config, editor, customization, document, methods, callback, connector, command service, additional API, and WOPI pages.</li>
+<li class="">Renamed "Parameters" headings to "Request/Response parameters" in command service and additional API pages.</li>
+<li class="">Redesigned API vs WOPI comparison table to feature-per-row format.</li>
+<li class="">Renamed <code>DocEditor</code> constructor parameter from <code>placeholder</code> to <code>id</code>.</li>
+<li class="">Improved license command response parameter table.</li>
+<li class="">Updated connector window class introduction and removed italic parameter names.</li>
+<li class="">Added <code>@onlyoffice/doceditor-types</code> package tip to DocEditor page.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Removed "Defines" prefix from plugin customization parameter descriptions.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Removed "Defines" prefix from desktop editors usage API parameter descriptions.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Replaced local config.d.ts with <code>@onlyoffice/doceditor-types</code> npm package.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/19/version-8-6-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed WOPI config and conversion API page errors.</li>
+<li class="">Corrected broken relative links in editor config docs.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.5.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/07/version-8-5-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/07/version-8-5-0</guid>
+            <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/07/version-8-5-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added <code>DocEditor</code> class with typed method signatures to TypeScript definition file.</li>
+<li class="">Added <code>mobile.disableForceDesktop</code> customization parameter.</li>
+<li class="">Added <code>editorConfig.wopi</code> section documentation.</li>
+<li class="">Added <code>user.roles</code> parameter for PDF form filling.</li>
+<li class="">Added <code>reviewPermissions</code> customization parameter.</li>
+<li class="">Added <code>startFillingForm</code> customization parameter.</li>
+<li class="">Added <code>onSaveDocument</code> event documentation.</li>
+<li class="">Added <code>onRequestFillingStatus</code> event documentation.</li>
+<li class="">Added <code>onStartFilling</code> event documentation.</li>
+<li class="">Added <code>roles</code> parameter to <code>onRequestStartFilling</code> event.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Added auto-generated JSON schema from TypeScript types for Config Editor.</li>
+<li class="">Added tri-state toggle (unset/true/false) and dimmed labels for unset controls in Config Editor.</li>
+<li class="">Added Config section grouping for root-level primitive fields.</li>
+<li class="">Added event handler checkboxes to Config Editor.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/07/version-8-5-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Rewrote config reference pages with standardized formatting, backtick identifiers, and improved examples across document, editor, customization, permissions, embedded, plugins, and events sections.</li>
+<li class="">Improved usage API method documentation with parameter headers, examples, and error descriptions.</li>
+<li class="">Removed deprecated parameters: changeHistory, rename, author, created, onReady, user.firstname, user.lastname, plugins.url.</li>
+<li class="">Standardized array type notation to TypeName[] format across all config pages.</li>
+<li class="">Added missing document, editorConfig, and events sections to config overview page.</li>
+<li class="">Updated images for the events page.</li>
+<li class="">Documented removal of deprecated params in changelog entries for v6.1 and v6.3.</li>
+<li class="">Used literal union types for mode, macrosMode, pointerMode, reviewDisplay, unit, tabStyle, and tabBackground config parameters.</li>
+<li class="">Added supported language codes to lang parameter and regional settings to region parameter.</li>
+<li class="">Documented actionLink sub-properties and insert/layout toolbar sub-properties in white label config.</li>
+<li class="">Improved onMakeActionLink event documentation and extracted onRequestInsertImage undeclared note into callout.</li>
+<li class="">Used danger admonitions for deprecated mailmerge and spellcheck.change events.</li>
+<li class="">Rewrote editor, embedded, plugins, and white label config parameter descriptions for clarity.</li>
+<li class="">Added JSDoc descriptions to all types and interfaces in TypeScript definition file.</li>
+<li class="">Removed dead <code>permissions.reader</code>, <code>canCoAuthoring</code>, and embedded <code>onBack</code> event properties from config type definitions.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Unified form/JSON dirty tracking with bidirectional sync on tab switch.</li>
+<li class="">Improved config schema types with per-document-type FileType unions and PlatformType alias.</li>
+<li class="">Cleaned up playground editor config defaults and reduced re-renders.</li>
+<li class="">Moved Run and Copy buttons from floating overlay to config editor header tab bar.</li>
+<li class="">Added Reset button to config editor header tab bar.</li>
+<li class="">Added toggleable sections for optional object and array properties in Config Editor.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added boolean token color to code syntax highlighting.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/07/version-8-5-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added missing autostart, isLink, and hml properties to config documentation.</li>
+<li class="">Removed hardcoded permission values from sharingSettings.permissions.</li>
+<li class="">Fixed broken anchors, links, and incorrect examples across config reference pages.</li>
+<li class="">Corrected isForm type, commentGroups.view example, and grammar inconsistencies.</li>
+<li class="">Removed .ashx extension and trailing slash from example URLs.</li>
+<li class="">Fixed MCP documentation formatting issues.</li>
+<li class="">Added deprecated fileChoiceUrl, mergeFolderUrl, saveAsUrl, and sharingSettingsUrl parameters to editor config documentation.</li>
+<li class="">Restructured event sections with consistent description flow, typed parameters, and improved cross-references.</li>
+<li class="">Simplified config section descriptions and updated JSDoc comments.</li>
+<li class="">Cleaned up code examples in customization docs.</li>
+<li class="">Used backtick formatting for types in methods parameter tables.</li>
+<li class="">Used info admonitions for licensing notes in methods page.</li>
+<li class="">Synced config descriptions across TypeScript definitions, docs, and zh-CN translations.</li>
+<li class="">Added interface-level JSDoc to <code>RecentDocument</code> and <code>DocumentTemplate</code> types.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed JSON editor changes not syncing to config on Run.</li>
+<li class="">Fixed editor re-initialization and script replacement prompts.</li>
+<li class="">Fixed enum deduplication and fileType grouping by documentType.</li>
+<li class="">Fixed button style scoping and ArrayControl schema resolution.</li>
+<li class="">Fixed anonymous mode, dark mode compatibility, and PDF form document names.</li>
+<li class="">Fixed config editor section content padding and removed short descriptions from object section headers.</li>
+<li class="">Fixed form state sync when applying config from code tab.</li>
+<li class="">Fixed event handler function signatures in Config Editor.</li>
+<li class="">Replaced inline descriptions with tooltips in config editor section headers.</li>
+<li class="">Fixed bold and code formatting in config editor tooltips.</li>
+<li class="">Fixed tooltip display for array-type properties in Config Editor.</li>
+<li class="">Added italic markdown support in Config Editor tooltips.</li>
+</ul>
+</li>
+<li class=""><strong>Homepage</strong>:<!-- -->
+<ul>
+<li class="">Linked home page Try buttons directly to playgrounds.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated macro code samples and synced Chinese localization.</li>
+<li class="">Fixed method links and table formatting in custom AI tool samples.</li>
+<li class="">Removed trailing slash before anchor in Asc.scope object link.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Fixed zh-CN product name spacing and synced translations for config pages.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.4.1]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/04/version-8-4-1</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/04/version-8-4-1</guid>
+            <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Bugfixes]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/04/version-8-4-1#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed editor re-initialization when script value changes in playground.</li>
+<li class="">Fixed prompt before replacing modified script on script type change.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.4.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/02/version-8-4-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/02/version-8-4-0</guid>
+            <pubDate>Sat, 02 May 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/02/version-8-4-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started">MCP server</a> documentation section with getting started guides, client connection instructions, tutorials, use cases, troubleshooting, distribution guides, configuration reference, tools reference, and glossary.</li>
+<li class="">Added MCP server homepage card and sidebar navigation.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/get-started/playground">Config Playground</a> for the Docs API with interactive JSON Forms editor, live document preview, and split-pane layout.</li>
+<li class="">Added screenshots for Config Playground cards.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added new entry-point page for the DocsAPI.DocEditor class.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/02/version-8-4-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Merged Config Playground into unified playground page.</li>
+<li class="">Renamed toolbar labels for clarity (Preview→Mode, Document→File, Connector→Automation API).</li>
+<li class="">Replaced tooltip with popover for click-based interaction in Config Playground.</li>
+<li class="">Unified playground card components into a single shared module.</li>
+<li class="">Removed redundant Builder card from playground cards.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Rewrote over 25 integration guides for improved integrator clarity, including how-it-works, saving-file, co-editing, document-history, security, JWT signature samples, and more.</li>
+<li class="">Renamed Advanced parameters to Configuration overview and connected with DocEditor and Config pages.</li>
+<li class="">Added cross-links to the DocEditor page from methods, preload, and installation pages.</li>
+<li class="">Updated images for the commenting page.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api documentation.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Removed broken PDF API method links from plugin changelog.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Consolidated MCP server distribution into a combined page.</li>
+<li class="">Revised MCP server tutorial titles for clarity.</li>
+<li class="">Refactored MCP server connection instructions.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Added Chinese translation for the Config Playground page.</li>
+<li class="">Synced zh-CN config pages with English source.</li>
+<li class="">Fixed Chinese localization for macro code snippets and paths.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Consolidated Window type augmentations into global.d.ts.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/05/02/version-8-4-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed Config Playground styling: improved color tokens, tooltips, focus indicators, section spacing, and SEO metadata.</li>
+<li class="">Fixed Config Playground performance: optimized rendering with memoization, lazy serialization, and debounced updates.</li>
+<li class="">Fixed Config Playground UI: consolidated action buttons into floating panel, corrected heading hierarchy, and hidden Ask AI button.</li>
+<li class="">Fixed playground document key generation to use crypto.randomUUID.</li>
+<li class="">Fixed File dropdown to show Sample before Blank.</li>
+<li class="">Fixed Config Playground to use PDF format for form document type.</li>
+<li class="">Fixed Config Playground info icon style and color.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Try page PDF using blank instead of demo document.</li>
+<li class="">Fixed opening-file and saving-file overview step lists.</li>
+<li class="">Fixed action-link semicolon consistency.</li>
+<li class="">Added missing onMakeActionLink event to complete config example.</li>
+<li class="">Sorted word file extensions alphabetically.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Fixed grammar, punctuation, and broken links across MCP server docs.</li>
+<li class="">Fixed sidebar labels and configuration category structure in MCP server docs.</li>
+<li class="">Fixed capitalization issues in MCP server documentation.</li>
+<li class="">Fixed broken links in MCP server use-cases sections.</li>
+<li class="">Fixed troubleshooting pages order.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.3.1]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/22/version-8-3-1</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/22/version-8-3-1</guid>
+            <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Fixes]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/22/version-8-3-1#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Try page documents not opening due to placeholder URLs overriding actual document URLs in editor configuration.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.3.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/17/version-8-3-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/17/version-8-3-0</guid>
+            <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/17/version-8-3-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added live Public room embed example to the SDK get-started page.</li>
+<li class="">Added embedding modes comparison table to the DocSpace SDK get-started page.</li>
+<li class="">Added DocSpace SDK playground page with interactive editor and live preview.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Added Document Server settings dialog to playground toolbar.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/17/version-8-3-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Updated main page button to link to playground instead of cloud registration.</li>
+<li class="">Replaced upload-and-summarize-document use case with a refocused chat-summary text flow.</li>
+<li class="">Updated DocSpace playground to new portal.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api documentation.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated Freeze panes macro sample code snippet.</li>
+<li class="">Updated complete-address-information macro sample code snippet.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Added missing Chinese localization and frontmatter to macro samples.</li>
+<li class="">Removed zh-CN DocSpace and workspace translations.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/17/version-8-3-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed playground settings button: updated icon, colors, and click feedback.</li>
+<li class="">Fixed DocSpace playground: added notice about Safari and incognito mode limitations.</li>
+<li class="">Fixed DocSpace playground: removed undocumented buttonWithLogo from selector snippets.</li>
+<li class="">Fixed DocSpace playground: added permission comments to Manager config params.</li>
+<li class="">Fixed DocSpace playground: prevented iframe from overlapping resize handle.</li>
+<li class="">Fixed DocSpace playground: re-run script on theme change to update preview.</li>
+<li class="">Fixed DocSpace playground: allowed user-specified src to override default portal URL.</li>
+<li class="">Fixed playground pages: moved JSX imports to top level instead of mdx-code-block fence.</li>
+<li class="">Fixed playground builder mode: stripped single-line comments before collapsing newlines.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Fixed DocSpace auth: use SDK iframe login with hash instead of cross-origin fetch.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Document API overview: wrong method prefix, fragile line refs, stray "spreadsheet".</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Fixed button being required in Features type for Workspace and Samples pages.</li>
+<li class="">Replaced console.log with visible actions in Playground connector examples.</li>
+<li class="">Renamed "Word" to "Text Document" in Playground editor selector.</li>
+<li class="">Fixed inconsistent admonition types for definitional and prerequisite notes.</li>
+<li class="">Removed redundant "Please note" prefixes from admonitions, fixed "extrenal" typo.</li>
+<li class="">Fixed blockquotes formatting across documentation.</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.2.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/08/version-8-2-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/08/version-8-2-0</guid>
+            <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/08/version-8-2-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>DocSpace</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docspace/api-backend/get-started/sdks">SDK documentation</a> with quick-start guides for C#, Java, PHP, Python, TypeScript, and Postman.</li>
+<li class="">Added MCP server use-case samples to the Samples page.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Added a new <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/samples">Samples</a> page with filterable sample cards across all documentation sections.</li>
+<li class="">Added search input with optimized filtering to the Samples page.</li>
+<li class="">Added <code>?doctype=</code> URL parameter support to the Samples page.</li>
+<li class="">Added pagination and tag-based filtering to the Samples page.</li>
+<li class="">Added Document Builder samples to the Samples page.</li>
+<li class="">Added Document Connectors samples to the Samples page.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/08/version-8-2-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Upgraded React to 19.2.0.</li>
+<li class="">Upgraded Docusaurus to 3.10.0 and openapi-docs to 5.0.0.</li>
+<li class="">Added description metadata to all sample pages across documentation.</li>
+<li class="">Added tags and descriptions to sample pages across all documentation sections.</li>
+<li class="">Shortened sample filenames and headers for better readability and URL consistency.</li>
+<li class="">Added clickable tag filtering on the Samples page.</li>
+<li class="">Renamed "Favorite/Recommended" to "Favorites/Frequently used" on the Samples page.</li>
+<li class="">Renamed "AI" to "AI Tools" tag.</li>
+<li class="">Renamed "Documents Editors" to "Document Editors".</li>
+<li class="">Removed tag display limit on the Samples page.</li>
+<li class="">Translated the playground to Chinese (zh-CN).</li>
+<li class="">Cleaned up unused CSS styles, variables, comments, and normalized hex values.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Homepage</strong>:</p>
+<ul>
+<li class="">Updated tag labels in favorites samples.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Fixed unnecessary backslash escaping from fragment links in WOPI docs.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Fixed heading level for <em>localeTranslate</em> in plugin configuration docs.</li>
+<li class="">Updated AI plugin and converting VBA macros documentation.</li>
+<li class="">Renamed custom AI tools files to kebab-case and headers to sentence case.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Playground</strong>:</p>
+<ul>
+<li class="">Updated form inputs on template fill and restyled radio buttons.</li>
+<li class="">Fixed redundant <em>onChangeContentControl</em> updates.</li>
+<li class="">Restored playground plugin config.json.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/04/08/version-8-2-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed homepage sample card links and cleaned up descriptions.</li>
+<li class="">Fixed flash of favorites on first load with doctype parameter on the Samples page.</li>
+<li class="">Fixed Samples page loading speed.</li>
+<li class="">Removed unnecessary min-height from description and tags row on the Samples page.</li>
+<li class="">Fixed curly quotes replaced with straight quotes in import statements.</li>
+<li class="">Fixed pipe character alignment with table headers across EN and zh-CN docs.</li>
+<li class="">Fixed missing table cell and closing pipe in zh-CN WOPI config.</li>
+<li class="">Fixed extra space inside bold marker in content controls navigation.</li>
+<li class="">Fixed extra indentation for list items in managing-versions FAQ.</li>
+<li class="">Fixed missing blank lines before code blocks, tables, and lists.</li>
+<li class="">Fixed heading levels: use H2 instead of H3 for top-level sections.</li>
+<li class="">Fixed typos across documentation (<em>raws</em> → <em>rows</em>, <em>standart</em> → <em>standard</em>, <em>exabled</em> → <em>enabled</em>, <em>DocSpaace</em> → <em>DocSpace</em>).</li>
+<li class="">Fixed punctuation: use Chinese period in zh-CN working-with-content-controls.</li>
+<li class="">Fixed links to renamed custom AI tools pages.</li>
+<li class="">Fixed active navbar link highlight to use accent color.</li>
+<li class="">Fixed duplicate <code>.menu__link</code> CSS rule.</li>
+<li class="">Fixed missing space before brace in CSS selector.</li>
+<li class="">Fixed broken links to language-specific-examples in changelog.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.1.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/27/version-8-1-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/27/version-8-1-0</guid>
+            <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/27/version-8-1-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Reworked the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/plugins/get-started">Get Started</a> section with improved quick-start tutorials.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/plugins/get-started/quick-start">Hello World Plugin</a> guide.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/macros/get-started/quick-start">Hello World Macro</a> guide.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/ai/get-started/quick-start">Comment Text AI Tool</a> tutorial.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/insert-formulas-row">Insert Formulas Row</a> macro sample for spreadsheet editor.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/ai/guides/ai-agent#create-ai-assistant">Create AI assistant</a> documentation with example.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Added comprehensive <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/get-started/configuration/server-config">Document Server configuration</a> documentation.</li>
+<li class="">New configuration sections include ActiveMQ, RabbitMQ, Redis, AI settings, security, token, storage, WOPI integration, and more.</li>
+<li class="">Restructured <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/usage-api/automation-api">Automation API</a> documentation into a dedicated section with separate pages for <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/usage-api/automation-api/connector-class">Connector class</a> and <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/usage-api/automation-api/connector-window">Connector window</a> methods.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/samples/automation-api/working-with-content-controls">Working with content controls</a> sample for Automation API.</li>
+<li class="">Added links to all editor methods (document, spreadsheet, presentation, PDF, form) in the connector <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/usage-api/automation-api/connector-class#executemethod">executeMethod</a> section.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Office API</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/office-api/samples/spreadsheet-editor/formatting-alternating-row-colors">Formatting alternating row colors</a> sample for Spreadsheet API.</li>
+<li class="">Updated PDF API documentation (ApiRun, ApiRichRun, ApiTextPr, ApiShape classes).</li>
+<li class="">Updated Presentation API documentation.</li>
+<li class="">Updated Spreadsheet API documentation.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/27/version-8-1-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Updated 165 images across the documentation with higher quality screenshots.</li>
+<li class="">Added new dark mode variants for plugin-related images (<code>plugin-manager.dark.png</code>, <code>submit-plugin.dark.png</code>).</li>
+<li class="">Enhanced visual clarity for plugin screenshots and structure diagrams.</li>
+<li class="">Added <code>rebuild-server-config.yaml</code> workflow for automated DocServer config documentation rebuilds.</li>
+<li class="">Removed legacy GIF assets and replaced with webm videos.</li>
+<li class="">Renamed webm files from camelCase to kebab-case for consistent naming.</li>
+<li class="">Replaced non-breaking spaces (U+00A0) with regular spaces across documentation.</li>
+<li class="">Enabled new S3 sync scheme for production deployment.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Removed outdated Office JavaScript API limitation notes.</li>
+<li class="">Removed redundant callback descriptions from how-to-call-commands.</li>
+<li class="">Consolidated <code>ContextMenuItem</code> type definitions in connector class documentation.</li>
+<li class="">Updated server config link to internal documentation.</li>
+<li class="">Redesigned review changes sample with live demo UI and change counter.</li>
+<li class="">Updated filling out the form and working with comments samples.</li>
+<li class="">Added List toggle button to content controls panel header.</li>
+<li class="">Improved content controls external toolbar with additional color options.</li>
+<li class="">Removed live demo labels from external toolbars.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Converted blockquotes to admonitions in macro samples.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Homepage</strong>:</p>
+<ul>
+<li class="">Redesigned SamplesGrid cards with icons, features list, view links, and pastel tags.</li>
+<li class="">Swapped DocSpace/Docs positioning on the first screen.</li>
+<li class="">Replaced blog articles on homepage.</li>
+<li class="">Fixed Cyrillic "С" (U+0421) replaced with Latin "C" in CSS class names.</li>
+<li class="">Reduced DOM nesting and removed unused assets.</li>
+<li class="">Changed navbar sorting.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Localization</strong>:</p>
+<ul>
+<li class="">Localized external links on zh-CN plugin and macro pages with Chinese equivalents.</li>
+<li class="">Added zh-CN translation for AI plugin page with localized links.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Playground</strong>:</p>
+<ul>
+<li class="">Removed unused legacy scripts (<code>cell/api.js</code>, <code>slide/api.js</code>, <code>word/api.js</code>).</li>
+<li class="">Removed deprecated plugin folder.</li>
+<li class="">Restructured <code>DEFAULT_SCRIPTS</code> configuration for better flexibility.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/27/version-8-1-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed link in documentation.</li>
+<li class="">Fixed Docusaurus configuration to exclude <code>index.md</code> from category index convention.</li>
+<li class="">Fixed unnecessary <code>setTimeout</code> wrapper in insert-formulas-row macro sample.</li>
+<li class="">Fixed example in macro documentation.</li>
+<li class="">Changed warning admonition to info where appropriate.</li>
+<li class="">Fixed broken links across documentation.</li>
+<li class="">Fixed external components.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 8.0.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/25/version-8-0-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/25/version-8-0-0</guid>
+            <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/25/version-8-0-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Document Builder</strong>:</p>
+<ul>
+<li class="">Restructured documentation to concatenate all programming languages on single pages instead of separate pages per language.</li>
+<li class="">Rewrote the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/document-builder/builder-framework/overview">Builder Framework overview</a> to emphasize runtime usage patterns.</li>
+<li class="">Added comprehensive <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/document-builder/using-cli/overview">CLI documentation</a> with improved examples.</li>
+<li class="">Changed code examples from <code>.docbuilder</code> extension to <code>.js</code> for better IDE support.</li>
+<li class="">Improved the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/additional-api/document-builder-api">Document Builder API</a> async workflow documentation with detailed response parameters.</li>
+<li class="">Added curl command examples throughout the API documentation.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/ai/guides/custom-ai-tools">AI custom tools text annotations</a> feature documentation.</li>
+<li class="">Added new <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/samples?doctype=docs&amp;text=macros">PDF macros samples</a>.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/samples?doctype=docs&amp;text=macros">freeze panes macro example</a>.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/bookmark-last-view">bookmark last view macro example</a>.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/samples?doctype=docs&amp;text=plugin">OData plugin</a> to plugin examples.</li>
+<li class="">Added Chinese translations for the entire Plugins API section.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Office API</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/office-api/get-started/playground">PDF section support</a> in the Playground.</li>
+<li class="">Updated the Playground with new default scripts for SSE.</li>
+<li class="">Added comprehensive Chinese translations for Office API usage documentation.</li>
+<li class="">Added Document type selector to the Playground toolbar for choosing between documents with blank or sample content.</li>
+<li class="">The Playground now opens with a sample document when accessed from the Playground overview pages.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>DocSpace</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started">MCP server use cases</a> documentation.</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/samples?doctype=docspace&amp;text=rest+api">new samples</a> to API Backend documentation.</li>
+<li class="">Updated <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docspace/plugins-sdk/get-started">Plugins SDK</a> documentation with improved structure and examples.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="improvements">Improvements<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/25/version-8-0-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Simplified Playground implementation by removing redundant variables.</li>
+<li class="">Improved code quality by removing unused comments across the codebase.</li>
+<li class="">Updated integration documentation for WordPress, SuiteCRM, Strapi, SharePoint, Redmine, Plone, ownCloud, Odoo, Nuxeo, Moodle, and Mattermost with Chinese translations.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Document Builder</strong>:</p>
+<ul>
+<li class="">Added link to supported properties in argument parameter descriptions.</li>
+<li class="">Improved API page formatting and readability.</li>
+<li class="">Standardized Parameters section with tabs for all languages.</li>
+<li class="">Updated Python examples in CDocBuilderValue docs to use direct method calls.</li>
+<li class="">Improved signature documentation consistency and formatting.</li>
+<li class="">Moved debugging docs to using-cli section.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Updated <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/usage-api/methods">connectors documentation</a>.</li>
+<li class="">Fixed grammar in integration docs.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Office API</strong>:</p>
+<ul>
+<li class="">Updated input-helper pages.</li>
+<li class="">Added deprecation info for legacy methods.</li>
+<li class="">Fixed <code>scrollWidth</code> null reference issue in code blocks.</li>
+<li class="">Fixed select popup position in Playground.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="bugfixes">Bugfixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/25/version-8-0-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed broken links across Document Builder documentation.</li>
+<li class="">Fixed broken links throughout the documentation site.</li>
+<li class="">Fixed wrong arguments in some Office API methods.</li>
+<li class="">Fixed Recording macros page.</li>
+<li class="">Fixed editor type for forms in Office API.</li>
+<li class="">Corrected <code>review.reviewDisplay</code> documentation.</li>
+<li class="">Fixed styles for announcement bar with multistring content.</li>
+<li class="">Fixed problem with previous merge deleting files.</li>
+<li class="">Fixed <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/currency-conversion">Currency Conversion</a> macro to use proper <code>RecalculateAllFormulas</code> API instead of internal method with timeout.</li>
+<li class="">Fixed <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/hide-or-unhide-rows-and-columns">Hide or Unhide Rows and Columns</a> macro example.</li>
+<li class="">Fixed Java syntax highlighting in CDocBuilder and CDocBuilderValue method examples.</li>
+<li class="">Fixed C++, Java, .Net, Python, and COM code samples in Document Builder methods (SaveFile, SetProperty, Execute, ExecuteCommand, CreateInstance).</li>
+<li class="">Fixed delete-annotations sample.</li>
+<li class="">Fixed markdown table alignment in <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/additional-api/document-builder-api">Document Builder API</a> page.</li>
+<li class="">Fixed markdown formatting in Mattermost and Nextcloud integration docs.</li>
+<li class="">Fixed broken markdown link in Chinese writing-macros.md.</li>
+<li class="">Fixed ASCII punctuation in Chinese saving-file.md translation.</li>
+<li class="">Fixed editor type in Playground.</li>
+<li class="">Standardized note format in builder-framework docs.</li>
+<li class="">Hidden comparing-documents.md pages.</li>
+<li class="">Fixed usage API documentation examples and improved consistency.</li>
+<li class="">Fixed AI Tools samples video.</li>
+<li class="">Fixed default scripts for PDF, builder, and mobile in Playground.</li>
+<li class="">Fixed announcement bar on try-docs example page.</li>
+<li class="">Updated PDF document name from 'demo' to 'blank' in Playground.</li>
+<li class="">Shortened case titles.</li>
+<li class="">Fixed Playground initialization issue with document type when opening via URL parameters.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="breaking-changes">Breaking changes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/25/version-8-0-0#breaking-changes" class="hash-link" aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Document Builder</strong>: Documentation structure changed from separate language pages to unified multi-language pages. Update any direct links to language-specific builder documentation pages.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.6]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/05/version-7-6-6</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/05/version-7-6-6</guid>
+            <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/03/05/version-7-6-6#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>: Added the announcement bar at the top containing information about new releases.</li>
+<li class=""><strong>Office API</strong>: Updated the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/office-api/get-started/overview">Office API documentation</a> for version 9.3.0.</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.5]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/20/version-7-6-5</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/20/version-7-6-5</guid>
+            <pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/20/version-7-6-5#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Added MCP server connection documentation for Desktop Editors v9.2</li>
+</ul>
+</li>
+<li class=""><strong>Docspace</strong>:<!-- -->
+<ul>
+<li class="">Enhanced MCP server documentation with AI agent capabilities and examples</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=""><strong>Docs API</strong>
+<ul>
+<li class="">Updated parameters of NextCloud integration</li>
+<li class="">Added configuration parameters section to Chinese Nextcloud docs</li>
+<li class="">Added Working with forms info to Odoo connector page</li>
+</ul>
+</li>
+<li class=""><strong>Document Builder</strong>:<!-- -->
+<ul>
+<li class="">Added <code>Creating form from JSON</code> sample</li>
+<li class="">Added <code>Getting form values by ID</code> sample</li>
+<li class="">Added <code>Removing individual fields</code> sample</li>
+<li class="">Added <code>Setting default values</code> sample</li>
+<li class="">Added <code>Updating placeholders</code> sample</li>
+<li class="">Added <code>Creating multiple NDA documents</code> sample</li>
+<li class="">Added <code>Creating employee onboarding checklist</code> sample</li>
+<li class="">Added <code>Creating purchase order</code> sample</li>
+<li class="">Added <code>Creating event form</code> sample</li>
+<li class="">Added <code>Validating exam form</code> sample</li>
+<li class="">Added Chinese translations for new samples</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated plugin installation docs with correct paths</li>
+<li class="">Updated plugin-and-macros changelog with v9.1 and v9.2 changes</li>
+<li class="">Improved adding custom functions documentation</li>
+<li class="">Edited 'Creating plugin template' page (moved info about old template to the Migration section)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/20/version-7-6-5#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Updated Docusaurus to 3.9.2</li>
+<li class="">Updated DocSearch to 4.6.0</li>
+<li class="">Fixed broken links across documentation</li>
+<li class="">Fixed incorrect DOM selector methods and code formatting in localization docs</li>
+<li class="">Improved conversion API documentation formatting</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.4]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/10/version-7-6-4</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/10/version-7-6-4</guid>
+            <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Fixes]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/10/version-7-6-4#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Fixed <code>Copy page</code> and <code>View as markdown</code> actions of the AI multi button</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.3]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/09/version-7-6-3</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/09/version-7-6-3</guid>
+            <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/09/version-7-6-3#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">Added LLM multi button on all pages</li>
+<li class="">Added <code>Context</code> option to <code>Ask AI</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/09/version-7-6-3#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Update Docusaurus OpenAPI plugin to version 4.7.1</li>
+<li class="">Removed unused scripts</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed typos and formating on some pages</li>
+</ul>
+</li>
+<li class=""><strong>Docspace</strong>:<!-- -->
+<ul>
+<li class="">Deleted generation of the <code>for-hosting-providers</code> section</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.2]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/02/version-7-6-2</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/02/version-7-6-2</guid>
+            <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Common]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="common">Common<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/02/version-7-6-2#common" class="hash-link" aria-label="Direct link to Common" title="Direct link to Common" translate="no">​</a></h2>
+<ul>
+<li class="">Added button <code>Ask AI</code> to chat with LLM</li>
+<li class="">Theme colors for the code block changed to similar VSCode</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/02/version-7-6-2#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/macros/guides/recording-macros"><code>Recording macros</code></a> page</li>
+<li class="">Added <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/ai/guides/ai-agent"><code>AI Agent</code></a> and <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/ai/guides/ai-plugin"><code>AI Plugin</code></a> pages for Chinese</li>
+<li class="">Updated <code>Playground</code> section</li>
+<li class="">Added <code>Builder</code> option to playground script target</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2026/02/02/version-7-6-2#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added <code>Installation</code> and <code>Clients</code> pages to the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started"><code>MCP Server</code></a> section</li>
+<li class="">Hidden <code>For hosting providers</code> section</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Getting started page</li>
+<li class="">Fixed styles of the right panel of OpenAI</li>
+<li class="">Fixed problems in the code examples for plugins due to the lack of required parameters</li>
+<li class="">Fixed style for plugins configuration description pages</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.1]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/24/version-7-6-1</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/24/version-7-6-1</guid>
+            <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/24/version-7-6-1#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>: Updated the main page</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/24/version-7-6-1#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>: Edited the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/docs-api/usage-api/config/document/info#favorite">document.info.favorite</a> parameter description</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.6.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/19/version-7-6-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/19/version-7-6-0</guid>
+            <pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/19/version-7-6-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>: Updated DocSpace version to 3.6</li>
+</ul>
+<ul>
+<li class=""><strong>Document Builder</strong>: Translated the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/document-builder/get-started/overview">Document Builder</a> section into Chinese</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Version 7.5.0]]></title>
+            <link>https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/11/version-7-5-0</link>
+            <guid>https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/11/version-7-5-0</guid>
+            <pubDate>Thu, 11 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[New features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-features">New features<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/11/version-7-5-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Office API</strong>: Updated the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/office-api/get-started/overview">Office API documentation</a> for version 9.2.0.</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Added the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/plugins/development-workflow/debugging/for-desktop-editors">Debugging</a> subsection to the Tutorials section</li>
+<li class="">Updated the plugin <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/plugins/configuration/icons-and-branding">Icons</a> page with additional info</li>
+<li class="">Added the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/how-to-customize-themes">How to customize themes</a> page</li>
+<li class="">Added the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/plugins/configuration/localization#troubleshooting-localization">Troubleshooting</a> section to the Localization page</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=""><strong>Desktop</strong>: Translated the <a class="" href="https://serg-kv.github.io/api.onlyoffice.com/docs/desktop-editors/get-started/overview">Desktop Editors</a> section into Chinese</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fixes">Fixes<a href="https://serg-kv.github.io/api.onlyoffice.com/changelog/2025/12/11/version-7-5-0#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Plugins and macros</strong>: Added missing links to the samples</li>
+</ul>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
