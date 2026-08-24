@@ -18,7 +18,7 @@ const docSpace = DocSpace.SDK.initUploader({
 
 The parameters `frameId`, `src`, and `id` are required. All other parameters are optional and have sensible defaults.
 
-For setup instructions (connecting the script, CSP configuration, npm package), see [Get started](../get-started/get-started.md).
+For setup instructions (connecting the script, CSP configuration, npm package), see [Get started](../get-started/get-started.md). For a complete HTML example, see [Initialize uploader](../samples/basic-samples/init-uploader.md).
 
 ## Configuration, events, and methods
 

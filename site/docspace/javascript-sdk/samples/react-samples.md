@@ -18,12 +18,12 @@ This procedure requires [Node.js (and npm)](https://nodejs.org/en).
 
 ## Creating the demo React application with ONLYOFFICE DocSpace
 
-This procedure creates a [basic React application](https://github.com/facebook/create-react-app) and installs an ONLYOFFICE DocSpace in it.
+This procedure creates a basic React application using [Vite](https://vite.dev/) and installs an ONLYOFFICE DocSpace in it.
 
-1. Create a new React project named *docspace-react-demo* using the *Create React App* package:
+1. Create a new React + Vite project named *docspace-react-demo*:
 
    ``` sh
-   npx create-react-app docspace-react-demo
+   npm create vite@latest docspace-react-demo -- --template react -y
    ```
 
 2. Go to the newly created directory:
@@ -38,7 +38,7 @@ This procedure creates a [basic React application](https://github.com/facebook/c
    npm install --save @onlyoffice/docspace-react
    ```
 
-4. Open the *./src/App.js* file in the *docspace-react-demo* project and replace its contents with the following code:
+4. Open the *./src/App.jsx* file in the *docspace-react-demo* project and replace its contents with the following code:
 
    ``` tsx
    import {DocSpace} from "@onlyoffice/docspace-react";
@@ -89,7 +89,7 @@ This procedure creates a [basic React application](https://github.com/facebook/c
    - To start the development server, navigate to the *docspace-react-demo* directory and run:
 
      ``` sh
-     npm run start
+     npm run dev
      ```
 
    - To stop the development server, select on the command line or command prompt and press *Ctrl+C*.
@@ -107,7 +107,7 @@ The easiest way to deploy the application to a production environment is to inst
 2. Serve your static site on the 3000 port:
 
    ``` sh
-   serve -s build
+   serve -s dist
    ```
 
    Another port can be adjusted using the *-l* or *--listen* flags:
@@ -131,9 +131,9 @@ Now you can deploy the application to the created server:
    npm run build
    ```
 
-   The *build* directory will be created with a production build of your app.
+   The *dist* directory will be created with a production build of your app.
 
-2. Copy the contents of the *docspace-react-demo/build* directory to the root directory of the web server (to the *docspace-react-demo* folder).
+2. Copy the contents of the *docspace-react-demo/dist* directory to the root directory of the web server (to the *docspace-react-demo* folder).
 
 The application will be deployed on the web server (`http://localhost:3000` by default).
 
@@ -151,63 +151,3 @@ The application will be deployed on the web server (`http://localhost:3000` by d
 | onLoadComponentError  | (errorCode: number, errorDescription: string) => void | null    | The function called when an error occurs while loading a component.                                         |
 
 \* *- required field*
-
-## Installing Storybook
-
-Install [Storybook](https://storybook.js.org/) to develop UI components in isolation:
-
-1. Change the address of the DocSpace in the *.env* file:
-
-   ``` ini
-   "DOCSPACE_URL": "https://example-onlyoffice.com/"
-   ```
-
-   where `http://example-onlyoffice.com/` is the URL to the server with **ONLYOFFICE DocSpace** installed.
-
-2. Build Storybook with the following command:
-
-   ``` sh
-   npm run build-storybook
-   ```
-
-3. Start Storybook:
-
-   ``` sh
-   npm run storybook
-   ```
-
-## Developing ONLYOFFICE DocSpace React component
-
-1. Clone project from the GitHub repository:
-
-   ``` sh
-   git clone https://github.com/ONLYOFFICE/docspace-react
-   ```
-
-2. Install the project dependencies:
-
-   ``` sh
-   npm install
-   ```
-
-3. Test the component:
-
-   ``` sh
-   npm run test
-   ```
-
-4. Build the project:
-
-   ``` sh
-   npm run rollup
-   ```
-
-5. Create the package:
-
-   ``` sh
-   npm pack
-   ```
-
-## Feedback and support
-
-In case you have any issues, questions, or suggestions for the ONLYOFFICE DocSpace React component, please refer to the [Issues](https://github.com/ONLYOFFICE/docspace-react/issues) section.
