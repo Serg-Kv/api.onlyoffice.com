@@ -7,8 +7,6 @@ tags: ["DocSpace", "Embed SDK", "Integration"]
 
 This example demonstrates how to initialize the DocSpace uploader using the Embed SDK.
 
-Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/basic-samples/init-uploader.html)
-
 ## Before you start
 
 Please make sure you are using a server environment to run the HTML file because the Embed SDK must be launched on the server.
