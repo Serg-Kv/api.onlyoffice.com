@@ -23,7 +23,7 @@ This procedure creates a basic React application using [Vite](https://vite.dev/)
 1. Create a new React + Vite project named *docspace-react-demo*:
 
    ``` sh
-   npm create vite@latest docspace-react-demo -- --template react -y
+   npm create vite@latest docspace-react-demo -- --template react
    ```
 
 2. Go to the newly created directory:
@@ -113,7 +113,7 @@ The easiest way to deploy the application to a production environment is to inst
    Another port can be adjusted using the *-l* or *--listen* flags:
 
    ``` sh
-   serve -s build -l 4000
+   serve -s dist -l 4000
    ```
 
 3. To serve the project folder, go to it and run the *serve* command:
