@@ -90,6 +90,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
       function initDocSpace(rootPath = null, filter = null) {
         const config = {
           frameId: "ds-frame",
+          src: "{PORTAL_SRC}",
           events: {
             onAppReady: rootPath ? onWorkspaceReady : onInitialReady
           }
@@ -246,6 +247,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function initDocSpace(rootPath = null, filter = null) {
   const config = {
     frameId: "ds-frame",
+    src: "{PORTAL_SRC}",
     events: {
       onAppReady: rootPath ? onWorkspaceReady : onInitialReady
     }

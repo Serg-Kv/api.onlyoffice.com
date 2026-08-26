@@ -93,6 +93,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
           // Step 5.3: Unlock DocSpace SDK
           const spaceInstance = DocSpace.SDK.initManager({
             frameId: "ds-frame",
+            src: "{PORTAL_SRC}",
             width: "100%",
             height: "700px"
           });
@@ -146,6 +147,7 @@ codeButton.addEventListener("click", function () {
 
     const docSpace = DocSpace.SDK.initManager({
       frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       width: "100%",
       height: "700px"
     });
@@ -164,6 +166,7 @@ codeButton.addEventListener("click", function () {
 ``` ts
 const docSpace = DocSpace.SDK.initManager({
   frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
   width: "100%",
   height: "700px"
 });

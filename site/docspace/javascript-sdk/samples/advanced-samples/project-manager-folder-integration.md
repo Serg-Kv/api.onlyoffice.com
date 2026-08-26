@@ -156,6 +156,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
       // Step 6: Initialize the DocSpace manager
       docSpace = DocSpace.SDK.initManager({
         frameId: "ds-frame",
+        src: "{PORTAL_SRC}",
         rootPath: "/rooms/shared/" + collaborationRoomID,
         filter: { folder: collaborationRoomID },
         events: { onAppReady },
@@ -194,6 +195,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
 ``` ts
 docSpace = DocSpace.SDK.initManager({
   frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
   rootPath: "/rooms/shared/" + collaborationRoomID,
   filter: { folder: collaborationRoomID },
   events: { onAppReady },

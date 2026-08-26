@@ -72,6 +72,7 @@ Please make sure you are using a server environment to run the HTML file because
 
       const docSpace = DocSpace.SDK.initManager({
         frameId: 'ds-frame',
+        src: '{PORTAL_SRC}',
         events: { onAppReady }
       })
 
@@ -111,6 +112,7 @@ Please make sure you are using a server environment to run the HTML file because
 
         const dsSelector = DocSpace.SDK.initRoomSelector({
           frameId: 'ds-selector',
+          src: '{PORTAL_SRC}',
           showSelectorCancel: true,
           events: {
             onSelectCallback,
@@ -186,6 +188,7 @@ const onAppReady = () => {
 
 const docSpace = DocSpace.SDK.initManager({
   frameId: 'ds-frame',
+  src: '{PORTAL_SRC}',
   events: { onAppReady }
 })
 ```
@@ -239,6 +242,7 @@ newTaskButton.addEventListener('click', () => {
 
   const dsSelector = DocSpace.SDK.initRoomSelector({
     frameId: 'ds-selector',
+    src: '{PORTAL_SRC}',
     showSelectorCancel: true,
     events: {
       onSelectCallback,

@@ -125,6 +125,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
         docSpace = DocSpace.SDK.initRoomSelector({
           height: "430px",
           frameId: "ds-selector",
+          src: "{PORTAL_SRC}",
           showSelectorCancel: true,
           events: {
             onSelectCallback: onRoomSelectCallback,
@@ -140,6 +141,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
 
         docSpace = DocSpace.SDK.initFileSelector({
           frameId: "ds-selector",
+          src: "{PORTAL_SRC}",
           height: "430px",
           showSelectorCancel: true,
           events: {
@@ -218,6 +220,7 @@ function openRoomSelector() {
     docSpace = DocSpace.SDK.initRoomSelector({
         height: "430px",
         frameId: "ds-selector",
+        src: "{PORTAL_SRC}",
         showSelectorCancel: true,
         events: {
             onSelectCallback: onRoomSelectCallback,

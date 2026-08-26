@@ -35,6 +35,8 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
       const frame = DocSpace.SDK.frames["ds-frame"]
     }
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       editorCustomization: {
         autosave: true,
         comments: true,
@@ -115,6 +117,8 @@ After that, copy the resulting config and paste it into the [customization](/doc
 
     ``` ts
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       editorCustomization: {
         autosave: true,
         comments: true,

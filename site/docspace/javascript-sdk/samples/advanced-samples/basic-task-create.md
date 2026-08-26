@@ -75,6 +75,7 @@ Please make sure you are using a server environment to run the HTML file because
 
       const docSpace = DocSpace.SDK.initManager({
         frameId: 'ds-frame',
+        src: '{PORTAL_SRC}',
         events: { onAppReady }
       })
 
@@ -187,6 +188,7 @@ th {
 ``` ts
 const docSpace = DocSpace.SDK.initManager({
   frameId: 'ds-frame',
+  src: '{PORTAL_SRC}',
   events: { onAppReady }
 })
 

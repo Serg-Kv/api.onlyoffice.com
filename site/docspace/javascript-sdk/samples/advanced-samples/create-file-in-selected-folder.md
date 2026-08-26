@@ -54,6 +54,8 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
     }
 
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       events: {
         onAppReady,
       },
@@ -78,6 +80,8 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
 
       const res = await frame.createFile(selectedFolder, fileName)
       const docSpace = DocSpace.SDK.initEditor({
+        frameId: "ds-frame",
+        src: "{PORTAL_SRC}",
         id: res.id,
         height: "700px",
       })
@@ -149,6 +153,8 @@ Add a script to initialize the [Manager](/docspace/javascript-sdk/usage-sdk/clas
 
     ``` ts
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       events: {
         onAppReady,
       },
@@ -192,6 +198,8 @@ function onButtonClick() {
 
   const res = await frame.createFile(selectedFolder, fileName)
   const docSpace = DocSpace.SDK.initEditor({
+    frameId: "ds-frame",
+    src: "{PORTAL_SRC}",
     id: res.id,
     height: "700px",
   })

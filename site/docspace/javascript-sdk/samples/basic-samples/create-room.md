@@ -57,8 +57,6 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
   <!-- Step 2: Embed SDK Logic -->
   <script>
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"];
-
       document.getElementById("button").onclick = () => {
         docSpace.createRoom("New Room", 2); // 2 = shared room
       };
@@ -66,6 +64,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
 
     const config = {
       frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       width: "100%",
       height: "700px",
       events: {
@@ -140,6 +139,7 @@ function onAppReady() {
 
 const config = {
   frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
   width: "100%",
   height: "700px",
   events: { onAppReady },

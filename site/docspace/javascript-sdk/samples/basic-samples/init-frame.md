@@ -38,6 +38,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
   <script>
     const config = {
       frameId: "ds-frame", // ID of the iframe container
+      src: "{PORTAL_SRC}", // Portal URL
       width: "100%",       // Full width
       height: "700px",     // Set desired height
     };
@@ -85,6 +86,7 @@ Use the  method to embed the ONLYOFFICE document editor for a specified file ID.
 ``` ts
 const config = {
   frameId: "ds-frame", // ID of the iframe container
+  src: "{PORTAL_SRC}", // Portal URL
   width: "100%",       // Full width
   height: "700px",     // Set desired height
 };

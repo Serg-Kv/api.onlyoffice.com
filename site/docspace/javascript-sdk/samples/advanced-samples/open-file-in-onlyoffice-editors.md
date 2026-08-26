@@ -35,6 +35,8 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
   <script>
     function onSelectCallback() {
       docSpace = DocSpace.SDK.initEditor({
+        frameId: "ds-frame",
+        src: "{PORTAL_SRC}",
         id: e.id,
         height: "700px",
       })
@@ -45,6 +47,8 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
     }
 
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       events: {
         onSelectCallback,
         onAppReady,
@@ -105,6 +109,8 @@ Add a script to initialize the [file selector](/docspace/javascript-sdk/usage-sd
     ``` ts
     function onSelectCallback() {
       docSpace = DocSpace.SDK.initEditor({
+        frameId: "ds-frame",
+        src: "{PORTAL_SRC}",
         id: e.id,
         height: "700px",
       })
@@ -115,6 +121,8 @@ Add a script to initialize the [file selector](/docspace/javascript-sdk/usage-sd
 
     ``` ts
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       events: {
         onSelectCallback,
         onAppReady,

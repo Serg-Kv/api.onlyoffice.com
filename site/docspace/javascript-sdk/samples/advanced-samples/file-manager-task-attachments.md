@@ -152,6 +152,8 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
       }
 
       const config = {
+        frameId: 'ds-frame',
+        src: '{PORTAL_SRC}',
         events: {
           onSelectCallback,
           onAppReady
@@ -283,6 +285,8 @@ function onAppReady() {
 }
 
 const config = {
+  frameId: 'ds-frame',
+  src: '{PORTAL_SRC}',
   events: {
     onSelectCallback,
     onAppReady

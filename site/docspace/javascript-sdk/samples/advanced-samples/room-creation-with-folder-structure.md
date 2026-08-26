@@ -67,6 +67,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
       // Step 7: Init DocSpace SDK
       docSpace = DocSpace.SDK.initManager({
         frameId: "ds-frame",
+        src: "{PORTAL_SRC}",
         events: { onAppReady }
       })
 
@@ -182,6 +183,7 @@ function onAppReady() {
 
 docSpace = DocSpace.SDK.initManager({
   frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
   events: { onAppReady }
 });
 ```

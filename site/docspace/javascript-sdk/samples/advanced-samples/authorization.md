@@ -49,6 +49,8 @@ Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docsp
       }
 
       const config = {
+        frameId: "ds-frame",
+        src: "{PORTAL_SRC}",
         events: {
           onAppReady,
         },
@@ -108,6 +110,8 @@ Add a script to initialize the [System](/docspace/javascript-sdk/usage-sdk/class
 
     ``` ts
     const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       events: {
         onAppReady,
       },
