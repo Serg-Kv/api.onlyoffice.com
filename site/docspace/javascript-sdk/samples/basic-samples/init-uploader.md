@@ -54,7 +54,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
     const config = {
       frameId: "ds-frame",
       src: "{PORTAL_SRC}",
-      id: "{{TARGET_FOLDER_ID}}",
+      id: "{TARGET_FOLDER_ID}",
       width: "100%",
       height: "700px",
       events: {
@@ -124,7 +124,7 @@ function onUploadError(error) {
 const config = {
   frameId: "ds-frame",
   src: "{PORTAL_SRC}",
-  id: "{{TARGET_FOLDER_ID}}",
+  id: "{TARGET_FOLDER_ID}",
   width: "100%",
   height: "700px",
   events: {
