@@ -44,7 +44,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
     }
 
     function onUploadSuccess(file) {
-      console.log("Uploaded:", file.title);
+      console.log("Uploaded:", file[0].response.title);
     }
 
     function onUploadError(error) {
@@ -53,6 +53,7 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
 
     const config = {
       frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
       id: "{{TARGET_FOLDER_ID}}",
       width: "100%",
       height: "700px",
@@ -113,7 +114,7 @@ function onUploadProgress(progress) {
 }
 
 function onUploadSuccess(file) {
-  console.log("Uploaded:", file.title);
+  console.log("Uploaded:", file[0].response.title);
 }
 
 function onUploadError(error) {
@@ -122,6 +123,7 @@ function onUploadError(error) {
 
 const config = {
   frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
   id: "{{TARGET_FOLDER_ID}}",
   width: "100%",
   height: "700px",
