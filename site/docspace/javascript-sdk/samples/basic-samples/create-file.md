@@ -58,7 +58,6 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
     const roomId = "71234"; // Replace with your actual public room ID
 
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"];
       document.getElementById("button").onclick = () => {
         docSpace.createFile(roomId, "new.pptx");
       };
@@ -139,7 +138,6 @@ Create a script block to configure and initialize the SDK. Use the [createFile()
 const roomId = "71234"; // Replace with your actual public room ID
 
 function onAppReady() {
-  const frame = DocSpace.SDK.frames["ds-frame"];
   document.getElementById("button").onclick = () => {
     docSpace.createFile(roomId, "new.pptx");
   };

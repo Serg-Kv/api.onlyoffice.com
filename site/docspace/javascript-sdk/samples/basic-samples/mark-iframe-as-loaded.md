@@ -57,7 +57,6 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
   <!-- Step 2: Embed SDK Logic -->
   <script>
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"]; // Get iframe frame
       document.getElementById("button").onclick = () => {
         docSpace.setIsLoaded(); // Mark the SDK as fully loaded
       };
@@ -131,7 +130,6 @@ Use the [setIsLoaded()](/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.m
 
 ``` ts
 function onAppReady() {
-  const frame = DocSpace.SDK.frames["ds-frame"]; // Get iframe frame
     document.getElementById("button").onclick = () => {
     docSpace.setIsLoaded(); // Mark the SDK as fully loaded
   };

@@ -43,7 +43,6 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
     }
 
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"]
     }
 
     const config = {
@@ -100,7 +99,6 @@ Add a script to initialize the [file selector](/docspace/javascript-sdk/usage-sd
 
     ``` ts
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"]
     }
     ```
 

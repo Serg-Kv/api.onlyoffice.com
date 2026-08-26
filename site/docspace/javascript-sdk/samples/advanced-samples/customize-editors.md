@@ -32,7 +32,6 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
   </body>
   <script>
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"]
     }
     const config = {
       frameId: "ds-frame",
@@ -108,7 +107,6 @@ Add a script to initialize the [editors](/docspace/javascript-sdk/usage-sdk/clas
 
     ``` ts
     function onAppReady() {
-      const frame = DocSpace.SDK.frames["ds-frame"]
     }
     ```
 

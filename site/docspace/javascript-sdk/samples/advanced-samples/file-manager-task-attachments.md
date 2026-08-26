@@ -148,7 +148,6 @@ You need to [add the URL](/docspace/javascript-sdk/get-started/authentication-se
 
       // Step 5: Initialize file selector
       function onAppReady() {
-        const frame = DocSpace.SDK.frames['ds-frame']
       }
 
       const config = {
@@ -281,7 +280,6 @@ modalElement.addEventListener('close', () => {
 
 ``` ts
 function onAppReady() {
-  const frame = DocSpace.SDK.frames['ds-frame']
 }
 
 const config = {
